@@ -1,0 +1,166 @@
+/* Home Page Specific Styles */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #2d3e50 0%, #3c4553 100%);
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-content .btn {
+  font-size: 1.1rem;
+  padding: 15px 40px;
+  box-shadow: 0 5px 15px rgba(205, 21, 55, 0.3);
+}
+
+/* About Section */
+.about-section {
+  background-color: white;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  color: #2d3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-section .btn {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.services-section {
+  background-color: #f8f9fa;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  color: #2d3e50;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #cd1537;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #2d3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.service-card a {
+  color: #cd1537;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.service-card a:hover {
+  color: #b91330;
+  padding-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 500px;
+    padding-top: 100px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-section h2,
+  .services-section h2 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    margin-bottom: 20px;
+  }
+}

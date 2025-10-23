@@ -1,0 +1,4 @@
+*.js
+routes/
+server.js
+node_modules/
