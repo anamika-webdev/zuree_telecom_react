@@ -140,7 +140,16 @@ const Career = () => {
       
       <section className="career-section section-padding">
         <div className="container">
-                    {/* Search and Filters */}
+          {/* Introduction */}
+          <div className="mb-5 text-center career-intro">
+            <h2 className="section-title">Join Our Team</h2>
+            <p className="section-subtitle">
+              Explore exciting career opportunities and be part of our innovative team. 
+              We're always looking for talented individuals to join us.
+            </p>
+          </div>
+
+          {/* Search and Filters */}
           <div className="mb-4 career-filters">
             <div className="row g-3">
               <div className="col-lg-6 col-md-6">
@@ -307,7 +316,85 @@ const Career = () => {
               )}
             </>
           )}
-        
+
+          {/* Stats Section */}
+          <div className="pt-5 mt-5 career-stats">
+            <div className="text-center row">
+              <div className="mb-4 col-md-3 col-6">
+                <div className="stat-card">
+                  <h3 className="stat-number">{filteredJobs.length}+</h3>
+                  <p className="stat-label">Open Positions</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-3 col-6">
+                <div className="stat-card">
+                  <h3 className="stat-number">500+</h3>
+                  <p className="stat-label">Team Members</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-3 col-6">
+                <div className="stat-card">
+                  <h3 className="stat-number">15+</h3>
+                  <p className="stat-label">Locations</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-3 col-6">
+                <div className="stat-card">
+                  <h3 className="stat-number">10+</h3>
+                  <p className="stat-label">Years Experience</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Why Join Us Section */}
+          <div className="pt-5 mt-5 why-join-section">
+            <h2 className="mb-5 text-center">Why Join Zuree Telecom?</h2>
+            <div className="row">
+              <div className="mb-4 col-md-4">
+                <div className="benefit-card">
+                  <div className="benefit-icon">🚀</div>
+                  <h4>Career Growth</h4>
+                  <p>Continuous learning opportunities and clear career progression paths.</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-4">
+                <div className="benefit-card">
+                  <div className="benefit-icon">💼</div>
+                  <h4>Work-Life Balance</h4>
+                  <p>Flexible working hours and remote work options for better balance.</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-4">
+                <div className="benefit-card">
+                  <div className="benefit-icon">🎯</div>
+                  <h4>Innovative Projects</h4>
+                  <p>Work on cutting-edge technologies with global clients.</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-4">
+                <div className="benefit-card">
+                  <div className="benefit-icon">🏥</div>
+                  <h4>Health Benefits</h4>
+                  <p>Comprehensive health insurance and wellness programs.</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-4">
+                <div className="benefit-card">
+                  <div className="benefit-icon">🎓</div>
+                  <h4>Learning & Development</h4>
+                  <p>Training programs, certifications, and skill development initiatives.</p>
+                </div>
+              </div>
+              <div className="mb-4 col-md-4">
+                <div className="benefit-card">
+                  <div className="benefit-icon">🌍</div>
+                  <h4>Global Exposure</h4>
+                  <p>Opportunity to work with international teams and clients.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

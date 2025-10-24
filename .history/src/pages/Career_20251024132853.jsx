@@ -140,7 +140,12 @@ const Career = () => {
       
       <section className="career-section section-padding">
         <div className="container">
-                    {/* Search and Filters */}
+          {/* Introduction */}
+          <div className="mb-5 text-center career-intro">
+            <h2 className="section-title">Join Our Team</h>
+          </div>
+
+          {/* Search and Filters */}
           <div className="mb-4 career-filters">
             <div className="row g-3">
               <div className="col-lg-6 col-md-6">

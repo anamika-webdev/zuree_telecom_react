@@ -224,6 +224,7 @@ const Layout = ({ children }) => {
     <div className="container">
       <div className="footer-bottom-content">
         <p className="copyright-text">© Copyright 2022 Zuree Telecom. All rights reserved</p>
+        <p className="developed-text">Developed By Incroyable Industries Private Limited</p>
       </div>
     </div>
   </div>
