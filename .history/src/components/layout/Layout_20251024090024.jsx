@@ -74,28 +74,83 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
-      {/* NEW FOOTER - REPLACES OLD FOOTER */}
+      {/* FOOTER WITH THEME-MATCHED NEWSLETTER */}
       <footer className="new-footer">
-        {/* Newsletter Section */}
-        <div className="new-footer-newsletter">
-          <div className="new-newsletter-content">
-            <h2 className="new-newsletter-title">Great projects start with a great connection.</h2>
-            <p className="new-newsletter-subtitle">
-              Subscribe to our newsletter and stay updated with the latest news, tips, and exclusive offers.
-            </p>
-            <form className="new-newsletter-form" onSubmit={handleSubscribe}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="new-newsletter-input"
-                required
-              />
-              <button type="submit" className="new-subscribe-btn">
-                Subscribe
-              </button>
-            </form>
+        {/* Newsletter Section - Matching Site Theme */}
+        <div className="theme-newsletter-section">
+          <div className="newsletter-bg-shapes">
+            <div className="shape shape-1"></div>
+            <div className="shape shape-2"></div>
+          </div>
+          
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <div className="theme-newsletter-wrapper">
+                  <div className="row align-items-center">
+                    {/* Left Content */}
+                    <div className="mb-4 col-lg-6 mb-lg-0">
+                      <div className="newsletter-left-content">
+                        <span className="newsletter-badge">Stay Connected</span>
+                        <h2 className="newsletter-title">
+                          Subscribe to Our Newsletter
+                        </h2>
+                        <p className="newsletter-subtitle">
+                          Get the latest updates, industry insights, and exclusive offers delivered directly to your inbox.
+                        </p>
+                        <ul className="newsletter-benefits">
+                          <li>
+                            <svg className="benefit-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                            </svg>
+                            <span>Industry insights & trends</span>
+                          </li>
+                          <li>
+                            <svg className="benefit-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                            </svg>
+                            <span>Exclusive promotions</span>
+                          </li>
+                          <li>
+                            <svg className="benefit-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                            </svg>
+                            <span>No spam, unsubscribe anytime</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Right Form */}
+                    <div className="col-lg-6">
+                      <div className="newsletter-form-container">
+                        <form className="theme-newsletter-form" onSubmit={handleSubscribe}>
+                          <div className="input-group-newsletter">
+                            <input
+                              type="email"
+                              placeholder="Enter your email address"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              className="theme-newsletter-input"
+                              required
+                            />
+                            <button type="submit" className="theme-newsletter-btn">
+                              Subscribe
+                              <svg className="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                              </svg>
+                            </button>
+                          </div>
+                          <p className="newsletter-privacy">
+                            🔒 We respect your privacy and protect your data
+                          </p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

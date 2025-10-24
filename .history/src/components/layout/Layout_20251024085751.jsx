@@ -74,28 +74,88 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
-      {/* NEW FOOTER - REPLACES OLD FOOTER */}
+      {/* NEW MODERN FOOTER WITH REDESIGNED NEWSLETTER */}
       <footer className="new-footer">
-        {/* Newsletter Section */}
-        <div className="new-footer-newsletter">
-          <div className="new-newsletter-content">
-            <h2 className="new-newsletter-title">Great projects start with a great connection.</h2>
-            <p className="new-newsletter-subtitle">
-              Subscribe to our newsletter and stay updated with the latest news, tips, and exclusive offers.
-            </p>
-            <form className="new-newsletter-form" onSubmit={handleSubscribe}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="new-newsletter-input"
-                required
-              />
-              <button type="submit" className="new-subscribe-btn">
-                Subscribe
-              </button>
-            </form>
+        {/* Newsletter Section - NEW DESIGN */}
+        <div className="modern-newsletter-section">
+          <div className="newsletter-background-pattern"></div>
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <div className="modern-newsletter-card">
+                  <div className="row align-items-center">
+                    {/* Left Side - Icon & Text */}
+                    <div className="mb-4 col-lg-6 mb-lg-0">
+                      <div className="newsletter-content-left">
+                        <div className="newsletter-icon-wrapper">
+                          <svg className="newsletter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                          </svg>
+                        </div>
+                        <h3 className="newsletter-heading">Stay in the Loop!</h3>
+                        <p className="newsletter-description">
+                          Get exclusive insights, tips, and updates delivered straight to your inbox.
+                        </p>
+                        <div className="newsletter-features">
+                          <div className="feature-item">
+                            <svg className="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                            <span>Weekly industry insights</span>
+                          </div>
+                          <div className="feature-item">
+                            <svg className="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                            <span>Exclusive offers & deals</span>
+                          </div>
+                          <div className="feature-item">
+                            <svg className="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                            <span>No spam, unsubscribe anytime</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Side - Form */}
+                    <div className="col-lg-6">
+                      <div className="newsletter-form-wrapper">
+                        <form className="modern-newsletter-form" onSubmit={handleSubscribe}>
+                          <div className="form-group-modern">
+                            <label className="form-label-modern">Your Email Address</label>
+                            <div className="input-with-icon">
+                              <svg className="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                              </svg>
+                              <input
+                                type="email"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="modern-email-input"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <button type="submit" className="modern-subscribe-btn">
+                            <span>Subscribe Now</span>
+                            <svg className="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                            </svg>
+                          </button>
+                          <p className="privacy-note">
+                            🔒 We respect your privacy. Your information is safe with us.
+                          </p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

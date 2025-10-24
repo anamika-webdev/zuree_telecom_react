@@ -9,7 +9,7 @@
 
 .main-content {
   flex: 1;
-  padding-top: 65px; /* Add space for fixed header */
+  padding-top: 65px;
 }
 
 /* Header Styles */
@@ -162,7 +162,7 @@
 }
 
 /* ==============================================
-   NEW FOOTER STYLES - MATCHING YOUR DESIGN
+   NEW FOOTER STYLES - ZIGZAG PATTERN
    ============================================== */
 
 .new-footer {
@@ -171,22 +171,38 @@
   color: #ffffff;
 }
 
-/* Newsletter Section */
+/* Newsletter Section with Zigzag Pattern */
 .new-footer-newsletter {
   background-color: #f8f9fa;
   padding: 60px 20px 0;
   position: relative;
+  padding-bottom: 100px;
 }
 
+/* Zigzag Pattern Effect */
 .new-footer-newsletter::after {
   content: '';
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 60px;
   background: #1a2332;
-  clip-path: ellipse(100% 100% at 50% 100%);
+  clip-path: polygon(
+    0 50%,
+    10% 0,
+    20% 50%,
+    30% 0,
+    40% 50%,
+    50% 0,
+    60% 50%,
+    70% 0,
+    80% 50%,
+    90% 0,
+    100% 50%,
+    100% 100%,
+    0 100%
+  );
   z-index: 1;
 }
 
@@ -200,7 +216,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
-  margin-bottom: 50px;
 }
 
 .new-newsletter-title {
@@ -362,7 +377,7 @@
   margin: 0;
 }
 
-/* Responsive Design for New Footer */
+/* Responsive Design */
 @media (max-width: 991px) {
   .mobile-menu-toggle {
     display: flex;

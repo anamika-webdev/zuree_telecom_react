@@ -1,0 +1,170 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const Layout = ({ children }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  return (
+    <div className="site-wrapper">
+      {/* Header */}
+      <header className="page_header">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-4">
+              <Link to="/" className="logo">
+                <span className="logo-text">Your Company</span>
+              </Link>
+            </div>
+            <div className="col-8">
+              <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+                <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+                <ul className="nav-menu">
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about-us">About</Link></li>
+                  <li className="mega-menu">
+                    <Link to="/services">Services</Link>
+                  </li>
+                  <li><Link to="/blogs">Blog</Link></li>
+                  <li><Link to="/contact-us">Contact</Link></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="main-content">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="page-footer">
+        {/* Newsletter Section */}
+        <div className="footer-newsletter">
+          <div className="container">
+            <div className="text-center">
+              <h2>Great projects start with a great connection.</h2>
+              <p>Subscribe to our newsletter and stay updated with the latest news, tips, and exclusive offers.</p>
+              <form className="newsletter-form">
+                <div className="input-group">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <button type="submit" className="btn btn-subscribe">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Content */}
+        <div className="footer-content">
+          <div className="container">
+            <div className="row">
+              {/* Services Column */}
+              <div className="mb-4 col-lg-3 col-md-6">
+                <h3 className="footer-column-title">Services</h3>
+                <ul className="footer-links">
+                  <li><Link to="/services/web-development">Web Development</Link></li>
+                  <li><Link to="/services/mobile-applications">Mobile Applications</Link></li>
+                  <li><Link to="/services/cloud-solutions">Cloud Solutions</Link></li>
+                  <li><Link to="/services/uiux-design">UI/UX Design</Link></li>
+                  <li><Link to="/services/devops-services">DevOps Services</Link></li>
+                  <li><Link to="/services/consulting">Consulting</Link></li>
+                </ul>
+              </div>
+
+              {/* Technologies Column */}
+              <div className="mb-4 col-lg-3 col-md-6">
+                <h3 className="footer-column-title">Technologies</h3>
+                <ul className="footer-links">
+                  <li><Link to="/tech/react-nextjs">React & Next.js</Link></li>
+                  <li><Link to="/tech/nodejs-python">Node.js & Python</Link></li>
+                  <li><Link to="/tech/aws-azure">AWS & Azure</Link></li>
+                  <li><Link to="/tech/ai-ml">AI & Machine Learning</Link></li>
+                  <li><Link to="/tech/blockchain">Blockchain</Link></li>
+                  <li><Link to="/tech/data-analytics">Data Analytics</Link></li>
+                </ul>
+              </div>
+
+              {/* Company Column */}
+              <div className="mb-4 col-lg-3 col-md-6">
+                <h3 className="footer-column-title">Company</h3>
+                <ul className="footer-links">
+                  <li><Link to="/about-us">About Us</Link></li>
+                  <li><Link to="/careers">Careers</Link></li>
+                  <li><Link to="/blog">Blog</Link></li>
+                  <li><Link to="/case-studies">Case Studies</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
+                  <li><Link to="/partners">Partners</Link></li>
+                </ul>
+              </div>
+
+              {/* Legal & Social Column */}
+              <div className="mb-4 col-lg-3 col-md-6">
+                <h3 className="footer-column-title">Legal</h3>
+                <ul className="footer-links">
+                  <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                  <li><Link to="/terms-of-service">Terms of Service</Link></li>
+                  <li><Link to="/cookie-policy">Cookie Policy</Link></li>
+                  <li><Link to="/gdpr">GDPR</Link></li>
+                </ul>
+                
+                <div className="footer-social-section">
+                  <h3 className="footer-social-title">Follow Us</h3>
+                  <div className="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                      <i className="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                      <i className="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <i className="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <i className="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                      <i className="fab fa-youtube"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-md-6">
+                <p>© 2025 Your Company. All rights reserved.</p>
+              </div>
+              <div className="col-md-6 text-md-end">
+                <p>Crafted with passion by the development team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
