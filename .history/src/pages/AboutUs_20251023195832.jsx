@@ -51,6 +51,7 @@ Can't find what you’re looking for?
             <h3>Vision & Mission</h3>
             {/* Content pulled from VisionMission.jsx */}
             <div className="p-4 mb-4 rounded bg-light-gray-ui">
+              <h4 className="text-primary">Our Vision</h4>
               <p>
                Zuree Telecom strives for best in class network solutions to telecom service providers across technology through our expertise and international experience which enable customers to achieve excellent quality of service.
               </p>

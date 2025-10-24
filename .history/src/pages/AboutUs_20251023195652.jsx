@@ -33,15 +33,13 @@ Can't find what you’re looking for?
         return (
           <div role="tabpanel" id="footprint-content">
             <h3>Our Footprint</h3>
-            <ul>
-           <li>USA</li> 
-<li>Philippines</li>
-<li>Indonesia</li>
-<li>Vietnam</li>
-<li>India</li>
-            </ul>
-
-            
+            <p>
+            USA
+Philippines
+Indonesia
+Vietnam
+India
+            </p>
           </div>
         );
 
@@ -51,11 +49,19 @@ Can't find what you’re looking for?
             <h3>Vision & Mission</h3>
             {/* Content pulled from VisionMission.jsx */}
             <div className="p-4 mb-4 rounded bg-light-gray-ui">
+              <h4 className="text-primary">Our Vision</h4>
               <p>
-               Zuree Telecom strives for best in class network solutions to telecom service providers across technology through our expertise and international experience which enable customers to achieve excellent quality of service.
+                To be the leading provider of innovative technology solutions that
+                empower businesses to thrive in the digital age.
               </p>
             </div>
-      
+            <div className="p-4 rounded bg-light-gray-ui">
+              <h4 className="text-primary">Our Mission</h4>
+              <p>
+                To deliver exceptional technology solutions that drive business growth
+                and digital transformation.
+              </p>
+            </div>
           </div>
         );
         

@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
                 <ul className="nav-menu">
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/about-us">About Us</Link></li>
-                  
+                  <li><Link to="/vision-mission">Vision & Mission</Link></li>
                   
                   <li 
                     className="mega-menu"

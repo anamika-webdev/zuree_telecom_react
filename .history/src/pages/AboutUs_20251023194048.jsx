@@ -18,10 +18,16 @@ const AboutUs = () => {
           <div role="tabpanel" id="company-content">
             <h3>Our Company</h3>
             <p className="lead">
-              Zuree Telecom was founded in 2014 by experienced telecom professionals. Established as dependable partner for leading service provider in USA and looks to expand across fast growing markets in Asia.
-</p>
+              Founded in 2014 by experienced telecom professionals, Zuree Telecom
+              has been at the forefront of digital transformation.
+            </p>
             <p>
-Can't find what you’re looking for?
+              We specialize in providing comprehensive infrastructure analysis and
+              communications solutions tailored to meet the unique needs of our clients.
+            </p>
+            <p>
+              Our team of experts is dedicated to delivering innovative and reliable
+              services, ensuring seamless connectivity and optimal performance.
             </p>
             <Link to="/contact-us" className="mt-3 btn btn-primary">
               Contact Us
@@ -33,15 +39,15 @@ Can't find what you’re looking for?
         return (
           <div role="tabpanel" id="footprint-content">
             <h3>Our Footprint</h3>
-            <ul>
-           <li>USA</li> 
-<li>Philippines</li>
-<li>Indonesia</li>
-<li>Vietnam</li>
-<li>India</li>
-            </ul>
-
-            
+            <p>
+              [Placeholder Content] Here you can describe Zuree Telecom's
+              reach, operational areas, and the scope of your services
+              across different regions.
+            </p>
+            <p>
+              Detail your network infrastructure, key markets, and
+              international presence.
+            </p>
           </div>
         );
 
@@ -51,11 +57,19 @@ Can't find what you’re looking for?
             <h3>Vision & Mission</h3>
             {/* Content pulled from VisionMission.jsx */}
             <div className="p-4 mb-4 rounded bg-light-gray-ui">
+              <h4 className="text-primary">Our Vision</h4>
               <p>
-               Zuree Telecom strives for best in class network solutions to telecom service providers across technology through our expertise and international experience which enable customers to achieve excellent quality of service.
+                To be the leading provider of innovative technology solutions that
+                empower businesses to thrive in the digital age.
               </p>
             </div>
-      
+            <div className="p-4 rounded bg-light-gray-ui">
+              <h4 className="text-primary">Our Mission</h4>
+              <p>
+                To deliver exceptional technology solutions that drive business growth
+                and digital transformation.
+              </p>
+            </div>
           </div>
         );
         

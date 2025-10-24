@@ -630,7 +630,7 @@
 
 .about-tab-nav .tab-link.active {
   background-color: var(--primary-color); /* Main selection effect */
-  color: #0a0808; /* White text on active */
+  color: #ffffff; /* White text on active */
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
