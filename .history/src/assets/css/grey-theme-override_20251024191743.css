@@ -1,0 +1,541 @@
+/* 
+ * AGGRESSIVE OVERRIDE - Grey Theme Complete
+ * This file uses !important flags and high specificity to override all existing styles
+ * Place this import LAST in your CSS chain
+ */
+
+/* ========================================
+   LOGO SIZE - MAXIMUM OVERRIDE
+   ======================================== */
+
+.logo img,
+.page_header .logo img,
+header .logo img,
+.header-fixed .logo img {
+  max-height: 65px !important;
+  min-height: 65px !important;
+  height: 65px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  transition: all 0.3s ease !important;
+}
+
+@media (max-width: 768px) {
+  .logo img,
+  .page_header .logo img,
+  header .logo img {
+    max-height: 55px !important;
+    min-height: 55px !important;
+    height: 55px !important;
+  }
+}
+
+/* ========================================
+   FOOTER SOCIAL ICONS - MAXIMUM VISIBILITY
+   ======================================== */
+
+.footer-social-icons a,
+.site-footer .footer-social-icons a,
+footer .footer-social-icons a {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 3px solid #d1d5d9 !important;
+  border-radius: 10px !important;
+  color: #4a5561 !important;
+  font-size: 24px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-social-icons a:hover,
+.site-footer .footer-social-icons a:hover,
+footer .footer-social-icons a:hover {
+  background-color: #7c8691 !important;
+  background: #7c8691 !important;
+  color: #ffffff !important;
+  border-color: #7c8691 !important;
+  transform: translateY(-8px) scale(1.15) !important;
+  box-shadow: 0 10px 25px rgba(124, 134, 145, 0.5) !important;
+}
+
+.footer-social-icons a i,
+.site-footer .footer-social-icons a i,
+footer .footer-social-icons a i {
+  color: inherit !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+.footer-social-icons {
+  gap: 18px !important;
+  margin-top: 30px !important;
+}
+
+@media (max-width: 768px) {
+  .footer-social-icons a {
+    width: 55px !important;
+    height: 55px !important;
+    min-width: 55px !important;
+    min-height: 55px !important;
+    font-size: 26px !important;
+  }
+}
+
+/* ========================================
+   BUTTONS - GREY THEME
+   ======================================== */
+
+.btn-primary,
+button.btn-primary,
+a.btn-primary,
+.btn.btn-primary {
+  background-color: #7c8691 !important;
+  background: #7c8691 !important;
+  border-color: #7c8691 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+button.btn-primary:hover,
+a.btn-primary:hover,
+.btn.btn-primary:hover {
+  background-color: #6b747e !important;
+  background: #6b747e !important;
+  border-color: #6b747e !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-primary,
+button.btn-outline-primary,
+a.btn-outline-primary {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: 2px solid #7c8691 !important;
+  color: #7c8691 !important;
+}
+
+.btn-outline-primary:hover,
+button.btn-outline-primary:hover,
+a.btn-outline-primary:hover {
+  background-color: #7c8691 !important;
+  background: #7c8691 !important;
+  color: #ffffff !important;
+}
+
+/* Newsletter Button */
+.newsletter-btn,
+.footer-newsletter-section .newsletter-btn,
+.newsletter-form .newsletter-btn,
+.newsletter-form button {
+  background-color: #7c8691 !important;
+  background: #7c8691 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.newsletter-btn:hover,
+.newsletter-form button:hover {
+  background-color: #6b747e !important;
+  background: #6b747e !important;
+}
+
+/* Contact Form Button */
+.contact-form .btn-primary,
+.contact-form button[type="submit"] {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+/* Application Form Button */
+.application-form .btn-primary,
+.application-form button[type="submit"] {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+/* ========================================
+   LINKS - GREY THEME
+   ======================================== */
+
+a:not(.footer-links-list a):not(.nav-menu a) {
+  color: #7c8691 !important;
+}
+
+a:not(.footer-links-list a):not(.nav-menu a):hover {
+  color: #6b747e !important;
+}
+
+/* Navigation Links */
+.nav-menu a,
+.nav-menu li a,
+.main-nav a {
+  color: #4a5561 !important;
+}
+
+.nav-menu a:hover,
+.nav-menu li a:hover,
+.main-nav a:hover {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   MEGA MENU
+   ======================================== */
+
+.mega-menu-content {
+  border-top: 3px solid #7c8691 !important;
+}
+
+.mega-menu-col h5 {
+  color: #7c8691 !important;
+  border-bottom: 2px solid #7c8691 !important;
+}
+
+.mega-menu-col ul li a {
+  color: #555 !important;
+}
+
+.mega-menu-col ul li a:hover {
+  color: #7c8691 !important;
+  background: rgba(124, 134, 145, 0.08) !important;
+}
+
+.mega-menu-col ul li a::before {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+  background: linear-gradient(135deg, rgba(74, 85, 97, 0.9) 0%, rgba(124, 134, 145, 0.9) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920') center/cover !important;
+}
+
+.hero-content .btn {
+  box-shadow: 0 5px 15px rgba(124, 134, 145, 0.3) !important;
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.service-card:hover,
+.business-unit-card:hover {
+  border-top: 4px solid #7c8691 !important;
+}
+
+.service-card .icon,
+.business-unit-card .icon,
+.benefit-icon {
+  color: #7c8691 !important;
+}
+
+.support-card:hover {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.support-card .icon {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   BLOG ELEMENTS
+   ======================================== */
+
+.blog-card-category {
+  background-color: #7c8691 !important;
+}
+
+.blog-card-title a:hover {
+  color: #7c8691 !important;
+}
+
+.blog-card-link {
+  color: #7c8691 !important;
+}
+
+.blog-card-link:hover {
+  color: #6b747e !important;
+}
+
+.page-link:hover {
+  background-color: #7c8691 !important;
+  border-color: #7c8691 !important;
+  color: white !important;
+}
+
+.page-item.active .page-link {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+  border-color: #7c8691 !important;
+  color: white !important;
+}
+
+.category-badge:hover {
+  border-color: #7c8691 !important;
+  color: #7c8691 !important;
+}
+
+.category-badge.active {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+  color: white !important;
+}
+
+.blog-cta {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.tag-badge:hover {
+  background: #7c8691 !important;
+  border-color: #7c8691 !important;
+  color: white !important;
+}
+
+.blog-meta-item i,
+.blog-author-badge {
+  color: #7c8691 !important;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.blog-content code {
+  color: #7c8691 !important;
+}
+
+.blog-content a {
+  color: #7c8691 !important;
+}
+
+.share-btn {
+  background: #7c8691 !important;
+}
+
+.share-btn:hover {
+  background: #6b747e !important;
+}
+
+/* ========================================
+   CONTACT PAGE
+   ======================================== */
+
+.contact-info-box {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.contact-icon {
+  background: linear-gradient(135deg, rgba(124, 134, 145, 0.1) 0%, rgba(107, 116, 126, 0.1) 100%) !important;
+  color: #7c8691 !important;
+}
+
+.social-link {
+  background: #7c8691 !important;
+}
+
+.social-link:hover {
+  background: #6b747e !important;
+}
+
+.faq-item {
+  border-left: 4px solid #7c8691 !important;
+}
+
+/* ========================================
+   CAREER PAGE
+   ======================================== */
+
+.job-card-header {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.btn-view-apply {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, rgba(124, 134, 145, 0.05) 0%, rgba(107, 116, 126, 0.05) 100%) !important;
+}
+
+.career-stats {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.job-header {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.job-detail-icon,
+.job-overview-list li i {
+  color: #7c8691 !important;
+}
+
+.sidebar-card-title {
+  border-bottom: 2px solid #7c8691 !important;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+.form-control:focus,
+.contact-form .form-control:focus,
+.application-form .form-control:focus,
+.newsletter-input:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #7c8691 !important;
+  box-shadow: 0 0 0 0.2rem rgba(124, 134, 145, 0.25) !important;
+  outline: none !important;
+}
+
+/* ========================================
+   TEXT & BACKGROUNDS
+   ======================================== */
+
+.text-primary {
+  color: #7c8691 !important;
+}
+
+.bg-primary {
+  background-color: #7c8691 !important;
+  color: white !important;
+}
+
+.badge {
+  background-color: #7c8691 !important;
+}
+
+.logo-text {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   PLAY BUTTON
+   ======================================== */
+
+.play-button {
+  background: rgba(124, 134, 145, 0.95) !important;
+  box-shadow: 0 8px 25px rgba(124, 134, 145, 0.4) !important;
+}
+
+.play-button::before {
+  border: 2px solid rgba(124, 134, 145, 0.5) !important;
+}
+
+.play-button:hover {
+  background: #7c8691 !important;
+}
+
+/* ========================================
+   SPINNER
+   ======================================== */
+
+.spinner-border {
+  color: #7c8691 !important;
+  border-color: #7c8691 !important;
+}
+
+/* ========================================
+   SECTIONS BACKGROUNDS
+   ======================================== */
+
+.services-section {
+  background-color: #f5f6f7 !important;
+}
+
+.about-section {
+  background-color: #e8eaed !important;
+}
+
+.business-units-section {
+  background-color: #f5f6f7 !important;
+}
+
+.support-section {
+  background-color: #e8eaed !important;
+}
+
+/* ========================================
+   OVERRIDE ANY INLINE STYLES WITH RED
+   ======================================== */
+
+[style*="cd1537"] {
+  color: #7c8691 !important;
+  background-color: #7c8691 !important;
+  border-color: #7c8691 !important;
+}
+
+[style*="b91330"] {
+  color: #6b747e !important;
+  background-color: #6b747e !important;
+  border-color: #6b747e !important;
+}
+
+[style*="a01129"] {
+  color: #6b747e !important;
+  background-color: #6b747e !important;
+  border-color: #6b747e !important;
+}
+
+/* ========================================
+   FORCE OVERRIDE FOR COMMON CLASSES
+   ======================================== */
+
+.text-danger,
+.text-red,
+.text-primary-red {
+  color: #7c8691 !important;
+}
+
+.bg-danger,
+.bg-red,
+.bg-primary-red {
+  background-color: #7c8691 !important;
+}
+
+.border-danger,
+.border-red,
+.border-primary-red {
+  border-color: #7c8691 !important;
+}
+
+/* ========================================
+   ADDITIONAL SPECIFICITY BOOSTERS
+   ======================================== */
+
+html body .btn-primary,
+html body button.btn-primary {
+  background-color: #7c8691 !important;
+}
+
+html body .footer-social-icons a {
+  background-color: #ffffff !important;
+  color: #4a5561 !important;
+}
+
+html body .logo img {
+  max-height: 65px !important;
+}
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+
+.page-title {
+  background-color: #4a5561 !important;
+}
+
+/* ========================================
+   ENSURE VISIBILITY
+   ======================================== */
+
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}

@@ -1,0 +1,608 @@
+/* 
+ * COMPLETE SITE REDESIGN - Grey Theme Matching Footer
+ * Based on footer colors: #7c8691 (medium grey), #6b747e (dark grey), #e8eaed (light grey)
+ * 
+ * COLOR PALETTE:
+ * - Primary Grey: #7c8691 (main brand color - from footer background)
+ * - Dark Grey: #6b747e (darker shade - from footer bottom)
+ * - Light Grey: #e8eaed (light backgrounds - from newsletter)
+ * - Very Light Grey: #f5f6f7 (subtle backgrounds)
+ * - Charcoal: #4a5561 (text and dark elements)
+ * - White: #ffffff (backgrounds)
+ * - Accent Blue-Grey: #5d6d7e (hover states)
+ */
+
+/* ========================================
+   LOGO SIZE INCREASE
+   ======================================== */
+
+.logo img {
+  max-height: 65px !important; /* Increased from 45px to 65px */
+  width: auto;
+  object-fit: contain;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile logo size */
+@media (max-width: 768px) {
+  .logo img {
+    max-height: 55px !important;
+  }
+}
+
+/* ========================================
+   HIGHLY VISIBLE SOCIAL MEDIA ICONS
+   ======================================== */
+
+/* Footer Social Icons - Maximum Visibility */
+.footer-social-icons a {
+  width: 48px !important;
+  height: 48px !important;
+  background-color: #ffffff !important; /* Solid white background */
+  border: 2px solid #e8eaed !important;
+  border-radius: 8px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a5561 !important; /* Dark grey icon color */
+  text-decoration: none;
+  font-size: 22px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.footer-social-icons a:hover {
+  background-color: #7c8691 !important; /* Grey background on hover */
+  color: #ffffff !important; /* White icon on hover */
+  border-color: #7c8691 !important;
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(124, 134, 145, 0.4) !important;
+}
+
+.footer-social-icons a i {
+  font-weight: 700 !important;
+  font-size: 22px !important;
+}
+
+/* Ensure gap between icons */
+.footer-social-icons {
+  display: flex;
+  gap: 15px !important;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Mobile social icons */
+@media (max-width: 768px) {
+  .footer-social-icons {
+    justify-content: center;
+  }
+  
+  .footer-social-icons a {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 24px !important;
+  }
+}
+
+/* ========================================
+   GLOBAL COLOR REPLACEMENTS
+   ======================================== */
+
+/* Remove all red colors and replace with grey theme */
+
+/* Primary Button Colors */
+.btn-primary {
+  background-color: #7c8691 !important;
+  border-color: #7c8691 !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #6b747e !important;
+  border-color: #6b747e !important;
+  color: white !important;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(124, 134, 145, 0.5) !important;
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+  background-color: #5d6d7e !important;
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  background-color: #4a5561 !important;
+}
+
+/* Outline Buttons */
+.btn-outline-primary {
+  background-color: transparent !important;
+  border: 2px solid #7c8691 !important;
+  color: #7c8691 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #7c8691 !important;
+  color: white !important;
+}
+
+/* ========================================
+   LINK COLORS
+   ======================================== */
+
+a {
+  color: #7c8691 !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #6b747e !important;
+}
+
+/* Navigation Links */
+.nav-menu a {
+  color: #4a5561 !important;
+}
+
+.nav-menu a:hover {
+  color: #7c8691 !important;
+}
+
+/* Footer Links */
+.footer-links-list a {
+  color: #ffffff !important;
+}
+
+.footer-links-list a:hover {
+  color: #e8eaed !important;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+  background: linear-gradient(135deg, rgba(74, 85, 97, 0.9) 0%, rgba(124, 134, 145, 0.9) 100%),
+              url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920') center/cover !important;
+}
+
+.hero-content .btn {
+  box-shadow: 0 5px 15px rgba(124, 134, 145, 0.3) !important;
+}
+
+/* ========================================
+   PAGE SECTIONS
+   ======================================== */
+
+/* Page Title */
+.page-title {
+  background-color: #4a5561 !important;
+  color: white;
+}
+
+/* Section Backgrounds - Alternating Grey Tones */
+.services-section,
+.business-units-section,
+.newsletter-section {
+  background-color: #f5f6f7 !important;
+}
+
+.about-section,
+.support-section {
+  background-color: #e8eaed !important;
+}
+
+.bg-light {
+  background-color: #f5f6f7 !important;
+}
+
+/* Section Titles */
+.section-title h2,
+.card-title,
+h1, h2, h3, h4, h5, h6 {
+  color: #4a5561 !important;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+/* Newsletter Input & Button */
+.newsletter-input:focus {
+  border-color: #7c8691 !important;
+}
+
+.newsletter-btn {
+  background-color: #7c8691 !important;
+  color: #ffffff !important;
+}
+
+.newsletter-btn:hover {
+  background-color: #6b747e !important;
+}
+
+/* Form Controls */
+.form-control:focus,
+.contact-form .form-control:focus,
+.application-form .form-control:focus {
+  border-color: #7c8691 !important;
+  box-shadow: 0 0 0 0.2rem rgba(124, 134, 145, 0.25) !important;
+}
+
+/* ========================================
+   NAVIGATION & MEGA MENU
+   ======================================== */
+
+.mega-menu-content {
+  border-top: 3px solid #7c8691 !important;
+}
+
+.mega-menu-col h5 {
+  color: #7c8691 !important;
+  border-bottom: 2px solid #7c8691 !important;
+}
+
+.mega-menu-col ul li a::before {
+  color: #7c8691 !important;
+}
+
+.mega-menu-col ul li a:hover {
+  color: #7c8691 !important;
+  background: rgba(124, 134, 145, 0.05) !important;
+}
+
+/* ========================================
+   CARDS & HOVER EFFECTS
+   ======================================== */
+
+.service-card:hover,
+.business-unit-card:hover {
+  border-top: 4px solid #7c8691 !important;
+}
+
+.service-card .icon,
+.business-unit-card .icon {
+  color: #7c8691 !important;
+}
+
+.support-card:hover {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.support-card .icon {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   BLOG STYLES
+   ======================================== */
+
+.blog-card-category {
+  background-color: #7c8691 !important;
+}
+
+.blog-card-title a:hover {
+  color: #7c8691 !important;
+}
+
+.blog-card-link {
+  color: #7c8691 !important;
+}
+
+.blog-card-link:hover {
+  color: #6b747e !important;
+}
+
+/* Pagination */
+.page-link:hover {
+  background-color: #7c8691 !important;
+  border-color: #7c8691 !important;
+}
+
+.page-item.active .page-link {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+  border-color: #7c8691 !important;
+}
+
+/* Category Badges */
+.category-badge:hover {
+  border-color: #7c8691 !important;
+  color: #7c8691 !important;
+  box-shadow: 0 4px 12px rgba(124, 134, 145, 0.2) !important;
+}
+
+.category-badge.active {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+/* Blog CTA */
+.blog-cta {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+/* Tag Badges */
+.tag-badge:hover {
+  background: #7c8691 !important;
+  border-color: #7c8691 !important;
+}
+
+/* ========================================
+   BLOG DETAILS PAGE
+   ======================================== */
+
+.blog-meta-item i,
+.blog-author-badge {
+  color: #7c8691 !important;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.blog-content code {
+  color: #7c8691 !important;
+}
+
+.blog-content a {
+  color: #7c8691 !important;
+}
+
+.blog-content a:hover {
+  color: #6b747e !important;
+}
+
+/* Share Buttons */
+.share-btn {
+  background: #7c8691 !important;
+}
+
+.share-btn:hover {
+  background: #6b747e !important;
+}
+
+/* ========================================
+   CONTACT PAGE
+   ======================================== */
+
+.contact-info-box {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.contact-icon {
+  background: linear-gradient(135deg, rgba(124, 134, 145, 0.1) 0%, rgba(107, 116, 126, 0.1) 100%) !important;
+  color: #7c8691 !important;
+}
+
+/* Social Links on Contact Page */
+.social-link {
+  background: #7c8691 !important;
+}
+
+.social-link:hover {
+  background: #6b747e !important;
+}
+
+.faq-item {
+  border-left: 4px solid #7c8691 !important;
+}
+
+.hours-item:hover {
+  background: linear-gradient(135deg, rgba(124, 134, 145, 0.05) 0%, rgba(107, 116, 126, 0.05) 100%) !important;
+}
+
+/* ========================================
+   CAREER PAGE
+   ======================================== */
+
+.job-card-header {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.btn-view-apply {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.btn-view-apply:hover {
+  box-shadow: 0 6px 20px rgba(124, 134, 145, 0.4) !important;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, rgba(124, 134, 145, 0.05) 0%, rgba(107, 116, 126, 0.05) 100%) !important;
+}
+
+.benefit-icon {
+  color: #7c8691 !important;
+}
+
+.career-stats {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+/* ========================================
+   JOB DETAILS PAGE
+   ======================================== */
+
+.job-header {
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.btn-apply-now {
+  background: linear-gradient(135deg, #4a5561 0%, #5d6d7e 100%) !important;
+}
+
+.btn-apply-now:hover {
+  box-shadow: 0 6px 20px rgba(124, 134, 145, 0.4) !important;
+  background: linear-gradient(135deg, #7c8691 0%, #6b747e 100%) !important;
+}
+
+.job-detail-icon,
+.job-overview-list li i {
+  color: #7c8691 !important;
+}
+
+.sidebar-card-title {
+  border-bottom: 2px solid #7c8691 !important;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-primary {
+  color: #7c8691 !important;
+}
+
+.text-secondary {
+  color: #4a5561 !important;
+}
+
+.bg-primary {
+  background-color: #7c8691 !important;
+  color: white !important;
+}
+
+.bg-secondary {
+  background-color: #6b747e !important;
+  color: white !important;
+}
+
+.badge {
+  background-color: #7c8691 !important;
+  color: white !important;
+}
+
+/* ========================================
+   SPINNER & LOADING
+   ======================================== */
+
+.spinner-border {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   ALERTS
+   ======================================== */
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 4px solid #7c8691 !important;
+}
+
+/* ========================================
+   PLAY BUTTON (VIDEO)
+   ======================================== */
+
+.play-button {
+  background: rgba(124, 134, 145, 0.95) !important;
+  box-shadow: 0 8px 25px rgba(124, 134, 145, 0.4) !important;
+}
+
+.play-button::before {
+  border: 2px solid rgba(124, 134, 145, 0.5) !important;
+}
+
+.play-button:hover {
+  background: #7c8691 !important;
+  box-shadow: 0 12px 35px rgba(124, 134, 145, 0.6) !important;
+}
+
+/* ========================================
+   ACCESSIBILITY - FOCUS STATES
+   ======================================== */
+
+.newsletter-btn:focus,
+.newsletter-input:focus,
+.footer-social-icons a:focus,
+.footer-links-list a:focus,
+.btn:focus,
+button:focus,
+a:focus {
+  outline: 2px solid #7c8691 !important;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   TEXT UTILITIES
+   ======================================== */
+
+.logo-text {
+  color: #7c8691 !important;
+}
+
+/* ========================================
+   ADDITIONAL ENHANCEMENTS
+   ======================================== */
+
+/* Header shadow with grey tint */
+.page_header {
+  box-shadow: 0 2px 10px rgba(124, 134, 145, 0.15) !important;
+}
+
+/* Card shadows with grey tint */
+.card {
+  box-shadow: 0 2px 8px rgba(124, 134, 145, 0.1) !important;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(124, 134, 145, 0.15) !important;
+}
+
+/* Improved contrast for better readability */
+body {
+  color: #4a5561 !important;
+}
+
+p {
+  color: #5d6d7e !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Ensure social icons are even more visible on mobile */
+  .footer-social-icons a {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 24px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  }
+}
+
+/* ========================================
+   OVERRIDE ANY REMAINING RED COLORS
+   ======================================== */
+
+/* Force override for any hardcoded red colors */
+[style*="#cd1537"],
+[style*="#b91330"],
+[style*="#a01129"] {
+  color: #7c8691 !important;
+  background-color: #7c8691 !important;
+  border-color: #7c8691 !important;
+}
+
+/* Ensure consistent grey theme across all elements */
+*[class*="primary"] {
+  color: #7c8691 !important;
+}
+
+*[class*="bg-primary"] {
+  background-color: #7c8691 !important;
+}
+
+*[class*="border-primary"] {
+  border-color: #7c8691 !important;
+}

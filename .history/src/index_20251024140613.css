@@ -3,8 +3,7 @@
 /* Import Bootstrap and other CSS files first */
 @import './assets/css/main.css';
 @import './assets/css/animations.css';
-@import './assets/css/complete-beige-theme.css';
-
+@import './assets/css/color-theme-update.css';
 
 /* Basic styling */
 body {

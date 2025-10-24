@@ -1,0 +1,450 @@
+/* 
+ * Updated Color Theme for Zuree Telecom
+ * Color Palette: Orange, Beige, White, and Grey
+ * 
+ * Primary Orange: #E67E22 (vibrant orange)
+ * Secondary Orange: #D35400 (darker orange)
+ * Light Orange: #F39C12 (bright orange)
+ * Beige: #F5E6D3 (warm beige)
+ * Dark Beige: #D4C4B0 (medium beige)
+ * Light Grey: #ECF0F1 (very light grey)
+ * Medium Grey: #95A5A6 (medium grey)
+ * Dark Grey: #34495E (dark grey for text)
+ * White: #FFFFFF
+ */
+
+/* ===== BUTTON STYLES ===== */
+.btn-primary {
+  background-color: #E67E22;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #D35400;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #95A5A6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7F8C8D;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: 2px solid #E67E22;
+  color: #E67E22;
+}
+
+.btn-outline-primary:hover {
+  background-color: #E67E22;
+  color: white;
+}
+
+/* ===== LINK COLORS ===== */
+a {
+  color: #E67E22;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #D35400;
+}
+
+/* ===== TEXT UTILITIES ===== */
+.text-primary {
+  color: #E67E22;
+}
+
+.text-secondary {
+  color: #34495E;
+}
+
+.bg-primary {
+  background-color: #E67E22 !important;
+  color: white !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: linear-gradient(135deg, rgba(52, 73, 94, 0.9) 0%, rgba(149, 165, 166, 0.9) 100%),
+              url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920') center/cover;
+}
+
+.hero-content .btn {
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title h2 {
+  color: #34495E;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+  background-color: #34495E;
+  color: white;
+}
+
+/* ===== CARD STYLES ===== */
+.card-title {
+  color: #34495E;
+}
+
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter-input:focus {
+  border-color: #E67E22;
+}
+
+.newsletter-btn {
+  background-color: #E67E22;
+  color: #ffffff;
+}
+
+.newsletter-btn:hover {
+  background-color: #D35400;
+}
+
+/* ===== FOOTER - KEEP EXISTING FOOTER COLORS ===== */
+/* Footer colors remain unchanged as requested */
+
+/* ===== ENHANCED FOOTER SOCIAL MEDIA ICONS ===== */
+.footer-social-icons a {
+  width: 42px;
+  height: 42px;
+  background-color: #E67E22;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer-social-icons a:hover {
+  background-color: #D35400;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(230, 126, 34, 0.4);
+}
+
+.footer-social-icons a i {
+  font-weight: 600;
+}
+
+/* ===== MEGA MENU ===== */
+.mega-menu-content {
+  border-top: 3px solid #E67E22;
+}
+
+.mega-menu-col h5 {
+  color: #E67E22;
+  border-bottom: 2px solid #E67E22;
+}
+
+.mega-menu-col ul li a::before {
+  color: #E67E22;
+}
+
+.mega-menu-col ul li a:hover {
+  color: #E67E22;
+  background: rgba(230, 126, 34, 0.05);
+}
+
+/* ===== SERVICE CARDS ===== */
+.service-card {
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-top: 4px solid #E67E22;
+}
+
+.service-card .icon {
+  color: #E67E22;
+}
+
+/* ===== FORM CONTROLS ===== */
+.form-control:focus {
+  border-color: #E67E22;
+  box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+}
+
+.contact-form .form-control:focus {
+  border-color: #E67E22;
+  box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.15);
+}
+
+/* ===== BLOG STYLES ===== */
+.blog-card-category {
+  background-color: #E67E22;
+}
+
+.blog-card-title a:hover {
+  color: #E67E22;
+}
+
+.blog-card-link {
+  color: #E67E22;
+}
+
+.blog-card-link:hover {
+  color: #D35400;
+}
+
+.page-link:hover {
+  background-color: #E67E22;
+  border-color: #E67E22;
+}
+
+.page-item.active .page-link {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+  border-color: #E67E22;
+}
+
+.category-badge:hover {
+  border-color: #E67E22;
+  color: #E67E22;
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
+}
+
+.category-badge.active {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.blog-cta {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.tag-badge:hover {
+  background: #E67E22;
+  border-color: #E67E22;
+}
+
+/* ===== BLOG DETAILS ===== */
+.blog-meta-item i,
+.blog-author-badge {
+  color: #E67E22;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #E67E22;
+}
+
+.blog-content code {
+  color: #E67E22;
+}
+
+.share-btn.facebook,
+.share-btn.twitter,
+.share-btn.linkedin,
+.share-btn.pinterest,
+.share-btn.whatsapp {
+  background: #E67E22;
+}
+
+.share-btn:hover {
+  background: #D35400;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-info-box {
+  border-left: 4px solid #E67E22;
+}
+
+.contact-icon {
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(211, 84, 0, 0.1) 100%);
+  color: #E67E22;
+}
+
+.social-link.facebook,
+.social-link.twitter,
+.social-link.linkedin,
+.social-link.instagram {
+  background: #E67E22;
+}
+
+.social-link:hover {
+  background: #D35400;
+}
+
+.faq-item {
+  border-left: 4px solid #E67E22;
+}
+
+.hours-item:hover {
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.05) 0%, rgba(211, 84, 0, 0.05) 100%);
+}
+
+/* ===== CAREER PAGE ===== */
+.job-card-header {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.job-badge-type {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.job-badge-location {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-view-apply {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.btn-view-apply:hover {
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.05) 0%, rgba(211, 84, 0, 0.05) 100%);
+}
+
+.benefit-icon {
+  color: #E67E22;
+}
+
+/* ===== JOB DETAILS PAGE ===== */
+.job-header {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.job-type-badge,
+.job-location-badge {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-apply-now {
+  background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+}
+
+.btn-apply-now:hover {
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.job-detail-icon {
+  color: #E67E22;
+}
+
+.job-overview-list li i {
+  color: #E67E22;
+}
+
+.sidebar-card-title {
+  border-bottom: 2px solid #E67E22;
+}
+
+/* ===== BEIGE BACKGROUND SECTIONS ===== */
+.services-section {
+  background-color: #F5E6D3;
+}
+
+.business-units-section {
+  background-color: #F5E6D3;
+}
+
+.newsletter-section {
+  background-color: #F5E6D3;
+}
+
+/* ===== LIGHT GREY BACKGROUNDS ===== */
+.about-section {
+  background-color: #ECF0F1;
+}
+
+.support-section {
+  background-color: #ECF0F1;
+}
+
+.bg-light {
+  background-color: #ECF0F1;
+}
+
+/* ===== SPINNER ===== */
+.spinner-border {
+  color: #E67E22;
+}
+
+/* ===== ALERT SUCCESS (with orange theme) ===== */
+.alert-success {
+  background-color: #FCF3CF;
+  color: #7D6608;
+  border: 1px solid #F9E79F;
+  border-left: 4px solid #F39C12;
+}
+
+/* ===== CONTACT FORM BUTTON ===== */
+.contact-form .btn-primary,
+.application-form .btn-primary {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+.contact-form .btn-primary:hover:not(:disabled),
+.application-form .btn-primary:hover:not(:disabled) {
+  box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
+}
+
+/* ===== PLAY BUTTON ===== */
+.play-button {
+  background: rgba(230, 126, 34, 0.95);
+  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+}
+
+.play-button::before {
+  border: 2px solid rgba(230, 126, 34, 0.5);
+}
+
+.play-button:hover {
+  background: #E67E22;
+  box-shadow: 0 12px 35px rgba(230, 126, 34, 0.6);
+}
+
+/* ===== BUSINESS UNIT CARDS ===== */
+.business-unit-card:hover {
+  border-top: 4px solid #E67E22;
+}
+
+.business-unit-card .icon {
+  color: #E67E22;
+}
+
+/* ===== SUPPORT CARDS ===== */
+.support-card:hover {
+  border-left: 4px solid #E67E22;
+}
+
+.support-card .icon {
+  color: #E67E22;
+}
+
+/* ===== CAREER STATS ===== */
+.career-stats {
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+/* ===== ACCESSIBILITY - Focus States ===== */
+.newsletter-btn:focus,
+.newsletter-input:focus,
+.footer-social-icons a:focus,
+.footer-links-list a:focus {
+  outline: 2px solid #E67E22;
+  outline-offset: 2px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .footer-social-icons a {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+}
