@@ -200,19 +200,19 @@ const Layout = ({ children }) => {
           {/* Social Icons */}
           <div className="footer-social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i className="bi bi-facebook"></i>
+              <i className="fab fa-facebook-f"></i>
             </a>
             <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <i className="bi bi-telegram"></i>
+              <i className="fab fa-telegram-plane"></i>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i className="bi bi-linkedin"></i>
+              <i className="fab fa-linkedin-in"></i>
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <i className="bi bi-instagram"></i>
+              <i className="fab fa-instagram"></i>
             </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <i className="bi bi-youtube"></i>
+              <i className="fab fa-youtube"></i>
             </a>
           </div>
         </div>

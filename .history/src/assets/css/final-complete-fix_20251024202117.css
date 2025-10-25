@@ -1,0 +1,608 @@
+/* 
+ * FINAL COMPREHENSIVE FIX
+ * 
+ * Fixes:
+ * 1. Visible social media icons in footer (beige, solid)
+ * 2. Curved/wavy line for page headers (like About Us screenshot)
+ * 3. Background image behind colored sections
+ * 4. Visible icons in Contact Us "Follow Us" section
+ * 5. All beige theme colors maintained
+ */
+
+/* ========================================
+   1. FOOTER SOCIAL ICONS - MAXIMUM VISIBILITY
+   ======================================== */
+
+/* Override any existing footer social styles */
+.footer-social-icons a,
+.site-footer .footer-social-icons a,
+footer .footer-social-icons a,
+.footer-links-section .footer-social-icons a {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  font-size: 24px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.footer-social-icons a:hover,
+.site-footer .footer-social-icons a:hover,
+footer .footer-social-icons a:hover {
+  background-color: #C4A792 !important;
+  background: #C4A792 !important;
+  color: #ffffff !important;
+  transform: translateY(-8px) scale(1.15) !important;
+  box-shadow: 0 10px 25px rgba(196, 167, 146, 0.5) !important;
+}
+
+.footer-social-icons a i,
+.site-footer .footer-social-icons a i,
+footer .footer-social-icons a i {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  display: block !important;
+}
+
+.footer-social-icons {
+  display: flex !important;
+  gap: 18px !important;
+  flex-wrap: wrap;
+  margin-top: 30px !important;
+}
+
+/* Mobile footer social icons */
+@media (max-width: 768px) {
+  .footer-social-icons a {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 26px !important;
+  }
+  
+  .footer-social-icons {
+    justify-content: center !important;
+  }
+}
+
+/* ========================================
+   2. CONTACT US PAGE - FOLLOW US ICONS
+   ======================================== */
+
+/* Contact page social links - visible and beige */
+.contact-info-card .social-links,
+.social-links {
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 12px !important;
+  flex-wrap: wrap;
+}
+
+.social-link,
+.social-links a,
+.contact-info-card .social-link {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  min-height: 45px !important;
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.social-link:hover,
+.social-links a:hover,
+.contact-info-card .social-link:hover {
+  background-color: #C4A792 !important;
+  background: #C4A792 !important;
+  color: #ffffff !important;
+  transform: translateY(-4px) scale(1.1) !important;
+  box-shadow: 0 6px 15px rgba(196, 167, 146, 0.4) !important;
+}
+
+.social-link i,
+.social-links a i,
+.contact-info-card .social-link i {
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  display: block !important;
+}
+
+/* Override specific social media colors */
+.social-link.facebook,
+.social-link.twitter,
+.social-link.linkedin,
+.social-link.instagram {
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+}
+
+.social-link.facebook:hover,
+.social-link.twitter:hover,
+.social-link.linkedin:hover,
+.social-link.instagram:hover {
+  background-color: #C4A792 !important;
+  background: #C4A792 !important;
+}
+
+/* ========================================
+   3. CURVED/WAVY HEADER LINE (Like Screenshot)
+   ======================================== */
+
+/* Page Title with Curved Bottom Edge */
+.page-title {
+  position: relative;
+  background-color: #A89E91 !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  color: white !important;
+  padding: 60px 0 80px !important; /* Extra padding for curve */
+  margin-top: 0px;
+  overflow: visible !important;
+}
+
+/* Create curved/wavy bottom edge using pseudo-element */
+.page-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 80px !important;
+  background: white !important;
+  clip-path: ellipse(70% 100% at 50% 100%) !important;
+  z-index: 1 !important;
+}
+
+/* Alternative wave style using SVG-like path */
+.page-title.wave-style::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 60px !important;
+  background: white !important;
+  clip-path: polygon(
+    0% 30%,
+    10% 45%,
+    20% 55%,
+    30% 45%,
+    40% 30%,
+    50% 25%,
+    60% 30%,
+    70% 45%,
+    80% 55%,
+    90% 45%,
+    100% 30%,
+    100% 100%,
+    0% 100%
+  ) !important;
+}
+
+/* Ensure content is above the curve */
+.page-title h1,
+.page-title .breadcrumb {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Adjust spacing after page title */
+.page-title + * {
+  margin-top: 40px !important;
+}
+
+/* ========================================
+   4. BACKGROUND IMAGES FOR SECTIONS
+   ======================================== */
+
+/* Page Title with Background Image */
+.page-title {
+  background-image: 
+    linear-gradient(135deg, rgba(168, 158, 145, 0.92) 0%, rgba(150, 139, 127, 0.92) 100%),
+    url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Hero Section with Background Image */
+.hero-section {
+  background-image: 
+    linear-gradient(135deg, rgba(74, 85, 97, 0.85) 0%, rgba(133, 122, 110, 0.85) 100%), 
+    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important; /* Parallax effect */
+}
+
+/* Section backgrounds with subtle patterns */
+.services-section,
+.business-units-section {
+  background-color: #FAF8F6 !important;
+  background-image: 
+    linear-gradient(135deg, #FAF8F6 0%, #F5F3F1 100%),
+    url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNkNGM0YjAiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAgNHYyaDJ2LTJoLTJ6Ii8+PC9nPjwvZz48L3N2Zz4=') !important;
+  background-size: auto, 60px 60px !important;
+}
+
+.about-section,
+.support-section {
+  background-color: #F5F3F1 !important;
+  background-image: 
+    linear-gradient(135deg, #F5F3F1 0%, #E8E4DF 100%),
+    url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNjNWJjYjEiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMyIgY3k9IjMiIHI9IjMiLz48L2c+PC9nPjwvc3ZnPg==') !important;
+  background-size: auto, 40px 40px !important;
+}
+
+/* Newsletter section with background image */
+.footer-newsletter-section,
+.newsletter-section {
+  background-image: 
+    linear-gradient(135deg, rgba(232, 234, 237, 0.95) 0%, rgba(245, 243, 241, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+/* ========================================
+   5. CONTACT PAGE ICON FIXES
+   ======================================== */
+
+/* Contact info card icons - visible beige */
+.info-icon,
+.contact-info-card .info-icon {
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  font-size: 26px !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(168, 158, 145, 0.3) !important;
+}
+
+.info-icon i,
+.contact-info-card .info-icon i {
+  color: #ffffff !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+}
+
+/* Contact icon (different from info-icon) */
+.contact-icon,
+.contact-info-box .contact-icon {
+  background: linear-gradient(135deg, rgba(168, 158, 145, 0.15) 0%, rgba(196, 167, 146, 0.15) 100%) !important;
+  color: #A89E91 !important;
+  border: 2px solid #A89E91 !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.contact-icon i,
+.contact-info-box .contact-icon i {
+  color: #A89E91 !important;
+  font-size: 24px !important;
+}
+
+/* ========================================
+   6. ADDITIONAL ENHANCEMENTS
+   ======================================== */
+
+/* Smooth transitions for background images */
+.page-title,
+.hero-section,
+.newsletter-section {
+  transition: background 0.5s ease !important;
+}
+
+/* Ensure text is readable over background images */
+.page-title h1,
+.page-title p,
+.page-title .breadcrumb {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Responsive adjustments for curved header */
+@media (max-width: 768px) {
+  .page-title {
+    padding: 50px 0 70px !important;
+  }
+  
+  .page-title::after {
+    height: 60px !important;
+  }
+  
+  .page-title h1 {
+    font-size: 2rem !important;
+  }
+}
+
+/* ========================================
+   7. ICON VISIBILITY FIXES (ALL ICONS)
+   ======================================== */
+
+/* Ensure ALL icons are visible with proper color */
+i.bi,
+i.fas,
+i.far,
+i.fab,
+.icon,
+.bi::before,
+.fas::before,
+.far::before,
+.fab::before {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* Service and business unit icons */
+.service-card i,
+.business-unit-card i,
+.support-card i {
+  color: #A89E91 !important;
+  font-size: 3rem !important;
+  margin-bottom: 20px !important;
+}
+
+/* ========================================
+   8. HIGH SPECIFICITY OVERRIDES
+   ======================================== */
+
+/* Maximum specificity for footer social icons */
+html body footer .footer-social-icons a,
+html body .site-footer .footer-social-icons a,
+html body .footer-links-section .footer-social-icons a {
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+  color: #ffffff !important;
+}
+
+/* Maximum specificity for contact social icons */
+html body .contact-info-card .social-link,
+html body .social-links a,
+html body .social-link {
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+  color: #ffffff !important;
+}
+
+/* Maximum specificity for contact icons */
+html body .contact-info-card .info-icon,
+html body .info-icon {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  color: #ffffff !important;
+}
+
+html body .contact-info-card .info-icon i,
+html body .info-icon i {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   9. PARALLAX EFFECT FOR BACKGROUNDS
+   ======================================== */
+
+@media (min-width: 768px) {
+  .page-title,
+  .hero-section,
+  .newsletter-section {
+    background-attachment: fixed !important;
+  }
+}
+
+/* Disable parallax on mobile for performance */
+@media (max-width: 767px) {
+  .page-title,
+  .hero-section,
+  .newsletter-section {
+    background-attachment: scroll !important;
+  }
+}
+
+/* ========================================
+   10. ACCESSIBILITY & PRINT
+   ======================================== */
+
+/* Print styles - remove background images */
+@media print {
+  .page-title,
+  .hero-section,
+  .newsletter-section,
+  .services-section,
+  .about-section {
+    background-image: none !important;
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .page-title::after {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .footer-social-icons a,
+  .social-link,
+  .info-icon {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* ========================================
+   11. ANIMATION FOR ICONS
+   ======================================== */
+
+/* Pulse animation for social icons on load */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.footer-social-icons a,
+.social-link {
+  animation: iconPulse 2s ease-in-out 1 !important;
+}
+
+/* Hover animation enhancement */
+.footer-social-icons a:hover,
+.social-link:hover {
+  animation: none !important;
+}
+
+/* ========================================
+   12. FORCE WHITE ICONS - MAXIMUM STRENGTH
+   ======================================== */
+
+/* FOOTER SOCIAL ICONS - FORCE WHITE */
+.footer-social-icons a i,
+.footer-social-icons a i.bi,
+.footer-social-icons a i::before,
+.site-footer .footer-social-icons a i,
+footer .footer-social-icons a i,
+.footer-links-section .footer-social-icons a i {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.footer-social-icons a {
+  color: #ffffff !important;
+}
+
+/* CONTACT PAGE SOCIAL ICONS - FORCE WHITE */
+.contact-info-card .social-links a i,
+.contact-info-card .social-link i,
+.social-links a i,
+.social-link i {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.contact-info-card .social-links a,
+.contact-info-card .social-link,
+.social-links a,
+.social-link {
+  color: #ffffff !important;
+}
+
+/* ALL BOOTSTRAP ICONS IN SOCIAL CONTEXTS - FORCE WHITE */
+.footer-social-icons .bi-facebook,
+.footer-social-icons .bi-telegram,
+.footer-social-icons .bi-linkedin,
+.footer-social-icons .bi-instagram,
+.footer-social-icons .bi-youtube,
+.social-link.facebook i,
+.social-link.twitter i,
+.social-link.linkedin i,
+.social-link.instagram i {
+  color: #ffffff !important;
+}
+
+/* BOOTSTRAP ICON PSEUDO-ELEMENTS - FORCE WHITE */
+.footer-social-icons .bi::before,
+.social-links .bi::before,
+.social-link .bi::before {
+  color: #ffffff !important;
+}
+
+/* ICONS STAY WHITE ON HOVER */
+.footer-social-icons a:hover i,
+.social-link:hover i,
+.social-links a:hover i {
+  color: #ffffff !important;
+}
+
+/* MAXIMUM SPECIFICITY - FORCE WHITE */
+html body .footer-social-icons a i,
+html body .footer-social-icons a i.bi,
+html body .social-link i,
+html body .social-links a i {
+  color: #ffffff !important;
+}
+
+html body .footer-social-icons a i::before,
+html body .social-link i::before {
+  color: #ffffff !important;
+}
+
+/* ENSURE ICONS RENDER PROPERLY */
+.footer-social-icons a i,
+.social-link i,
+.social-links a i {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  vertical-align: middle !important;
+}
+
+/* SVG ICONS (IF USED) - FORCE WHITE */
+.footer-social-icons a svg,
+.social-link svg,
+.social-links a svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.footer-social-icons a svg path,
+.social-link svg path {
+  fill: #ffffff !important;
+}
+
+/* OVERRIDE ANY INLINE STYLES */
+.footer-social-icons a[style] i,
+.footer-social-icons a i[style],
+.social-link[style] i,
+.social-link i[style] {
+  color: #ffffff !important;
+}
+
+/* CATCH-ALL FOR ANY SOCIAL ICON */
+a[aria-label="Facebook"] i,
+a[aria-label="Telegram"] i,
+a[aria-label="LinkedIn"] i,
+a[aria-label="Instagram"] i,
+a[aria-label="YouTube"] i,
+a[aria-label="Twitter"] i {
+  color: #ffffff !important;
+}

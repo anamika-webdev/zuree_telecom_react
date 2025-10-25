@@ -441,13 +441,13 @@ const JobDetails = () => {
                   <h5 className="sidebar-card-title">Share this Job</h5>
                   <div className="share-buttons">
                     <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="share-btn facebook">
-                      <i className="bi bi-facebook"></i>
+                      <i className="fab fa-facebook-f"></i>
                     </a>
                     <a href={`https://twitter.com/intent/tweet?url=${window.location.href}&text=${job.title}`} target="_blank" rel="noopener noreferrer" className="share-btn twitter">
-                      <i className="bi bi-twitter"></i>
+                      <i className="fab fa-telegram-plane"></i>
                     </a>
                     <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="share-btn linkedin">
-                      <i className="bi bi-linkedin"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                     <a href={`https://api.whatsapp.com/send?text=${job.title} ${window.location.href}`} target="_blank" rel="noopener noreferrer" className="share-btn whatsapp">
                       <i className="bi bi-whatsapp"></i>
@@ -912,13 +912,13 @@ const JobDetails = () => {
                   <h5 className="sidebar-card-title">Share this Job</h5>
                   <div className="share-buttons">
                     <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="share-btn facebook">
-                      <i className="bi bi-facebook"></i>
+                      <i className="fab fa-facebook-f"></i>
                     </a>
                     <a href={`https://twitter.com/intent/tweet?url=${window.location.href}&text=${job.title}`} target="_blank" rel="noopener noreferrer" className="share-btn twitter">
-                      <i className="bi bi-twitter"></i>
+                      <i className="fab fa-telegram-plane"></i>
                     </a>
                     <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="share-btn linkedin">
-                      <i className="bi bi-linkedin"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                     <a href={`https://api.whatsapp.com/send?text=${job.title} ${window.location.href}`} target="_blank" rel="noopener noreferrer" className="share-btn whatsapp">
                       <i className="bi bi-whatsapp"></i>

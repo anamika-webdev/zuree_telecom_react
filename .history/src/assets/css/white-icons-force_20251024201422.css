@@ -1,0 +1,267 @@
+/* 
+ * FORCE WHITE ICONS - Maximum Specificity Override
+ * 
+ * This ensures ALL social media icons are WHITE
+ * - Footer social icons
+ * - Contact page social icons
+ * - Any other social icons
+ */
+
+/* ========================================
+   FOOTER SOCIAL ICONS - WHITE ICONS
+   ======================================== */
+
+/* Maximum specificity - force white color */
+.footer-social-icons a i,
+.footer-social-icons a i.bi,
+.footer-social-icons a i::before,
+.site-footer .footer-social-icons a i,
+footer .footer-social-icons a i,
+.footer-links-section .footer-social-icons a i {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Ensure icons inside links are white */
+.footer-social-icons a,
+.site-footer .footer-social-icons a,
+footer .footer-social-icons a {
+  color: #ffffff !important;
+}
+
+/* Override any Bootstrap icon colors */
+.footer-social-icons .bi-facebook,
+.footer-social-icons .bi-telegram,
+.footer-social-icons .bi-linkedin,
+.footer-social-icons .bi-instagram,
+.footer-social-icons .bi-youtube {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   CONTACT PAGE SOCIAL ICONS - WHITE
+   ======================================== */
+
+/* Contact page "Follow Us" section */
+.contact-info-card .social-links a i,
+.contact-info-card .social-link i,
+.social-links a i,
+.social-link i {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.contact-info-card .social-links a,
+.contact-info-card .social-link,
+.social-links a,
+.social-link {
+  color: #ffffff !important;
+}
+
+/* Override specific social media icons in contact page */
+.social-link.facebook i,
+.social-link.twitter i,
+.social-link.linkedin i,
+.social-link.instagram i {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   ALL SOCIAL ICONS - WHITE
+   ======================================== */
+
+/* Catch-all for any social icon */
+a[aria-label="Facebook"] i,
+a[aria-label="Telegram"] i,
+a[aria-label="LinkedIn"] i,
+a[aria-label="Instagram"] i,
+a[aria-label="YouTube"] i,
+a[aria-label="Twitter"] i {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   BOOTSTRAP ICONS - WHITE
+   ======================================== */
+
+/* Force all Bootstrap icons in social contexts to white */
+.bi-facebook::before,
+.bi-telegram::before,
+.bi-linkedin::before,
+.bi-instagram::before,
+.bi-youtube::before,
+.bi-twitter::before,
+.bi-share::before {
+  color: #ffffff !important;
+}
+
+/* Parent elements containing social icons */
+.footer-social-icons .bi::before,
+.social-links .bi::before,
+.social-link .bi::before {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   HOVER STATES - KEEP WHITE
+   ======================================== */
+
+/* Icons stay white on hover */
+.footer-social-icons a:hover i,
+.social-link:hover i,
+.social-links a:hover i {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   MAXIMUM SPECIFICITY OVERRIDES
+   ======================================== */
+
+/* Use html body for maximum specificity */
+html body .footer-social-icons a i,
+html body .footer-social-icons a i.bi,
+html body .social-link i,
+html body .social-links a i {
+  color: #ffffff !important;
+}
+
+/* Use !important on pseudo-elements */
+html body .footer-social-icons a i::before,
+html body .social-link i::before {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   ENSURE ICONS ARE VISIBLE
+   ======================================== */
+
+/* Make sure icons render properly */
+.footer-social-icons a i,
+.social-link i,
+.social-links a i {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  vertical-align: middle !important;
+}
+
+/* ========================================
+   BACKGROUND COLOR CONFIRMATION
+   ======================================== */
+
+/* Confirm backgrounds are beige (for contrast with white) */
+.footer-social-icons a,
+.social-link,
+.social-links a {
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+}
+
+.footer-social-icons a:hover,
+.social-link:hover,
+.social-links a:hover {
+  background-color: #C4A792 !important;
+  background: #C4A792 !important;
+}
+
+/* ========================================
+   DEBUGGING - REMOVE IF NOT NEEDED
+   ======================================== */
+
+/* If icons still not showing white, this will help identify the issue */
+.footer-social-icons a *,
+.social-link *,
+.social-links a * {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   INLINE STYLE OVERRIDE
+   ======================================== */
+
+/* Override any inline styles */
+.footer-social-icons a[style],
+.footer-social-icons a i[style],
+.social-link[style],
+.social-link i[style] {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   SVG ICONS (IF APPLICABLE)
+   ======================================== */
+
+/* If using SVG icons instead of font icons */
+.footer-social-icons a svg,
+.social-link svg,
+.social-links a svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.footer-social-icons a svg path,
+.social-link svg path {
+  fill: #ffffff !important;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .footer-social-icons a i,
+  .social-link i {
+    color: #ffffff !important;
+    font-size: 26px !important;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .footer-social-icons a i,
+  .social-link i {
+    color: #000000 !important; /* Black for print */
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .footer-social-icons a i,
+  .social-link i {
+    color: #ffffff !important;
+    font-weight: bold !important;
+  }
+}
+
+/* ========================================
+   FINAL CATCH-ALL
+   ======================================== */
+
+/* Absolute last resort - force everything white */
+.footer-social-icons,
+.footer-social-icons *,
+.social-links,
+.social-links *,
+.social-link,
+.social-link * {
+  color: inherit !important;
+}
+
+.footer-social-icons a,
+.social-links a,
+.social-link {
+  color: #ffffff !important;
+}

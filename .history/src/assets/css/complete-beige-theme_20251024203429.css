@@ -1,0 +1,956 @@
+/* 
+ * COMPLETE BEIGE/TAUPE THEME - No Red Colors
+ * All red colors (#cd1537, #b91330, #a01129) replaced with beige/taupe palette
+ * 
+ * PRIMARY COLOR: #A89E91 (from your button screenshot)
+ * This file removes ALL traces of red and creates a harmonious beige theme
+ */
+
+/* ========================================
+   COLOR PALETTE - HARMONIOUS BEIGE TONES
+   ======================================== */
+
+:root {
+  /* Main Beige Colors */
+  --primary-beige: #A89E91;           /* Main brand color from screenshot */
+  --primary-beige-hover: #968B7F;     /* Hover state */
+  --primary-beige-dark: #857A6E;      /* Dark accent */
+  --primary-beige-light: #C5BCB1;     /* Light accent */
+  
+  /* Accent Colors (harmonious with beige) */
+  --accent-warm: #C4A792;             /* Warm peachy-beige for highlights */
+  --accent-hover: #B89682;            /* Darker warm for hover */
+  --accent-terracotta: #C89F8C;       /* Terracotta-beige for variety */
+  
+  /* Neutral Backgrounds */
+  --bg-cream: #FAF8F6;                /* Very light cream */
+  --bg-beige-light: #F5F3F1;          /* Light beige background */
+  --bg-beige-medium: #E8E4DF;         /* Medium beige */
+  
+  /* Text Colors */
+  --text-dark: #4a4540;               /* Dark brown text */
+  --text-medium: #6b6560;             /* Medium brown */
+  --text-light: #8b8580;              /* Light brown */
+}
+
+/* ========================================
+   LOGO SIZE - INCREASED
+   ======================================== */
+
+.logo img,
+.page_header .logo img,
+header .logo img,
+.header-fixed .logo img {
+  max-height: 65px !important;
+  min-height: 65px !important;
+  height: 65px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  transition: all 0.3s ease !important;
+}
+
+@media (max-width: 768px) {
+  .logo img,
+  .page_header .logo img,
+  header .logo img {
+    max-height: 55px !important;
+    min-height: 55px !important;
+    height: 55px !important;
+  }
+}
+
+/* ========================================
+   REMOVE ALL RED - REPLACE WITH BEIGE
+   ======================================== */
+
+/* Override any red colors in the system */
+[style*="#cd1537"],
+[style*="#b91330"],
+[style*="#a01129"],
+[style*="rgb(205, 21, 55)"],
+[style*="rgb(185, 19, 48)"],
+[style*="rgb(160, 17, 41)"] {
+  color: #A89E91 !important;
+  background-color: #A89E91 !important;
+  border-color: #A89E91 !important;
+}
+
+/* Force override for red classes */
+.text-danger,
+.text-red,
+.bg-danger,
+.bg-red,
+.border-danger,
+.border-red {
+  color: #A89E91 !important;
+  background-color: #A89E91 !important;
+  border-color: #A89E91 !important;
+}
+
+/* ========================================
+   ALL BUTTONS - BEIGE THEME
+   ======================================== */
+
+/* Primary Buttons */
+.btn-primary,
+button.btn-primary,
+a.btn-primary,
+.btn.btn-primary,
+button[type="submit"],
+.submit-btn,
+.cta-btn,
+input[type="submit"] {
+  background-color: #A89E91 !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  border-color: #A89E91 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover,
+button.btn-primary:hover,
+a.btn-primary:hover,
+.btn.btn-primary:hover,
+button[type="submit"]:hover,
+.submit-btn:hover,
+.cta-btn:hover {
+  background-color: #968B7F !important;
+  background: linear-gradient(135deg, #968B7F 0%, #857A6E 100%) !important;
+  border-color: #968B7F !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 158, 145, 0.3) !important;
+}
+
+/* Outline Buttons */
+.btn-outline-primary,
+button.btn-outline-primary,
+a.btn-outline-primary {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: 2px solid #A89E91 !important;
+  color: #A89E91 !important;
+}
+
+.btn-outline-primary:hover,
+button.btn-outline-primary:hover,
+a.btn-outline-primary:hover {
+  background-color: #A89E91 !important;
+  background: #A89E91 !important;
+  color: #ffffff !important;
+  border-color: #A89E91 !important;
+}
+
+/* Secondary Buttons */
+.btn-secondary,
+button.btn-secondary {
+  background-color: #C4A792 !important;
+  background: linear-gradient(135deg, #C4A792 0%, #B89682 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-secondary:hover {
+  background-color: #B89682 !important;
+  background: linear-gradient(135deg, #B89682 0%, #A89E91 100%) !important;
+}
+
+/* ========================================
+   FOOTER SOCIAL MEDIA ICONS - VISIBLE & BEIGE
+   ======================================== */
+
+.footer-social-icons a,
+.site-footer .footer-social-icons a,
+footer .footer-social-icons a {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  background-color: #A89E91 !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  font-size: 24px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-social-icons a:hover,
+.site-footer .footer-social-icons a:hover,
+footer .footer-social-icons a:hover {
+  background-color: #C4A792 !important;
+  background: linear-gradient(135deg, #C4A792 0%, #B89682 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-8px) scale(1.15) !important;
+  box-shadow: 0 10px 25px rgba(196, 167, 146, 0.5) !important;
+}
+
+.footer-social-icons a i,
+.site-footer .footer-social-icons a i,
+footer .footer-social-icons a i {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+.footer-social-icons {
+  gap: 18px !important;
+  margin-top: 30px !important;
+}
+
+@media (max-width: 768px) {
+  .footer-social-icons a {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 26px !important;
+  }
+}
+
+/* ========================================
+   ALL ICONS - BEIGE COLOR
+   ======================================== */
+
+/* Service & Business Unit Icons */
+.service-card .icon,
+.service-card i,
+.business-unit-card .icon,
+.business-unit-card i,
+i.bi {
+  color: #A89E91 !important;
+}
+
+/* Support Card Icons */
+.support-card .icon,
+.support-card i {
+  color: #A89E91 !important;
+}
+
+/* Benefit Icons */
+.benefit-icon,
+.benefit-card .icon,
+.benefit-card i {
+  color: #A89E91 !important;
+}
+
+/* Contact Icons */
+.contact-icon,
+.contact-info-box i {
+  background: linear-gradient(135deg, rgba(168, 158, 145, 0.15) 0%, rgba(196, 167, 146, 0.15) 100%) !important;
+  color: #A89E91 !important;
+}
+
+/* Job & Career Icons */
+.job-detail-icon,
+.job-overview-list li i,
+.job-info-item i,
+.career-icon {
+  color: #A89E91 !important;
+}
+
+/* Blog Icons */
+.blog-meta-item i,
+.blog-author-badge {
+  color: #A89E91 !important;
+}
+
+/* All Generic Icons */
+i.icon,
+.icon-box i,
+.feature-icon,
+.fas,
+.far,
+.fab {
+  color: #A89E91 !important;
+}
+
+/* Play Button Icon */
+.play-button,
+.video-play-button {
+  background: rgba(168, 158, 145, 0.95) !important;
+  box-shadow: 0 8px 25px rgba(168, 158, 145, 0.4) !important;
+}
+
+.play-button::before {
+  border: 2px solid rgba(168, 158, 145, 0.5) !important;
+}
+
+.play-button:hover {
+  background: #C4A792 !important;
+  box-shadow: 0 12px 35px rgba(196, 167, 146, 0.6) !important;
+}
+
+.play-button i {
+  color: white !important;
+}
+
+/* ========================================
+   LINKS - BEIGE WITH WARM HOVER
+   ======================================== */
+
+a:not(.footer-links-list a):not(.nav-menu a):not(.btn) {
+  color: #A89E91 !important;
+  transition: color 0.3s ease;
+}
+
+a:not(.footer-links-list a):not(.nav-menu a):not(.btn):hover {
+  color: #C4A792 !important;
+}
+
+/* Blog Card Links */
+.blog-card-link {
+  color: #A89E91 !important;
+}
+
+.blog-card-link:hover {
+  color: #C4A792 !important;
+}
+
+.blog-card-title a:hover {
+  color: #A89E91 !important;
+}
+
+/* Blog Content Links */
+.blog-content a {
+  color: #A89E91 !important;
+  text-decoration: underline;
+}
+
+.blog-content a:hover {
+  color: #C4A792 !important;
+}
+
+/* ========================================
+   NAVIGATION - BEIGE HOVER
+   ======================================== */
+
+.nav-menu a,
+.nav-menu li a,
+.main-nav a {
+  color: #4a4540 !important;
+}
+
+.nav-menu a:hover,
+.nav-menu li a:hover,
+.main-nav a:hover {
+  color: #A89E91 !important;
+}
+
+/* Mega Menu */
+.mega-menu-content {
+  border-top: 3px solid #A89E91 !important;
+}
+
+.mega-menu-col h5 {
+  color: #A89E91 !important;
+  border-bottom: 2px solid #A89E91 !important;
+}
+
+.mega-menu-col ul li a {
+  color: #6b6560 !important;
+}
+
+.mega-menu-col ul li a:hover {
+  color: #A89E91 !important;
+  background: rgba(168, 158, 145, 0.08) !important;
+  padding-left: 28px !important;
+}
+
+.mega-menu-col ul li a::before {
+  color: #A89E91 !important;
+}
+
+/* ========================================
+   CARDS - BEIGE ACCENTS & HOVER
+   ======================================== */
+
+.service-card:hover,
+.business-unit-card:hover {
+  border-top: 4px solid #A89E91 !important;
+  box-shadow: 0 8px 20px rgba(168, 158, 145, 0.15) !important;
+}
+
+.support-card:hover {
+  border-left: 4px solid #A89E91 !important;
+  box-shadow: 0 8px 20px rgba(168, 158, 145, 0.15) !important;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(168, 158, 145, 0.2) !important;
+}
+
+/* ========================================
+   BLOG ELEMENTS - BEIGE THEME
+   ======================================== */
+
+.blog-card-category {
+  background-color: #A89E91 !important;
+  color: white !important;
+}
+
+.blog-card-category:hover {
+  background-color: #C4A792 !important;
+}
+
+.blog-cta {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+.tag-badge {
+  background: #F5F3F1 !important;
+  border: 1px solid #E8E4DF !important;
+  color: #6b6560 !important;
+}
+
+.tag-badge:hover {
+  background: #A89E91 !important;
+  border-color: #A89E91 !important;
+  color: white !important;
+}
+
+.category-badge {
+  background: #F5F3F1 !important;
+  border: 2px solid #E8E4DF !important;
+  color: #6b6560 !important;
+}
+
+.category-badge:hover {
+  border-color: #A89E91 !important;
+  color: #A89E91 !important;
+  background: rgba(168, 158, 145, 0.05) !important;
+}
+
+.category-badge.active {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+/* Pagination */
+.page-link {
+  color: #6b6560 !important;
+  border: 1px solid #E8E4DF !important;
+}
+
+.page-link:hover {
+  background-color: #A89E91 !important;
+  border-color: #A89E91 !important;
+  color: white !important;
+}
+
+.page-item.active .page-link {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  border-color: #A89E91 !important;
+  color: white !important;
+}
+
+/* Blog Content Elements */
+.blog-content blockquote {
+  background: #FAF8F6 !important;
+  border-left: 4px solid #A89E91 !important;
+  color: #4a4540 !important;
+}
+
+.blog-content code {
+  background: #F5F3F1 !important;
+  color: #A89E91 !important;
+}
+
+.blog-content pre {
+  background: #4a4540 !important;
+  color: #FAF8F6 !important;
+}
+
+/* Share Buttons */
+.share-btn {
+  background: #A89E91 !important;
+}
+
+.share-btn:hover {
+  background: #C4A792 !important;
+  transform: translateY(-3px) !important;
+}
+
+/* ========================================
+   CONTACT PAGE - BEIGE ACCENTS
+   ======================================== */
+
+.contact-info-box {
+  border-left: 4px solid #A89E91 !important;
+}
+
+.social-link {
+  background: #A89E91 !important;
+}
+
+.social-link:hover {
+  background: #C4A792 !important;
+  transform: translateY(-4px) scale(1.1) !important;
+}
+
+.faq-item {
+  border-left: 4px solid #A89E91 !important;
+}
+
+.faq-item:hover {
+  background: rgba(168, 158, 145, 0.03) !important;
+}
+
+.hours-item:hover {
+  background: linear-gradient(135deg, rgba(168, 158, 145, 0.08) 0%, rgba(196, 167, 146, 0.08) 100%) !important;
+}
+
+/* ========================================
+   CAREER PAGE - BEIGE THEME
+   ======================================== */
+
+.job-card-header {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+.job-badge-type,
+.job-badge-location {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.btn-view-apply {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  border: none !important;
+}
+
+.btn-view-apply:hover {
+  background: linear-gradient(135deg, #C4A792 0%, #B89682 100%) !important;
+  box-shadow: 0 6px 20px rgba(196, 167, 146, 0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, rgba(168, 158, 145, 0.06) 0%, rgba(196, 167, 146, 0.06) 100%) !important;
+  border: 1px solid rgba(168, 158, 145, 0.15) !important;
+}
+
+.benefit-card:hover {
+  background: linear-gradient(135deg, rgba(168, 158, 145, 0.12) 0%, rgba(196, 167, 146, 0.12) 100%) !important;
+  border-color: #A89E91 !important;
+}
+
+.career-stats {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+/* ========================================
+   JOB DETAILS PAGE
+   ======================================== */
+
+.job-header {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+.job-type-badge,
+.job-location-badge {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.btn-apply-now {
+  background: linear-gradient(135deg, #C4A792 0%, #B89682 100%) !important;
+  border: none !important;
+}
+
+.btn-apply-now:hover {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  box-shadow: 0 6px 20px rgba(168, 158, 145, 0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+.sidebar-card {
+  border: 1px solid #E8E4DF !important;
+}
+
+.sidebar-card-title {
+  color: #4a4540 !important;
+  border-bottom: 2px solid #A89E91 !important;
+}
+
+/* ========================================
+   FORM ELEMENTS - BEIGE FOCUS
+   ======================================== */
+
+.form-control:focus,
+.contact-form .form-control:focus,
+.application-form .form-control:focus,
+.newsletter-input:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.form-select:focus {
+  border-color: #A89E91 !important;
+  box-shadow: 0 0 0 0.2rem rgba(168, 158, 145, 0.25) !important;
+  outline: none !important;
+}
+
+/* Newsletter Form */
+.newsletter-btn,
+.footer-newsletter-section .newsletter-btn,
+.newsletter-form .newsletter-btn,
+.newsletter-form button {
+  background-color: #A89E91 !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.newsletter-btn:hover,
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #C4A792 0%, #B89682 100%) !important;
+}
+
+/* Contact & Application Forms */
+.contact-form .btn-primary,
+.contact-form button[type="submit"],
+.application-form .btn-primary,
+.application-form button[type="submit"] {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+.contact-form .btn-primary:hover:not(:disabled),
+.application-form .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #C4A792 0%, #B89682 100%) !important;
+  box-shadow: 0 8px 20px rgba(196, 167, 146, 0.3) !important;
+}
+
+/* ========================================
+   HERO SECTION - BEIGE OVERLAY
+   ======================================== */
+
+.hero-section {
+  background: linear-gradient(135deg, rgba(74, 85, 97, 0.85) 0%, rgba(133, 122, 110, 0.85) 100%), 
+              url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920') center/cover !important;
+}
+
+.hero-content .btn {
+  box-shadow: 0 5px 15px rgba(168, 158, 145, 0.4) !important;
+}
+
+/* ========================================
+   TEXT & BACKGROUND UTILITIES
+   ======================================== */
+
+.text-primary,
+.logo-text {
+  color: #A89E91 !important;
+}
+
+.bg-primary {
+  background-color: #A89E91 !important;
+  color: white !important;
+}
+
+.badge {
+  background-color: #A89E91 !important;
+  color: white !important;
+}
+
+/* Alert Success - Beige Theme */
+.alert-success {
+  background-color: #F5F3F1 !important;
+  color: #4a4540 !important;
+  border: 1px solid #E8E4DF !important;
+  border-left: 4px solid #A89E91 !important;
+}
+
+/* ========================================
+   SECTION BACKGROUNDS - WARM NEUTRAL TONES
+   ======================================== */
+
+.services-section {
+  background-color: #FAF8F6 !important;
+}
+
+.about-section {
+  background-color: #F5F3F1 !important;
+}
+
+.business-units-section {
+  background-color: #FAF8F6 !important;
+}
+
+.support-section {
+  background-color: #F5F3F1 !important;
+}
+
+.bg-light {
+  background-color: #FAF8F6 !important;
+}
+
+/* ========================================
+   SPINNER & LOADING
+   ======================================== */
+
+.spinner-border {
+  color: #A89E91 !important;
+  border-color: #A89E91 !important;
+}
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+
+.page-title {
+  background-color: #857A6E !important;
+  color: white !important;
+}
+
+.breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.breadcrumb-item a:hover {
+  color: white !important;
+}
+
+/* ========================================
+   HEADER & FOOTER
+   ======================================== */
+
+.page_header {
+  box-shadow: 0 2px 10px rgba(168, 158, 145, 0.1) !important;
+}
+
+/* Footer keeps its existing colors, only social icons changed */
+
+/* ========================================
+   ACCESSIBILITY - FOCUS STATES
+   ======================================== */
+
+.newsletter-btn:focus,
+.newsletter-input:focus,
+.footer-social-icons a:focus,
+.btn:focus,
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #A89E91 !important;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   HIGH SPECIFICITY OVERRIDES
+   ======================================== */
+
+html body .btn-primary,
+html body button.btn-primary,
+html body .newsletter-btn {
+  background-color: #A89E91 !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+html body .footer-social-icons a {
+  background-color: #A89E91 !important;
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+  color: #ffffff !important;
+}
+
+html body .logo img {
+  max-height: 65px !important;
+}
+
+html body .service-card .icon,
+html body .business-unit-card .icon,
+html body .support-card .icon,
+html body i.icon,
+html body .contact-icon {
+  color: #A89E91 !important;
+}
+
+html body a:not(.btn):not(.footer-links-list a) {
+  color: #A89E91 !important;
+}
+
+html body a:not(.btn):not(.footer-links-list a):hover {
+  color: #C4A792 !important;
+}
+
+/* ========================================
+   ENSURE NO RED COLORS REMAIN
+   ======================================== */
+
+*[class*="red"],
+*[class*="danger"],
+*[class*="error"] {
+  color: #A89E91 !important;
+  background-color: #A89E91 !important;
+  border-color: #A89E91 !important;
+}
+
+/* Override any gradient with red */
+*[style*="linear-gradient"][style*="cd1537"],
+*[style*="linear-gradient"][style*="b91330"] {
+  background: linear-gradient(135deg, #A89E91 0%, #968B7F 100%) !important;
+}
+
+/* ========================================
+   FINAL CATCH-ALL
+   ======================================== */
+
+/* Replace any remaining red colors */
+body * {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ==========================================
+   COMPREHENSIVE FIX FOR FOOTER SOCIAL ICONS
+   Add this at the END of complete-beige-theme.css
+   ========================================== */
+
+/* STEP 1: Override layout.css base styles */
+.footer-social-icons {
+  display: flex !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+  margin-top: 30px !important;
+}
+
+.footer-social-icons a {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  /* REMOVE ALL BACKGROUNDS */
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+  /* REMOVE BORDERS AND RADIUS */
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  /* LAYOUT */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* ICON COLOR */
+  color: #A89E91 !important;
+  font-size: 26px !important;
+  text-decoration: none !important;
+  /* TRANSITIONS */
+  transition: all 0.3s ease !important;
+}
+
+/* STEP 2: Override hover states */
+.footer-social-icons a:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: #C4A792 !important;
+  transform: translateY(-5px) scale(1.1) !important;
+}
+
+/* STEP 3: Override icon styles inside */
+.footer-social-icons a i,
+.footer-social-icons a .bi {
+  color: inherit !important;
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+}
+
+/* STEP 4: High specificity overrides */
+.site-footer .footer-social-icons a,
+footer .footer-social-icons a,
+.footer-links-section .footer-social-icons a {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.site-footer .footer-social-icons a:hover,
+footer .footer-social-icons a:hover,
+.footer-links-section .footer-social-icons a:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* STEP 5: Even higher specificity - body level */
+html body .footer-social-icons a,
+html body .site-footer .footer-social-icons a,
+html body footer .footer-social-icons a {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #A89E91 !important;
+}
+
+html body .footer-social-icons a:hover,
+html body .site-footer .footer-social-icons a:hover,
+html body footer .footer-social-icons a:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: #C4A792 !important;
+}
+
+/* STEP 6: Override icon color specificity */
+html body .footer-social-icons a i,
+html body .site-footer .footer-social-icons a i,
+html body footer .footer-social-icons a i {
+  color: #A89E91 !important;
+  font-size: 26px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+html body .footer-social-icons a:hover i,
+html body .site-footer .footer-social-icons a:hover i,
+html body footer .footer-social-icons a:hover i {
+  color: #C4A792 !important;
+}
+
+/* STEP 7: Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-social-icons a {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 24px !important;
+  }
+  
+  .footer-social-icons a i,
+  .footer-social-icons a .bi {
+    font-size: 24px !important;
+  }
+  
+  .footer-social-icons {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-social-icons {
+    justify-content: center !important;
+  }
+}
+
+/* STEP 8: Focus states (accessibility) */
+.footer-social-icons a:focus {
+  outline: 2px solid #A89E91 !important;
+  outline-offset: 3px !important;
+  background: transparent !important;
+}
+
+/* STEP 9: Remove any lingering gradients */
+.footer-social-icons a::before,
+.footer-social-icons a::after {
+  display: none !important;
+}
