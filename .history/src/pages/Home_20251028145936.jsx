@@ -11,7 +11,7 @@ const Home = () => {
     {
       id: 1,
       title: "Modern Workspace",
-      thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
       description: "Empowering teams everywhere"
     },
     {
@@ -23,7 +23,7 @@ const Home = () => {
     {
       id: 3,
       title: "Cloud Solutions",
-      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+      thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
       description: "Scalable infrastructure for modern businesses"
     },
     {
@@ -61,7 +61,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Hero Section with Integrated Video Carousel */}
+      {/* Hero Section - Modern Split Design */}
       <section className="hero-section-modern">
         {/* Decorative Blobs */}
         <div className="hero-blob hero-blob-1"></div>
@@ -72,52 +72,25 @@ const Home = () => {
             {/* Left Content */}
             <div className="col-lg-6">
               <div className="hero-content-left">
-                <span className="hero-badge">Zuree Telecom</span>
-                <h1>Empowering Digital Transformation</h1>
+                <span className="hero-badge">Digital Innovation Leader</span>
+                <h1>Empowering Digital<br />Transformation</h1>
                 <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
                 <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
               </div>
             </div>
 
-            {/* Right - Video Carousel */}
+            {/* Right Image */}
             <div className="col-lg-6">
-              <div className="hero-carousel-wrapper">
-                <div className="hero-carousel-container">
-                  {/* Main Carousel Image */}
-                  <div className="hero-carousel-image">
-                    <img 
-                      src={videos[currentVideoIndex].thumbnail} 
-                      alt={videos[currentVideoIndex].title}
-                      className="hero-carousel-img"
-                    />
-                    {/* Small icon badge on top left */}
-                    <div className="hero-carousel-badge">
-                      <i className="fas fa-cube"></i>
-                    </div>
-                  </div>
-
-                  {/* Carousel Dots Indicator */}
-                  <div className="hero-carousel-dots">
-                    {videos.map((_, index) => (
-                      <button
-                        key={index}
-                        className={`hero-carousel-dot ${index === currentVideoIndex ? 'active' : ''}`}
-                        onClick={() => handleDotClick(index)}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Navigation Arrows */}
-                  <button className="hero-carousel-arrow hero-arrow-left" onClick={handlePrevious}>
-                    <i className="fas fa-chevron-left"></i>
-                  </button>
-                  <button className="hero-carousel-arrow hero-arrow-right" onClick={handleNext}>
-                    <i className="fas fa-chevron-right"></i>
-                  </button>
-
+              <div className="hero-image-wrapper">
+                <div className="hero-image-container">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" 
+                    alt="Digital Innovation"
+                    className="hero-main-image"
+                  />
                   {/* Decorative circles */}
-                  <div className="hero-carousel-deco hero-carousel-deco-1"></div>
-                  <div className="hero-carousel-deco hero-carousel-deco-2"></div>
+                  <div className="hero-deco-circle hero-deco-circle-1"></div>
+                  <div className="hero-deco-circle hero-deco-circle-2"></div>
                 </div>
               </div>
             </div>
@@ -125,7 +98,92 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section - Now comes directly after hero */}
+      {/* Video Carousel Section - Stylized Design */}
+      <section className="carousel-section-modern">
+        {/* Decorative wave pattern */}
+        <div className="carousel-wave-top"></div>
+        
+        <div className="container">
+          <div className="row">
+            <div className="mb-5 text-center col-12">
+              <h2 className="carousel-main-title">Our Expertise</h2>
+              <p className="carousel-main-subtitle">Driving innovation through technology and expertise</p>
+            </div>
+          </div>
+
+          <div className="modern-carousel-wrapper">
+            <div className="row align-items-center">
+              {/* Carousel Image - Left Side with circular design */}
+              <div className="col-lg-6">
+                <div className="carousel-image-section">
+                  <div className="carousel-circle-container">
+                    <img 
+                      src={videos[currentVideoIndex].thumbnail} 
+                      alt={videos[currentVideoIndex].title}
+                      className="carousel-circle-image"
+                    />
+                    {/* Play button in center */}
+                    <div className="carousel-play-overlay">
+                      <div className="carousel-play-button">
+                        <i className="fas fa-play"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Navigation Arrows */}
+                  <button className="carousel-nav-arrow carousel-arrow-left" onClick={handlePrevious}>
+                    <i className="fas fa-chevron-left"></i>
+                  </button>
+                  <button className="carousel-nav-arrow carousel-arrow-right" onClick={handleNext}>
+                    <i className="fas fa-chevron-right"></i>
+                  </button>
+
+                  {/* Decorative wave elements */}
+                  <div className="carousel-deco-wave carousel-deco-wave-1"></div>
+                  <div className="carousel-deco-wave carousel-deco-wave-2"></div>
+                </div>
+              </div>
+
+              {/* Content - Right Side */}
+              <div className="col-lg-6">
+                <div className="carousel-content-section">
+                  <h3 className="carousel-content-title">{videos[currentVideoIndex].title}</h3>
+                  <p className="carousel-content-description">{videos[currentVideoIndex].description}</p>
+
+                  {/* Circular thumbnails */}
+                  <div className="carousel-thumbnails-circles">
+                    {videos.map((video, index) => (
+                      <div
+                        key={video.id}
+                        className={`carousel-thumb-circle ${index === currentVideoIndex ? 'active' : ''}`}
+                        onClick={() => handleDotClick(index)}
+                      >
+                        <img src={video.thumbnail} alt={video.title} />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Stats Badge */}
+                  <div className="carousel-stats-badge">
+                    <div className="stats-badge-dots">
+                      <span className="stats-dot"></span>
+                      <span className="stats-dot"></span>
+                      <span className="stats-dot"></span>
+                    </div>
+                    <span className="stats-badge-text">1000+ Projects Delivered</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative background elements */}
+        <div className="carousel-bg-circle carousel-bg-circle-1"></div>
+        <div className="carousel-bg-circle carousel-bg-circle-2"></div>
+      </section>
+
+      {/* Services Section */}
       <section className="services-section section-padding">
         <div className="container">
           <div className="row">
@@ -204,7 +262,78 @@ const Home = () => {
         </div>
       </section>
 
-      
+      {/* Business Units Section */}
+      <section className="business-units-section section-padding bg-light">
+        <div className="container">
+          <div className="row">
+            <div className="mb-5 text-center col-12">
+              <h2 className="section-title">Business Units</h2>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-cube"></i>
+                </div>
+                <h3>Blockchain</h3>
+                <Link to="/services/blockchain">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-bar-chart"></i>
+                </div>
+                <h3>BI & Analytics</h3>
+                <Link to="/services/bi-analytics">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-building"></i>
+                </div>
+                <h3>VR & AR Solutions</h3>
+                <Link to="/services/vr-ar-solutions">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-users"></i>
+                </div>
+                <h3>Recruitment Process Outsourcing</h3>
+                <Link to="/services/recruitment-process-outsourcing">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-user-plus"></i>
+                </div>
+                <h3>Staff Augmentation</h3>
+                <Link to="/services/staff-augmentation">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-chart-line"></i>
+                </div>
+                <h3>Talent Management</h3>
+                <Link to="/services/talent-management">read more →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 24/7 Support Section */}
       <section className="support-section-modern section-padding">
@@ -251,6 +380,20 @@ const Home = () => {
                   </div>
                   <h4>Priority Service</h4>
                   <p>VIP support for premium clients</p>
+                </div>
+              </div>
+
+              <div className="support-stats">
+                <div className="stats-row">
+                  <div className="stat-item">
+                    <span className="stat-number">&lt;2min</span>
+                    <span className="stat-label">Avg Response</span>
+                  </div>
+                  <div className="stat-divider"></div>
+                  <div className="stat-item">
+                    <span className="stat-number">98%</span>
+                    <span className="stat-label">Satisfaction</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -204,7 +204,78 @@ const Home = () => {
         </div>
       </section>
 
-      
+      {/* Business Units Section */}
+      <section className="business-units-section section-padding bg-light">
+        <div className="container">
+          <div className="row">
+            <div className="mb-5 text-center col-12">
+              <h2 className="section-title">Business Units</h2>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-cube"></i>
+                </div>
+                <h3>Blockchain</h3>
+                <Link to="/services/blockchain">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-bar-chart"></i>
+                </div>
+                <h3>BI & Analytics</h3>
+                <Link to="/services/bi-analytics">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-building"></i>
+                </div>
+                <h3>VR & AR Solutions</h3>
+                <Link to="/services/vr-ar-solutions">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-users"></i>
+                </div>
+                <h3>Recruitment Process Outsourcing</h3>
+                <Link to="/services/recruitment-process-outsourcing">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-user-plus"></i>
+                </div>
+                <h3>Staff Augmentation</h3>
+                <Link to="/services/staff-augmentation">read more →</Link>
+              </div>
+            </div>
+
+            <div className="mb-4 col-lg-4 col-md-6">
+              <div className="business-unit-card">
+                <div className="icon">
+                  <i className="fa fa-chart-line"></i>
+                </div>
+                <h3>Talent Management</h3>
+                <Link to="/services/talent-management">read more →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 24/7 Support Section */}
       <section className="support-section-modern section-padding">
@@ -251,6 +322,20 @@ const Home = () => {
                   </div>
                   <h4>Priority Service</h4>
                   <p>VIP support for premium clients</p>
+                </div>
+              </div>
+
+              <div className="support-stats">
+                <div className="stats-row">
+                  <div className="stat-item">
+                    <span className="stat-number">&lt;2min</span>
+                    <span className="stat-label">Avg Response</span>
+                  </div>
+                  <div className="stat-divider"></div>
+                  <div className="stat-item">
+                    <span className="stat-number">98%</span>
+                    <span className="stat-label">Satisfaction</span>
+                  </div>
                 </div>
               </div>
             </div>

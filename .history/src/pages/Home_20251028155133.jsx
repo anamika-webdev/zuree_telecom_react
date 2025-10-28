@@ -253,6 +253,20 @@ const Home = () => {
                   <p>VIP support for premium clients</p>
                 </div>
               </div>
+
+              <div className="support-stats">
+                <div className="stats-row">
+                  <div className="stat-item">
+                    <span className="stat-number">&lt;2min</span>
+                    <span className="stat-label">Avg Response</span>
+                  </div>
+                  <div className="stat-divider"></div>
+                  <div className="stat-item">
+                    <span className="stat-number">98%</span>
+                    <span className="stat-label">Satisfaction</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="col-lg-6">
