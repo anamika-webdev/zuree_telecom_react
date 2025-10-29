@@ -205,108 +205,150 @@ const Home = () => {
       </section>
 
       
-{/* Compact 24/7 Support Section - Single Screen */}
-      <section className="support-section-modern section-padding-compact">
+
+     {/* Enhanced 24/7 Support Section */}
+      <section className="support-section-modern section-padding">
         <div className="container">
-          {/* Compact Section Header */}
-          <div className="mb-4 row">
-            <div className="mx-auto text-center col-lg-10">
-              <span className="mb-2 section-badge">24/7 SUPPORT</span>
-              <h2 className="mb-3 support-title-compact">
+          {/* Section Header */}
+          <div className="mb-5 row">
+            <div className="mx-auto text-center col-lg-8">
+              <span className="mb-3 section-badge">24/7 SUPPORT</span>
+              <h2 className="mb-4 support-title">
                 We're Here <span className="highlight-text">24/7</span> for You
               </h2>
-              <p className="support-description-compact">
-                Our dedicated support team is always ready to assist you with expert guidance and solutions.
+              <p className="support-description">
+                Our dedicated support team is always ready to assist you with expert guidance 
+                and solutions. Experience seamless support across all time zones with multiple 
+                channels to reach us instantly.
               </p>
             </div>
           </div>
 
           <div className="row align-items-center">
             {/* Left Side - Support Options */}
-            <div className="mb-4 col-lg-7 mb-lg-0">
-              {/* Decorative Shapes */}
-              <div className="support-shapes">
-                <div className="shape shape-1"></div>
-                <div className="shape shape-2"></div>
-                <div className="shape shape-3"></div>
-              </div>
-
-              <div className="support-cards-grid-compact">
-                {/* Live Chat Card */}
-                <div className="support-card-compact">
-                  <div className="card-icon-compact">
-                    <i className="fas fa-comment-dots"></i>
+            <div className="mb-4 col-lg-6 mb-lg-0">
+              <div className="support-cards-grid">
+                <div className="support-card-modern">
+                  <div className="card-icon">
+                    <i className="fas fa-comments"></i>
                   </div>
-                  <div className="card-content-compact">
+                  <div className="card-content">
                     <h4>Live Chat</h4>
-                    <p>Instant responses from our expert team</p>
-                    <span className="meta-badge-compact meta-available">
-                      <i className="fas fa-circle"></i> Available Now
-                    </span>
+                    <p>Instant responses from our expert team available round the clock</p>
+                    <div className="support-availability">
+                      <i className="fas fa-circle text-success"></i>
+                      <span>Available Now</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Email Support Card */}
-                <div className="support-card-compact">
-                  <div className="card-icon-compact">
-                    <i className="fas fa-envelope-open-text"></i>
+                <div className="support-card-modern">
+                  <div className="card-icon">
+                    <i className="fas fa-envelope"></i>
                   </div>
-                  <div className="card-content-compact">
+                  <div className="card-content">
                     <h4>Email Support</h4>
-                    <p>Detailed assistance within hours</p>
-                    <span className="meta-badge-compact meta-time">
-                      <i className="far fa-clock"></i> 2-4 hrs
-                    </span>
+                    <p>Detailed assistance with comprehensive solutions within hours</p>
+                    <div className="support-response-time">
+                      <i className="fas fa-clock"></i>
+                      <span>Response in 2-4 hrs</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Phone Support Card */}
-                <div className="support-card-compact">
-                  <div className="card-icon-compact">
-                    <i className="fas fa-phone-volume"></i>
+                <div className="support-card-modern">
+                  <div className="card-icon">
+                    <i className="fas fa-phone-alt"></i>
                   </div>
-                  <div className="card-content-compact">
+                  <div className="card-content">
                     <h4>Phone Support</h4>
-                    <p>Direct line to our specialists</p>
-                    <span className="meta-badge-compact meta-phone">
-                      <i className="fas fa-phone"></i> +1-800-123-4567
-                    </span>
+                    <p>Direct line to our specialists for immediate assistance</p>
+                    <div className="support-phone">
+                      <i className="fas fa-phone"></i>
+                      <span>+1 (800) 123-4567</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Need Help Card */}
-                <div className="support-card-compact">
-                  <div className="card-icon-compact">
+                <div className="support-card-modern">
+                  <div className="card-icon">
                     <i className="fas fa-headset"></i>
                   </div>
-                  <div className="card-content-compact">
-                    <h4>Need Help Right Now?</h4>
-                    <p>Our team is standing by to assist</p>
-                    <Link to="/contact-us" className="meta-link-compact">
-                      <i className="fas fa-arrow-right"></i> Get Support
-                    </Link>
+                  <div className="card-content">
+                    <h4>Priority Service</h4>
+                    <p>VIP support with dedicated account managers for premium clients</p>
+                    <div className="support-badge-vip">
+                      <i className="fas fa-crown"></i>
+                      <span>Premium</span>
+                    </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Support Stats */}
+              <div className="mt-4 support-stats">
+                <div className="stat-item">
+                  <h3 className="stat-number">98%</h3>
+                  <p className="stat-label">Customer Satisfaction</p>
+                </div>
+                <div className="stat-item">
+                  <h3 className="stat-number">&lt;2min</h3>
+                  <p className="stat-label">Avg Response Time</p>
+                </div>
+                <div className="stat-item">
+                  <h3 className="stat-number">24/7</h3>
+                  <p className="stat-label">Always Available</p>
                 </div>
               </div>
             </div>
 
-            {/* Right Side - Compact Image */}
-            <div className="col-lg-5">
-              <div className="support-image-compact">
-                <div className="image-backdrop-compact"></div>
+            {/* Right Side - Image with Floating Elements */}
+            <div className="col-lg-6">
+              <div className="support-image-wrapper">
+                <div className="image-decoration"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=600&q=80" 
-                  alt="Customer Support Team" 
-                  className="support-img-compact"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800" 
+                  alt="Customer Support Representative" 
+                  className="support-image"
                 />
-                <div className="support-badge-overlay">
-                  <div className="badge-icon">
-                    <i className="fas fa-headset"></i>
+                <div className="floating-badge badge-1">
+                  <i className="fas fa-headset"></i>
+                  <div>
+                    <strong>24/7 Support</strong>
+                    <span>Always Here for You</span>
                   </div>
-                  <div className="badge-text">
-                    <strong>24/7</strong>
-                    <span>Always Available</span>
+                </div>
+                <div className="floating-badge badge-2">
+                  <i className="fas fa-check-circle"></i>
+                  <div>
+                    <strong>1500+ Tickets</strong>
+                    <span>Resolved Monthly</span>
                   </div>
+                </div>
+                <div className="floating-badge badge-3">
+                  <i className="fas fa-users"></i>
+                  <div>
+                    <strong>Expert Team</strong>
+                    <span>50+ Specialists</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Support CTA */}
+          <div className="mt-5 row">
+            <div className="text-center col-lg-12">
+              <div className="support-cta">
+                <h3>Need Help Right Now?</h3>
+                <p>Our support team is standing by to assist you</p>
+                <div className="cta-buttons">
+                  <Link to="/contact-us" className="btn-hero-primary">
+                    <i className="fas fa-comments"></i> Start Live Chat
+                  </Link>
+                  <a href="tel:+18001234567" className="btn-hero-secondary">
+                    <i className="fas fa-phone-alt"></i> Call Us Now
+                  </a>
                 </div>
               </div>
             </div>
