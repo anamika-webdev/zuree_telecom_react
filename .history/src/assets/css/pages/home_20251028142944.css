@@ -190,7 +190,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #cd1537 0%, #e01641 100%);
+  background: linear-gradient(90deg, #050336 0%, #e01641 100%);
   border-radius: 2px;
 }
 
@@ -232,7 +232,7 @@
 }
 
 .carousel-arrow:hover {
-  background: #cd1537;
+  background: #050336;
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 8px 24px rgba(205, 21, 55, 0.35);
 }
@@ -294,7 +294,7 @@
 .carousel-dot.active {
   width: 32px;
   border-radius: 5px;
-  background: linear-gradient(90deg, #cd1537 0%, #e01641 100%);
+  background: linear-gradient(90deg, #050336 0%, #e01641 100%);
 }
 
 /* Thumbnail Preview Strip - Clean Design */
@@ -324,7 +324,7 @@
 }
 
 .thumbnail-item.active {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 8px 24px rgba(205, 21, 55, 0.25);
   transform: translateY(-4px);
 }

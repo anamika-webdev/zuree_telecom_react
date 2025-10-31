@@ -31,7 +31,7 @@ const Login = () => {
 
     try {
       await login(formData);
-      navigate('/'); // Redirect to home after login
+      navigate('/'); // redirect to home after login
     } catch (err) {
       setError(err.message || 'Invalid credentials');
     } finally {

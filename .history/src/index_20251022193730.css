@@ -34,7 +34,7 @@ code {
 }
 
 .btn-primary {
-  background-color: #cd1537;
+  background-color: #050336;
   color: white;
 }
 
@@ -54,12 +54,12 @@ code {
 
 .btn-outline-primary {
   background-color: transparent;
-  border: 2px solid #cd1537;
-  color: #cd1537;
+  border: 2px solid #050336;
+  color: #050336;
 }
 
 .btn-outline-primary:hover {
-  background-color: #cd1537;
+  background-color: #050336;
   color: white;
 }
 
@@ -82,7 +82,7 @@ code {
 
 .form-control:focus {
   outline: none;
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.25);
 }
 
@@ -188,7 +188,7 @@ label {
 }
 
 .bg-primary {
-  background-color: #cd1537 !important;
+  background-color: #050336 !important;
   color: white !important;
 }
 

@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
-      {/* NEW MODERN FOOTER WITH REDESIGNED NEWSLETTER */}
+      {/* NEW MODERN FOOTER WITH redESIGNED NEWSLETTER */}
       <footer className="new-footer">
         {/* Newsletter Section - NEW DESIGN */}
         <div className="modern-newsletter-section">

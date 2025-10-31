@@ -1,5 +1,5 @@
 /* 
- * COMPLETE SITE REDESIGN - Grey Theme Matching Footer
+ * COMPLETE SITE redESIGN - Grey Theme Matching Footer
  * Based on footer colors: #7c8691 (medium grey), #6b747e (dark grey), #e8eaed (light grey)
  * 
  * COLOR PALETTE:
@@ -582,11 +582,11 @@ p {
 }
 
 /* ========================================
-   OVERRIDE ANY REMAINING RED COLORS
+   OVERRIDE ANY REMAINING red COLORS
    ======================================== */
 
 /* Force override for any hardcoded red colors */
-[style*="#cd1537"],
+[style*="#050336"],
 [style*="#b91330"],
 [style*="#a01129"] {
   color: #7c8691 !important;

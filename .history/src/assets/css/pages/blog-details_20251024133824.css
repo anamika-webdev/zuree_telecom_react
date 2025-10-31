@@ -40,12 +40,12 @@
 }
 
 .meta-item i {
-  color: #cd1537;
+  color: #050336;
   font-size: 16px;
 }
 
 .meta-item.category {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   color: white;
   padding: 6px 16px;
   border-radius: 20px;
@@ -84,7 +84,7 @@
   font-weight: 700;
   margin: 40px 0 20px;
   padding-bottom: 15px;
-  border-bottom: 3px solid #cd1537;
+  border-bottom: 3px solid #050336;
 }
 
 .blog-content h3 {
@@ -118,7 +118,7 @@
 }
 
 .blog-content ul li::marker {
-  color: #cd1537;
+  color: #050336;
   font-weight: bold;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .blog-content a {
-  color: #cd1537;
+  color: #050336;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -139,7 +139,7 @@
 
 .blog-content blockquote {
   background: #f8f9fa;
-  border-left: 4px solid #cd1537;
+  border-left: 4px solid #050336;
   padding: 20px 30px;
   margin: 30px 0;
   font-style: italic;
@@ -151,7 +151,7 @@
   padding: 3px 8px;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
-  color: #cd1537;
+  color: #050336;
   font-size: 14px;
 }
 
@@ -211,8 +211,8 @@
 }
 
 .tag-badge:hover {
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
   color: white;
   transform: translateY(-2px);
 }
@@ -306,7 +306,7 @@
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #cd1537;
+  border-bottom: 2px solid #050336;
 }
 
 /* Author Widget */
@@ -319,7 +319,7 @@
   height: 80px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -396,7 +396,7 @@
 }
 
 .related-post-item:hover h6 {
-  color: #cd1537;
+  color: #050336;
 }
 
 .related-post-date {
@@ -419,12 +419,12 @@
 }
 
 .newsletter-form .form-control:focus {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.15);
 }
 
 .newsletter-form .btn-primary {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   border: none;
   padding: 12px;
   font-weight: 600;
@@ -457,7 +457,7 @@
 }
 
 .categories-list a:hover {
-  color: #cd1537;
+  color: #050336;
   padding-left: 10px;
 }
 
@@ -625,7 +625,7 @@
 .btn:focus,
 .form-control:focus,
 .share-btn:focus {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 2px;
 }
 

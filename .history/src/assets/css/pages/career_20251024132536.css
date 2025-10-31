@@ -43,7 +43,7 @@
 
 .career-filters .form-control:focus,
 .career-filters .form-select:focus {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.15);
 }
 
@@ -63,7 +63,7 @@
 .job-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: #cd1537;
+  border-color: #050336;
 }
 
 .job-card-header {
@@ -164,8 +164,8 @@
 }
 
 .page-link:hover {
-  background-color: #cd1537;
-  border-color: #cd1537;
+  background-color: #050336;
+  border-color: #050336;
   color: white;
 }
 
@@ -185,7 +185,7 @@
 
 /* Career Stats */
 .career-stats {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   padding: 60px 40px;
   border-radius: 16px;
   color: white;
@@ -234,7 +234,7 @@
 
 .benefit-card:hover {
   background: white;
-  border-color: #cd1537;
+  border-color: #050336;
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
@@ -465,7 +465,7 @@
 /* Accessibility */
 .btn-view-apply:focus,
 .page-link:focus {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 2px;
 }
 

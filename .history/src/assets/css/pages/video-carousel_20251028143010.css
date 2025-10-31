@@ -189,8 +189,8 @@
 }
 
 .carousel-arrow:hover {
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 8px 30px rgba(205, 21, 55, 0.4);
 }
@@ -248,8 +248,8 @@
 .carousel-dot.active {
   width: 40px;
   border-radius: 6px;
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
 }
 
 /* Thumbnail Preview Strip */
@@ -286,7 +286,7 @@
 }
 
 .thumbnail-item.active {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 8px 20px rgba(205, 21, 55, 0.3);
 }
 

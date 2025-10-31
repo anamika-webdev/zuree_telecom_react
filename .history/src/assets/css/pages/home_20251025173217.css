@@ -154,7 +154,7 @@
   font-size: 1.1rem;
   padding: 15px 45px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
   border: none;
   box-shadow: 0 8px 20px rgba(205, 21, 55, 0.4);
@@ -168,7 +168,7 @@
 .hero-content .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(205, 21, 55, 0.6);
-  background: linear-gradient(135deg, #e01641 0%, #cd1537 100%);
+  background: linear-gradient(135deg, #e01641 0%, #050336 100%);
   color: white;
 }
 
@@ -349,7 +349,7 @@
 
 .play-button:hover {
   transform: scale(1.1);
-  background: #cd1537;
+  background: #050336;
   box-shadow: 0 12px 35px rgba(205, 21, 55, 0.6);
 }
 
@@ -361,7 +361,7 @@
 
 /* Service Card Icons */
 .service-card .icon {
-  color: #cd1537;
+  color: #050336;
   margin-bottom: 20px;
 }
 
@@ -615,7 +615,7 @@ body.beige-theme .play-button::before {
 
 .play-button:hover {
   transform: scale(1.1);
-  background: #cd1537;
+  background: #050336;
   box-shadow: 0 15px 40px rgba(205, 21, 55, 0.7);
 }
 
@@ -672,8 +672,8 @@ body.beige-theme .play-button::before {
 }
 
 .carousel-btn:hover {
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
   color: white;
   transform: scale(1.1);
   box-shadow: 0 5px 15px rgba(205, 21, 55, 0.3);
@@ -707,7 +707,7 @@ body.beige-theme .play-button::before {
 }
 
 .indicator.active {
-  background: #cd1537;
+  background: #050336;
   width: 30px;
   border-radius: 6px;
   transform: scale(1);
@@ -739,13 +739,13 @@ body.beige-theme .play-button::before {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #cd1537;
+  background: #050336;
   transform: scaleY(0);
   transition: transform 0.3s ease;
 }
 
 .thumbnail-item:hover {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transform: translateY(-3px);
 }
@@ -755,7 +755,7 @@ body.beige-theme .play-button::before {
 }
 
 .thumbnail-item.active {
-  border-color: #cd1537;
+  border-color: #050336;
   background: linear-gradient(135deg, rgba(205, 21, 55, 0.05) 0%, rgba(205, 21, 55, 0.02) 100%);
   box-shadow: 0 8px 25px rgba(205, 21, 55, 0.15);
 }
@@ -779,14 +779,14 @@ body.beige-theme .play-button::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #cd1537;
+  color: #050336;
   font-size: 24px;
   transition: all 0.3s ease;
 }
 
 .thumbnail-item:hover .thumbnail-icon,
 .thumbnail-item.active .thumbnail-icon {
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
   transform: scale(1.1);
 }
@@ -807,7 +807,7 @@ body.beige-theme .play-button::before {
 }
 
 .thumbnail-item.active .thumbnail-text h4 {
-  color: #cd1537;
+  color: #050336;
 }
 
 /* Responsive Design */

@@ -37,7 +37,7 @@ code {
 }
 
 .btn-primary {
-  background-color: #cd1537;
+  background-color: #050336;
   color: white;
 }
 
@@ -57,17 +57,17 @@ code {
 
 .btn-outline-primary {
   background-color: transparent;
-  border: 2px solid #cd1537;
-  color: #cd1537;
+  border: 2px solid #050336;
+  color: #050336;
 }
 
 .btn-outline-primary:hover {
-  background-color: #cd1537;
+  background-color: #050336;
   color: white;
 }
 
 .section-padding {
-  padding: 60px 0; /* Reduced from 80px */
+  padding: 60px 0; /* reduced from 80px */
 }
 
 .bg-light {
@@ -85,7 +85,7 @@ code {
 
 .form-control:focus {
   outline: none;
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.25);
 }
 
@@ -122,7 +122,7 @@ label {
 .page-title {
   background-color: #2d3e50;
   color: white;
-  padding: 40px 0 30px; /* Reduced padding */
+  padding: 40px 0 30px; /* reduced padding */
   margin-bottom: 0;
   margin-top: 0px; /* Space for fixed navbar */
 }
@@ -136,7 +136,7 @@ label {
 .breadcrumb {
   background-color: transparent;
   padding: 0;
-  margin: 0 0 0 0; /* Reduced margin */
+  margin: 0 0 0 0; /* reduced margin */
   list-style: none;
 }
 
@@ -192,7 +192,7 @@ label {
 }
 
 .bg-primary {
-  background-color: #cd1537 !important;
+  background-color: #050336 !important;
   color: white !important;
 }
 

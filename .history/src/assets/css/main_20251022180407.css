@@ -97,7 +97,7 @@ p {
 
 /* Links */
 a {
-  color: #cd1537;
+  color: #050336;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -116,7 +116,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #cd1537;
+  color: #050336;
 }
 
 .text-secondary {

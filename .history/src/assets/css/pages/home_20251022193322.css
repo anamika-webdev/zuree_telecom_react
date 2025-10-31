@@ -109,7 +109,7 @@
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  border-color: #cd1537;
+  border-color: #050336;
 }
 
 .service-card h3 {
@@ -127,7 +127,7 @@
 }
 
 .service-card a {
-  color: #cd1537;
+  color: #050336;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -163,7 +163,7 @@
 
 .business-unit-card .icon {
   font-size: 3rem;
-  color: #cd1537;
+  color: #050336;
   margin-bottom: 20px;
 }
 
@@ -174,7 +174,7 @@
 }
 
 .business-unit-card a {
-  color: #cd1537;
+  color: #050336;
   text-decoration: none;
   font-size: 14px;
 }
@@ -203,12 +203,12 @@
 }
 
 .job-item:hover {
-  background: #cd1537;
+  background: #050336;
   color: white;
 }
 
 .job-item i {
-  color: #cd1537;
+  color: #050336;
 }
 
 .job-item:hover i {
@@ -239,7 +239,7 @@
 }
 
 .process-card .badge {
-  background: #cd1537;
+  background: #050336;
   color: white;
   padding: 8px 15px;
   border-radius: 20px;
@@ -276,7 +276,7 @@
 }
 
 .support-card i {
-  color: #cd1537;
+  color: #050336;
   margin-bottom: 15px;
 }
 
@@ -363,13 +363,13 @@
 
 .play-button i {
   font-size: 30px;
-  color: #cd1537;
+  color: #050336;
   margin-left: 5px;
 }
 
 /* Service Card Icons */
 .service-card .icon {
-  color: #cd1537;
+  color: #050336;
   margin-bottom: 20px;
 }
 

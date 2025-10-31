@@ -44,7 +44,7 @@
 .logo-text {
   font-size: 24px;
   font-weight: 700;
-  color: #cd1537;
+  color: #050336;
   letter-spacing: 1px;
   margin-left: 20px;
 }
@@ -81,7 +81,7 @@
 }
 
 .nav-menu a:hover {
-  color: #cd1537;
+  color: #050336;
 }
 
 /* Mobile Menu Toggle */
@@ -133,7 +133,7 @@
 }
 
 .mega-menu-col h5 {
-  color: #cd1537;
+  color: #050336;
   font-size: 16px;
   margin-bottom: 15px;
   font-weight: 600;
@@ -157,7 +157,7 @@
 }
 
 .mega-menu-col ul li a:hover {
-  color: #cd1537;
+  color: #050336;
   padding-left: 5px;
 }
 
@@ -322,7 +322,7 @@
 }
 
 .contact-info i {
-  color: #cd1537;
+  color: #050336;
   margin-right: 10px;
 }
 

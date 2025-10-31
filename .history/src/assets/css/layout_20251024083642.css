@@ -44,7 +44,7 @@
 .logo-text {
   font-size: 24px;
   font-weight: 700;
-  color: #cd1537;
+  color: #050336;
   letter-spacing: 1px;
   margin-left: 20px;
 }
@@ -81,7 +81,7 @@
 }
 
 .nav-menu a:hover {
-  color: #cd1537;
+  color: #050336;
 }
 
 /* Mobile Menu Toggle */
@@ -133,7 +133,7 @@
 }
 
 .mega-menu-col h5 {
-  color: #cd1537;
+  color: #050336;
   font-size: 16px;
   margin-bottom: 15px;
   font-weight: 600;
@@ -157,7 +157,7 @@
 }
 
 .mega-menu-col ul li a:hover {
-  color: #cd1537;
+  color: #050336;
   padding-left: 5px;
 }
 
@@ -255,7 +255,7 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #cd1537, #3498db, #cd1537);
+  background: linear-gradient(45deg, #050336, #3498db, #050336);
   border-radius: 60px;
   z-index: -1;
   opacity: 0;
@@ -302,7 +302,7 @@
   white-space: nowrap;
   font-weight: 600;
   font-size: 16px;
-  background: linear-gradient(135deg, #cd1537 0%, #e74c3c 100%);
+  background: linear-gradient(135deg, #050336 0%, #e74c3c 100%);
   border: none;
   box-shadow: 0 8px 20px rgba(205, 21, 55, 0.4);
   transition: all 0.3s ease;
@@ -395,7 +395,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #cd1537;
+  color: #050336;
   transition: transform 0.3s ease;
 }
 
@@ -414,7 +414,7 @@
 }
 
 .footer-links a:hover {
-  color: #cd1537;
+  color: #050336;
   padding-left: 5px;
 }
 
@@ -449,7 +449,7 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: linear-gradient(135deg, #cd1537, #e74c3c);
+  background: linear-gradient(135deg, #050336, #e74c3c);
   border-radius: 10px;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease;
@@ -485,7 +485,7 @@
 }
 
 .contact-info i {
-  color: #cd1537;
+  color: #050336;
   margin-right: 10px;
 }
 
@@ -505,7 +505,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #cd1537, transparent);
+  background: linear-gradient(90deg, transparent, #050336, transparent);
 }
 
 .footer-bottom p {

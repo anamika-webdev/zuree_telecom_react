@@ -12,7 +12,7 @@
 
 /* Job Header Card */
 .job-header-card {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   padding: 40px;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -58,7 +58,7 @@
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #cd1537;
+  border-bottom: 2px solid #050336;
 }
 
 .job-content-section p {
@@ -82,7 +82,7 @@
 }
 
 .job-content-section li::marker {
-  color: #cd1537;
+  color: #050336;
   font-weight: bold;
 }
 
@@ -101,7 +101,7 @@
   font-weight: 700;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #cd1537;
+  border-bottom: 2px solid #050336;
 }
 
 .application-form .form-label {
@@ -122,7 +122,7 @@
 
 .application-form .form-control:focus,
 .application-form .form-select:focus {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.15);
 }
 
@@ -146,7 +146,7 @@
 }
 
 .application-form .btn-primary {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   border: none;
   padding: 14px 32px;
   font-size: 16px;
@@ -186,7 +186,7 @@
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #cd1537;
+  border-bottom: 2px solid #050336;
 }
 
 /* Job Overview List */
@@ -210,7 +210,7 @@
 
 .job-overview-list li i {
   font-size: 20px;
-  color: #cd1537;
+  color: #050336;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -460,7 +460,7 @@
 .btn:focus,
 .form-control:focus,
 .form-select:focus {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 2px;
 }
 

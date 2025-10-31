@@ -53,7 +53,7 @@
 }
 
 .mega-menu-col h5 {
-  color: #cd1537;
+  color: #050336;
   font-size: 15px;
   margin-bottom: 18px;
   font-weight: 600;
@@ -84,7 +84,7 @@
 }
 
 .mega-menu-col ul li a:hover {
-  color: #cd1537;
+  color: #050336;
   padding-left: 10px;
   background-color: #f9f9f9;
 }
@@ -97,7 +97,7 @@
   transform: translateY(-50%);
   width: 0;
   height: 2px;
-  background-color: #cd1537;
+  background-color: #050336;
   transition: width 0.3s ease;
 }
 

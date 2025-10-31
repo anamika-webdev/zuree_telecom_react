@@ -65,7 +65,7 @@
 .stat-card:hover {
   transform: translateY(-10px) scale(1.05);
   background: rgba(255, 255, 255, 0.15);
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 15px 40px rgba(205, 21, 55, 0.3);
 }
 
@@ -86,7 +86,7 @@
   font-weight: 700;
   color: white;
   margin-bottom: 10px;
-  background: linear-gradient(135deg, #ffffff 0%, #cd1537 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #050336 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -144,8 +144,8 @@
 }
 
 .tab-button.active {
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
-  border-color: #cd1537;
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
+  border-color: #050336;
   box-shadow: 0 8px 25px rgba(205, 21, 55, 0.4);
   transform: translateY(-2px);
 }
@@ -195,7 +195,7 @@
   left: 0;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #cd1537 0%, transparent 100%);
+  background: linear-gradient(90deg, #050336 0%, transparent 100%);
   border-radius: 2px;
 }
 
@@ -232,7 +232,7 @@
 }
 
 .feature-item:hover {
-  border-color: #cd1537;
+  border-color: #050336;
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(205, 21, 55, 0.15);
 }
@@ -282,7 +282,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(90deg, #050336 0%, #b91330 100%);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -294,7 +294,7 @@
 .country-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border-color: #cd1537;
+  border-color: #050336;
 }
 
 .country-flag {
@@ -338,7 +338,7 @@
 }
 
 .vision-card {
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
 }
 
@@ -424,7 +424,7 @@
 }
 
 .value-card:hover {
-  border-color: #cd1537;
+  border-color: #050336;
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(205, 21, 55, 0.15);
 }
@@ -433,7 +433,7 @@
   width: 60px;
   height: 60px;
   margin-bottom: 20px;
-  color: #cd1537;
+  color: #050336;
 }
 
 .value-card h5 {
@@ -465,7 +465,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #cd1537 0%, #2d3e50 100%);
+  background: linear-gradient(180deg, #050336 0%, #2d3e50 100%);
   border-radius: 2px;
 }
 
@@ -511,10 +511,10 @@
   top: 30px;
   width: 20px;
   height: 20px;
-  background: #cd1537;
+  background: #050336;
   border: 4px solid white;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px #cd1537;
+  box-shadow: 0 0 0 4px #050336;
   transition: all 0.3s ease;
 }
 
@@ -539,13 +539,13 @@
 
 .timeline-content:hover {
   transform: scale(1.05);
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 10px 30px rgba(205, 21, 55, 0.2);
 }
 
 .timeline-year {
   display: inline-block;
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
   padding: 8px 20px;
   border-radius: 25px;
@@ -570,7 +570,7 @@
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   padding: 80px 20px;
   position: relative;
   overflow: hidden;
@@ -640,7 +640,7 @@
 
 .btn-primary {
   background: white;
-  color: #cd1537;
+  color: #050336;
   border: 2px solid white;
 }
 
@@ -659,7 +659,7 @@
 
 .btn-outline-primary:hover {
   background: white;
-  color: #cd1537;
+  color: #050336;
   transform: translateY(-3px);
 }
 

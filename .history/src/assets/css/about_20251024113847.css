@@ -19,7 +19,7 @@
 /* Section Badge */
 .section-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
   padding: 8px 24px;
   border-radius: 25px;
@@ -104,7 +104,7 @@
 }
 
 .vision-icon {
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
 }
 
 .mission-icon {
@@ -133,7 +133,7 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: #cd1537;
+  background: #050336;
   border-radius: 2px;
 }
 
@@ -171,7 +171,7 @@
 }
 
 .value-item:hover .value-number {
-  color: #cd1537;
+  color: #050336;
 }
 
 .value-title {
@@ -267,7 +267,7 @@
   font-weight: 700;
   color: white;
   margin-bottom: 10px;
-  background: linear-gradient(135deg, #ffffff 0%, #cd1537 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #050336 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -293,7 +293,7 @@
 }
 
 .service-block:hover {
-  border-left-color: #cd1537;
+  border-left-color: #050336;
   padding-left: 40px;
 }
 
@@ -380,7 +380,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
   box-shadow: 0 8px 20px rgba(205, 21, 55, 0.4);
 }

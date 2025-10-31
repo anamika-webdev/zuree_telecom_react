@@ -620,10 +620,10 @@ html body i.icon {
 }
 
 /* ========================================
-   OVERRIDE ALL RED COLORS
+   OVERRIDE ALL red COLORS
    ======================================== */
 
-[style*="#cd1537"],
+[style*="#050336"],
 [style*="#b91330"],
 [style*="#a01129"],
 [style*="rgb(205, 21, 55)"] {

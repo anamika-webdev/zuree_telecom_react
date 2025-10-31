@@ -46,14 +46,14 @@
 .contact-info-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: #cd1537;
+  border-color: #050336;
 }
 
 .info-icon {
   width: 60px;
   height: 60px;
   min-width: 60px;
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
 }
 
 .info-content a {
-  color: #cd1537;
+  color: #050336;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -181,7 +181,7 @@
 }
 
 .contact-form .form-control:focus {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.15);
   background: white;
   outline: none;
@@ -203,7 +203,7 @@
 }
 
 .contact-form .btn-primary {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   border: none;
   padding: 14px 40px;
   font-size: 16px;
@@ -316,7 +316,7 @@
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid #cd1537;
+  border-left: 4px solid #050336;
   transition: all 0.3s ease;
   height: 100%;
 }
@@ -534,7 +534,7 @@
 .btn:focus,
 .form-control:focus,
 .social-link:focus {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 2px;
 }
 
@@ -543,7 +543,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Reduced motion for accessibility */
+/* reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

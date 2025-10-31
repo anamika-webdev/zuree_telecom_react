@@ -44,7 +44,7 @@
 }
 
 .search-box .form-control:focus {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.15);
   outline: none;
 }
@@ -70,7 +70,7 @@
 }
 
 .blogs-filters .form-select:focus {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 0 0 0.2rem rgba(205, 21, 55, 0.15);
   outline: none;
 }
@@ -91,7 +91,7 @@
 .blog-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-  border-color: #cd1537;
+  border-color: #050336;
 }
 
 .blog-card-link {
@@ -181,7 +181,7 @@
 }
 
 .blog-card-title a:hover {
-  color: #cd1537;
+  color: #050336;
 }
 
 .blog-meta {
@@ -202,7 +202,7 @@
 }
 
 .blog-date i {
-  color: #cd1537;
+  color: #050336;
 }
 
 .blog-excerpt {
@@ -221,7 +221,7 @@
 .btn-read-more {
   display: inline-flex;
   align-items: center;
-  color: #cd1537;
+  color: #050336;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -270,15 +270,15 @@
 }
 
 .page-link:hover {
-  background-color: #cd1537;
-  border-color: #cd1537;
+  background-color: #050336;
+  border-color: #050336;
   color: white;
   transform: translateY(-2px);
 }
 
 .page-item.active .page-link {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
-  border-color: #cd1537;
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
+  border-color: #050336;
   color: white;
   font-weight: 600;
 }
@@ -328,14 +328,14 @@
 
 .category-badge:hover {
   background: white;
-  border-color: #cd1537;
-  color: #cd1537;
+  border-color: #050336;
+  color: #050336;
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(205, 21, 55, 0.2);
 }
 
 .category-badge.active {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   border-color: transparent;
   color: white;
 }
@@ -353,7 +353,7 @@
 
 /* Blog CTA */
 .blog-cta {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   padding: 50px 40px;
   border-radius: 16px;
   color: white;
@@ -374,7 +374,7 @@
 
 .blog-cta .btn-primary {
   background: white;
-  color: #cd1537;
+  color: #050336;
   border: none;
   padding: 14px 40px;
   font-size: 16px;
@@ -626,7 +626,7 @@
 .btn-read-more:focus,
 .page-link:focus,
 .category-badge:focus {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 2px;
 }
 
@@ -644,7 +644,7 @@
   }
 }
 
-/* Reduced motion for accessibility */
+/* reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

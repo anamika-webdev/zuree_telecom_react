@@ -189,8 +189,8 @@
 }
 
 .carousel-arrow:hover {
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 8px 30px rgba(205, 21, 55, 0.4);
 }
@@ -248,8 +248,8 @@
 .carousel-dot.active {
   width: 40px;
   border-radius: 6px;
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
 }
 
 /* Thumbnail Preview Strip */
@@ -286,7 +286,7 @@
 }
 
 .thumbnail-item.active {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 8px 20px rgba(205, 21, 55, 0.3);
 }
 
@@ -587,7 +587,7 @@
   font-size: 1.1rem;
   padding: 16px 45px;
   border-radius: 50px;
-  background: linear-gradient(135deg, #cd1537 0%, #b91330 100%);
+  background: linear-gradient(135deg, #050336 0%, #b91330 100%);
   color: white;
   border: 2px solid white;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -602,7 +602,7 @@
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   background: white;
-  color: #cd1537;
+  color: #050336;
   border-color: white;
 }
 
@@ -652,7 +652,7 @@
 
 /* Remove extra padding at top */
 .section-padding-top {
-  padding-top: 60px !important; /* Reduced from default */
+  padding-top: 60px !important; /* reduced from default */
 }
 
 .video-carousel-section::before {
@@ -826,8 +826,8 @@
 }
 
 .carousel-arrow:hover {
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 8px 30px rgba(205, 21, 55, 0.4);
 }
@@ -885,8 +885,8 @@
 .carousel-dot.active {
   width: 40px;
   border-radius: 6px;
-  background: #cd1537;
-  border-color: #cd1537;
+  background: #050336;
+  border-color: #050336;
 }
 
 /* Thumbnail Preview Strip */
@@ -923,7 +923,7 @@
 }
 
 .thumbnail-item.active {
-  border-color: #cd1537;
+  border-color: #050336;
   box-shadow: 0 8px 20px rgba(205, 21, 55, 0.3);
 }
 

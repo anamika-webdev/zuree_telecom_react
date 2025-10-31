@@ -1,6 +1,6 @@
 /* 
- * COMPLETE BEIGE/TAUPE THEME - No Red Colors
- * All red colors (#cd1537, #b91330, #a01129) replaced with beige/taupe palette
+ * COMPLETE BEIGE/TAUPE THEME - No red Colors
+ * All red colors (#050336, #b91330, #a01129) replaced with beige/taupe palette
  * 
  * PRIMARY COLOR: #A89E91 (from your button screenshot)
  * This file removes ALL traces of red and creates a harmonious beige theme
@@ -60,11 +60,11 @@ header .logo img,
 }
 
 /* ========================================
-   REMOVE ALL RED - REPLACE WITH BEIGE
+   REMOVE ALL red - REPLACE WITH BEIGE
    ======================================== */
 
 /* Override any red colors in the system */
-[style*="#cd1537"],
+[style*="#050336"],
 [style*="#b91330"],
 [style*="#a01129"],
 [style*="rgb(205, 21, 55)"],
@@ -776,7 +776,7 @@ html body a:not(.btn):not(.footer-links-list a):hover {
 }
 
 /* ========================================
-   ENSURE NO RED COLORS REMAIN
+   ENSURE NO red COLORS REMAIN
    ======================================== */
 
 *[class*="red"],

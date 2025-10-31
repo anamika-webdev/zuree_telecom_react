@@ -57,8 +57,8 @@
 }
 
 .tab-button:hover {
-  border-color: #cd1537;
-  color: #cd1537;
+  border-color: #050336;
+  color: #050336;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(205, 21, 55, 0.2);
 }
@@ -69,7 +69,7 @@
 }
 
 .tab-button.active {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   color: white;
   border-color: transparent;
   box-shadow: 0 6px 20px rgba(205, 21, 55, 0.3);
@@ -129,7 +129,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(90deg, #050336 0%, #a01129 100%);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -142,7 +142,7 @@
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: #cd1537;
+  border-color: #050336;
 }
 
 .service-card-icon {
@@ -201,7 +201,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #cd1537;
+  color: #050336;
   font-weight: bold;
 }
 
@@ -209,7 +209,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #cd1537;
+  color: #050336;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -238,7 +238,7 @@
 
 /* Services CTA */
 .services-cta {
-  background: linear-gradient(135deg, #cd1537 0%, #a01129 100%);
+  background: linear-gradient(135deg, #050336 0%, #a01129 100%);
   color: white;
   padding: 60px 40px;
   border-radius: 16px;
@@ -260,7 +260,7 @@
 
 .services-cta .btn {
   background: white;
-  color: #cd1537;
+  color: #050336;
   border: none;
   padding: 16px 48px;
   font-size: 18px;
@@ -388,12 +388,12 @@
 
 /* Accessibility Improvements */
 .tab-button:focus {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 2px;
 }
 
 .service-card:focus-within {
-  outline: 2px solid #cd1537;
+  outline: 2px solid #050336;
   outline-offset: 4px;
 }
 
