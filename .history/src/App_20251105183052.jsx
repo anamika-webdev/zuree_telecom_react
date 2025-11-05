@@ -6,6 +6,7 @@ import PrivateRoute from './components/PrivateRoute';
 import { AuthProvider } from './hooks/useAuth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AdminLogin from './pages/AdminLogin';
+import Login from './pages/Login';
 
 // Public Pages
 import Home from './pages/Home';

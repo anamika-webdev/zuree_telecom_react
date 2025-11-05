@@ -1,0 +1,136 @@
+/* src/assets/css/admin-login.css */
+
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.admin-login-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.admin-login-box {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-logo {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.admin-logo i {
+  font-size: 36px;
+  color: white;
+}
+
+.admin-login-header h2 {
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.admin-login-form .form-group {
+  margin-bottom: 20px;
+}
+
+.admin-login-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.admin-login-form .form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.admin-login-form .form-control:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-admin-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-admin-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-admin-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-login-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.back-to-site {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.back-to-site:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.admin-login-page .alert {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .admin-login-box {
+    padding: 30px 20px;
+  }
+  
+  .admin-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .admin-logo i {
+    font-size: 28px;
+  }
+}
