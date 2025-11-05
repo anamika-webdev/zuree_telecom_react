@@ -1,20 +1,19 @@
-// src/pages/Login.jsx
-import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+// src/pages/Login.jsx - FIXED
+import { useState, useEffect } from 'react'; // Import useEffect
+import { useNavigate, useSearchParams } from 'react-router-dom'; // Import useSearchParams
 import PageTitle from '../components/common/PageTitle';
 import { useAuth } from '../hooks/useAuth.jsx';
-import { toast } from 'react-toastify'; // <-- IMPORT TOAST
 
 const Login = () => {
   const navigate = useNavigate();
   const { loginUser } = useAuth();
-  const [searchParams] = useSearchParams(); 
+  const [searchParams] = useSearchParams(); // To check for registration message
   const [formData, setFormData] = useState({
     loginId: '',
     password: ''
   });
-  // const [error, setError] = useState('');     // <-- No longer needed
-  // const [success, setSuccess] = useState(''); // <-- No longer needed
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(''); // For registration message
   const [loading, setLoading] = useState(false);
 
   const breadcrumbs = [{ label: 'Login' }];
@@ -22,28 +21,37 @@ const Login = () => {
   // Check for 'registered=true' query param from Register.jsx
   useEffect(() => {
     if (searchParams.get('registered') === 'true') {
-      toast.success('Registration successful! Please log in.');
+      setSuccess('Registration successful! Please log in.');
     }
   }, [searchParams]);
+
 
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
+    if (error) setError(''); // Clear error on new input
+    if (success) setSuccess(''); // Clear success on new input
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setSuccess(''); // Clear any messages
     setLoading(true);
 
+    console.log('User login attempt:', { loginId: formData.loginId });
+
     try {
-      await loginUser(formData);
-      toast.success('Login successful! Redirecting...');
+      const response = await loginUser(formData);
+      console.log('User login successful:', response);
+      
+      // Redirect to user dashboard
       navigate('/dashboard');
     } catch (err) {
       console.error('User login error:', err);
-      toast.error(err.message || 'Invalid credentials');
+      setError(err.message || 'Invalid credentials');
     } finally {
       setLoading(false);
     }
@@ -63,7 +71,25 @@ const Login = () => {
                   <p className="text-muted">Sign in to your account</p>
                 </div>
                 
-                {/* The {success} and {error} alert divs are no longer needed */}
+                {/* Success Message (from registration) */}
+                {success && (
+                  <div className="alert alert-success" role="alert">
+                    <i className="fas fa-check-circle me-2"></i>
+                    {success}
+                  </div>
+                )}
+                
+                {/* Error Message Display (FIXED) */}
+                {error && (
+                  <div className="alert alert-danger" role="alert">
+                    <i className="fas fa-exclamation-circle me-2"></i>
+                    {error}
+                    {/* I removed the close button ('btn-close'). 
+                      The error will now only disappear when the user 
+                      starts typing again (handled in handleChange).
+                    */}
+                  </div>
+                )}
 
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
@@ -125,6 +151,8 @@ const Login = () => {
                     Don't have an account? <a href="/register">Sign up</a>
                   </small>
                 </div>
+
+                {/* Admin login option was removed in previous request */}
                 
               </div>
             </div>

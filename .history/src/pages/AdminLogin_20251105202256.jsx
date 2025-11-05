@@ -2,19 +2,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.jsx';
+import { toast } from 'react-toastify'; // 1. Import toast for notifications
 import '../assets/css/admin-login.css';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  // FIX 1: Use 'loginAdmin', which is the correct function from your useAuth hook
-  const { loginAdmin } = useAuth();
+  const { loginAdmin } = useAuth(); // 2. FIX: Use 'loginAdmin' from your auth hook
   
-  // FIX 2: Change state property from 'username' to 'loginId' to match the API
   const [formData, setFormData] = useState({
-    loginId: '', 
+    loginId: '', // 3. FIX: Changed 'username' to 'loginId' to match API
     password: ''
   });
-  const [error, setError] = useState('');
+  
+  // const [error, setError] = useState(''); // No longer needed, using toast
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -22,29 +22,33 @@ const AdminLogin = () => {
       ...prev,
       [e.target.name]: e.target.value
     }));
-    if (error) setError('');
+    // if (error) setError(''); // No longer needed
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    // setError(''); // No longer needed
     setLoading(true);
 
-    console.log('Admin login attempt:', { loginId: formData.loginId });
+    // 4. FIX: Log the correct state property
+    console.log('Admin login attempt:', { loginId: formData.loginId }); 
 
     try {
-      // FIX 3: Call the correct 'loginAdmin' function
-      const response = await loginAdmin(formData);
+      // 5. FIX: Call the correct 'loginAdmin' function
+      const response = await loginAdmin(formData); 
       console.log('Admin login successful:', response);
       
-      // Use navigate for a cleaner redirect
-      navigate('/admin/dashboard');
+      toast.success('Login successful! Redirecting...');
+      
+      // 6. FIX: Use 'navigate' for a clean React redirect
+      navigate('/admin/dashboard'); 
 
     } catch (err) {
       console.error('Admin login error:', err);
-      // This will now correctly show backend errors (like "Invalid admin credentials")
-      setError(err.message || 'Invalid admin credentials');
+      // 7. Use toast for error messages
+      toast.error(err.message || 'Invalid admin credentials'); 
     } finally {
+      // 8. Set loading to false in 'finally' to ensure it always runs
       setLoading(false);
     }
   };
@@ -61,12 +65,8 @@ const AdminLogin = () => {
             <p className="text-muted">Secure Admin Access</p>
           </div>
 
-          {error && (
-            <div className="alert alert-danger" role="alert">
-              <i className="fas fa-exclamation-circle me-2"></i>
-              {error}
-            </div>
-          )}
+          {/* Error display is now handled by react-toastify */}
+          {/* {error && ( ... )} */}
 
           <form onSubmit={handleSubmit} className="admin-login-form">
             <div className="form-group">
@@ -76,8 +76,8 @@ const AdminLogin = () => {
               </label>
               <input
                 type="text"
-                // FIX 4: 'name' and 'value' must match the state property 'loginId'
-                name="loginId"
+                // 9. FIX: 'name' and 'value' now point to 'loginId'
+                name="loginId" 
                 className="form-control"
                 value={formData.loginId}
                 onChange={handleChange}

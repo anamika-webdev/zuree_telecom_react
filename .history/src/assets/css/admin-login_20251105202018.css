@@ -137,19 +137,11 @@
 
 /* src/assets/css/admin-login.css */
 
-/* ... all your other admin login styles ... */
-
+/* ... all your existing admin-login styles ... */
 
 /* --- ADD THIS CODE AT THE END --- */
 
-/* Fix for local alert text visibility */
-.admin-login-box .alert {
-  color: #f6f3f3 !important; /* Dark red text for danger */
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-}
-
-/* Fix for React-Toastify popups (if they appear on this page) */
+/* React-Toastify Text Color Fix */
 .Toastify__toast-container {
   z-index: 99999;
 }
@@ -159,9 +151,9 @@
 }
 
 .Toastify__toast-body {
-  color: #ffffff !important;
+  color: #ffffff !important; /* Ensures body text is white */
 }
 
 .Toastify__toast-body div {
-  color: #ffffff !important;
+  color: #ffffff !important; /* Catches text inside other elements */
 }

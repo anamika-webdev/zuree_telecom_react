@@ -6,12 +6,9 @@ import '../assets/css/admin-login.css';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  // FIX 1: Use 'loginAdmin', which is the correct function from your useAuth hook
-  const { loginAdmin } = useAuth();
-  
-  // FIX 2: Change state property from 'username' to 'loginId' to match the API
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
-    loginId: '', 
+    username: '',
     password: ''
   });
   const [error, setError] = useState('');
@@ -30,21 +27,19 @@ const AdminLogin = () => {
     setError('');
     setLoading(true);
 
-    console.log('Admin login attempt:', { loginId: formData.loginId });
+    console.log('Admin login attempt:', { username: formData.username });
 
     try {
-      // FIX 3: Call the correct 'loginAdmin' function
-      const response = await loginAdmin(formData);
+      const response = await login(formData);
       console.log('Admin login successful:', response);
       
-      // Use navigate for a cleaner redirect
-      navigate('/admin/dashboard');
-
+      // Redirect to admin dashboard
+      setTimeout(() => {
+        window.location.href = '/admin/dashboard';
+      }, 100);
     } catch (err) {
       console.error('Admin login error:', err);
-      // This will now correctly show backend errors (like "Invalid admin credentials")
       setError(err.message || 'Invalid admin credentials');
-    } finally {
       setLoading(false);
     }
   };
@@ -72,16 +67,15 @@ const AdminLogin = () => {
             <div className="form-group">
               <label>
                 <i className="fas fa-user-shield me-2"></i>
-                Admin ID
+                Admin Username
               </label>
               <input
                 type="text"
-                // FIX 4: 'name' and 'value' must match the state property 'loginId'
-                name="loginId"
+                name="username"
                 className="form-control"
-                value={formData.loginId}
+                value={formData.username}
                 onChange={handleChange}
-                placeholder="Enter admin ID"
+                placeholder="Enter admin username"
                 required
                 autoFocus
                 disabled={loading}

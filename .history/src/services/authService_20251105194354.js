@@ -28,7 +28,6 @@ export const authService = {
       console.error('authService.adminLogin error:', error);
       
       if (error.response) {
-        // This is what's throwing your error message
         throw new Error(error.response.data?.message || 'Invalid admin credentials');
       } else if (error.request) {
         throw new Error('Cannot connect to server. Please check if the backend is running.');
@@ -73,19 +72,22 @@ export const authService = {
     }
   },
 
-  // Regular user registration
+  // ** NEW: Regular user registration - for main site **
   userRegister: async (userData) => {
     try {
       console.log('authService.userRegister called with:', userData.loginId);
       
+      // Assumes your backend endpoint is '/api/auth/register'
       const response = await api.post('/auth/register', userData);
       
       console.log('User register response:', response.data);
       
+      // We don't log the user in, just return the success response
       return response.data; 
     } catch (error) {
       console.error('authService.userRegister error:', error);
       
+      // Pass the specific error message (e.g., "User already exists")
       if (error.response) {
         throw new Error(error.response.data?.message || 'Registration failed');
       } else if (error.request) {

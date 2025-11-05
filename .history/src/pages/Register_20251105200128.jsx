@@ -1,30 +1,22 @@
-// src/pages/Login.jsx
-import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+// src/pages/Register.jsx
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageTitle from '../components/common/PageTitle';
-import { useAuth } from '../hooks/useAuth.jsx';
+import { useAuth } from '../hooks/useAuth'; 
 import { toast } from 'react-toastify'; // <-- IMPORT TOAST
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
-  const { loginUser } = useAuth();
-  const [searchParams] = useSearchParams(); 
+  const { registerUser } = useAuth();
   const [formData, setFormData] = useState({
     loginId: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   });
-  // const [error, setError] = useState('');     // <-- No longer needed
-  // const [success, setSuccess] = useState(''); // <-- No longer needed
+  // const [error, setError] = useState(''); // <-- No longer needed
   const [loading, setLoading] = useState(false);
 
-  const breadcrumbs = [{ label: 'Login' }];
-
-  // Check for 'registered=true' query param from Register.jsx
-  useEffect(() => {
-    if (searchParams.get('registered') === 'true') {
-      toast.success('Registration successful! Please log in.');
-    }
-  }, [searchParams]);
+  const breadcrumbs = [{ label: 'Register' }];
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -35,23 +27,40 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // --- Client-side Validation ---
+    if (formData.password !== formData.confirmPassword) {
+      toast.error('Passwords do not match.');
+      return;
+    }
+    if (formData.password.length < 6) {
+      toast.error('Password must be at least 6 characters long.');
+      return;
+    }
+    // --- End Validation ---
+
     setLoading(true);
 
     try {
-      await loginUser(formData);
-      toast.success('Login successful! Redirecting...');
-      navigate('/dashboard');
+      await registerUser({
+        loginId: formData.loginId,
+        password: formData.password
+      });
+
+      // Redirect to login page, which will show the success toast
+      navigate('/login?registered=true'); 
+      
     } catch (err) {
-      console.error('User login error:', err);
-      toast.error(err.message || 'Invalid credentials');
+      console.error('User registration error:', err);
+      toast.error(err.message || 'Registration failed. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="login-page">
-      <PageTitle title="User Login" breadcrumbItems={breadcrumbs} />
+    <div className="register-page">
+      <PageTitle title="Create Account" breadcrumbItems={breadcrumbs} />
       
       <section className="section-padding">
         <div className="container">
@@ -59,11 +68,11 @@ const Login = () => {
             <div className="col-lg-5 col-md-8">
               <div className="p-5 rounded shadow login-box">
                 <div className="mb-4 text-center">
-                  <h3>Welcome Back</h3>
-                  <p className="text-muted">Sign in to your account</p>
+                  <h3>Get Started</h3>
+                  <p className="text-muted">Create your new account</p>
                 </div>
                 
-                {/* The {success} and {error} alert divs are no longer needed */}
+                {/* The {error} alert div is no longer needed */}
 
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
@@ -77,14 +86,14 @@ const Login = () => {
                       className="form-control"
                       value={formData.loginId}
                       onChange={handleChange}
-                      placeholder="Enter your login ID"
+                      placeholder="Enter your Login ID or Email"
                       required
                       autoFocus
                       disabled={loading}
                     />
                   </div>
 
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <label className="form-label">
                       <i className="fas fa-lock me-2"></i>
                       Password
@@ -95,7 +104,24 @@ const Login = () => {
                       className="form-control"
                       value={formData.password}
                       onChange={handleChange}
-                      placeholder="Enter your password"
+                      placeholder="Minimum 6 characters"
+                      required
+                      disabled={loading}
+                    />
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label className="form-label">
+                      <i className="fas fa-check-circle me-2"></i>
+                      Confirm Password
+                    </label>
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      className="form-control"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Re-enter your password"
                       required
                       disabled={loading}
                     />
@@ -109,12 +135,12 @@ const Login = () => {
                     {loading ? (
                       <>
                         <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                        Logging in...
+                        Creating Account...
                       </>
                     ) : (
                       <>
-                        <i className="fas fa-sign-in-alt me-2"></i>
-                        Login
+                        <i className="fas fa-user-plus me-2"></i>
+                        Register
                       </>
                     )}
                   </button>
@@ -122,10 +148,9 @@ const Login = () => {
 
                 <div className="mt-4 text-center">
                   <small className="text-muted">
-                    Don't have an account? <a href="/register">Sign up</a>
+                    Already have an account? <a href="/login">Sign In</a>
                   </small>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -135,4 +160,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

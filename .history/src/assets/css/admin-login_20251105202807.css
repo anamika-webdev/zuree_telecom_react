@@ -144,7 +144,7 @@
 
 /* Fix for local alert text visibility */
 .admin-login-box .alert {
-  color: #f6f3f3 !important; /* Dark red text for danger */
+  color: #721c24 !important; /* Dark red text for danger */
   background-color: #f8d7da;
   border-color: #f5c6cb;
 }

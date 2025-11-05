@@ -1,49 +1,45 @@
 // src/pages/Login.jsx
-import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageTitle from '../components/common/PageTitle';
 import { useAuth } from '../hooks/useAuth.jsx';
-import { toast } from 'react-toastify'; // <-- IMPORT TOAST
 
 const Login = () => {
   const navigate = useNavigate();
   const { loginUser } = useAuth();
-  const [searchParams] = useSearchParams(); 
   const [formData, setFormData] = useState({
     loginId: '',
     password: ''
   });
-  // const [error, setError] = useState('');     // <-- No longer needed
-  // const [success, setSuccess] = useState(''); // <-- No longer needed
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const breadcrumbs = [{ label: 'Login' }];
-
-  // Check for 'registered=true' query param from Register.jsx
-  useEffect(() => {
-    if (searchParams.get('registered') === 'true') {
-      toast.success('Registration successful! Please log in.');
-    }
-  }, [searchParams]);
 
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
+    if (error) setError('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     setLoading(true);
 
+    console.log('User login attempt:', { loginId: formData.loginId });
+
     try {
-      await loginUser(formData);
-      toast.success('Login successful! Redirecting...');
-      navigate('/dashboard');
+      const response = await loginUser(formData);
+      console.log('User login successful:', response);
+      
+      // Redirect to user dashboard
+      navigate('/dashboard'); // <-- UPDATED REDIRECT
     } catch (err) {
       console.error('User login error:', err);
-      toast.error(err.message || 'Invalid credentials');
+      setError(err.message || 'Invalid credentials');
     } finally {
       setLoading(false);
     }
@@ -63,7 +59,18 @@ const Login = () => {
                   <p className="text-muted">Sign in to your account</p>
                 </div>
                 
-                {/* The {success} and {error} alert divs are no longer needed */}
+                {error && (
+                  <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i className="fas fa-exclamation-circle me-2"></i>
+                    {error}
+                    <button 
+                      type="button" 
+                      className="btn-close" 
+                      onClick={() => setError('')}
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                )}
 
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
@@ -125,6 +132,8 @@ const Login = () => {
                     Don't have an account? <a href="/register">Sign up</a>
                   </small>
                 </div>
+
+                {/* Admin login option removed as requested */}
                 
               </div>
             </div>

@@ -26,17 +26,8 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (credentials) => {
     // Call the method from the authService object
     const response = await authService.userLogin(credentials); 
-    
     if (response.success && response.user) {
-      // --- FIX IS HERE ---
-      // We manually create the user object for the state to match
-      // what authService saves in localStorage.
-      const userForState = {
-        ...response.user,
-        userType: 'user' 
-      };
-      
-      setUser(userForState); // Set the correct object in state
+      setUser(response.user);
       // Set auth header after successful login
       api.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
     }
@@ -46,17 +37,8 @@ export const AuthProvider = ({ children }) => {
   const loginAdmin = async (credentials) => {
     // Call the method from the authService object
     const response = await authService.adminLogin(credentials);
-    
     if (response.success && response.user) {
-      // --- FIX IS HERE ---
-      // We manually create the user object for the state to match
-      // what authService saves in localStorage.
-      const userForState = {
-        ...response.user,
-        userType: 'admin'
-      };
-      
-      setUser(userForState); // Set the correct object in state
+      setUser(response.user);
       // Set auth header after successful login
       api.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
     }
@@ -79,7 +61,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     isAuthenticated: !!user,
-    // These checks will now work immediately after login
+    // Use the userType property stored in the user state
     isAdmin: !!user && user.userType === 'admin',
     isUser: !!user && user.userType === 'user',
     loading,

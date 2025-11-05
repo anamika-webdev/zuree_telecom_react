@@ -1,4 +1,4 @@
-// src/App.jsx - UPDATED WITH REGISTER ROUTE
+// src/App.jsx - UPDATED WITH ADMIN & USER DASHBOARD ROUTES
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import AdminLayout from './components/layout/AdminLayout';
@@ -16,11 +16,10 @@ import Blogs from './pages/Blogs';
 import BlogDetails from './pages/BlogDetails';
 import ContactUs from './pages/ContactUs';
 import Login from './pages/Login';
-import Register from './pages/Register'; // <-- IMPORTED
 import JobDetails from './pages/JobDetails';
 import ScrollToTop from './components/ScrollToTop';
 
-// Import User Dashboard
+// Import New User Dashboard
 import UserDashboard from './pages/UserDashboard';
 
 // Services Pages
@@ -70,7 +69,6 @@ function App() {
 
           {/* Auth Routes */}
           <Route path="/login" element={<Layout><Login /></Layout>} />
-          <Route path="/register" element={<Layout><Register /></Layout>} /> {/* <-- NEW ROUTE */}
           <Route path="/admin-login" element={<AdminLogin />} />
 
           {/* Services Routes */}
@@ -93,17 +91,17 @@ function App() {
           <Route path="/services/bi-analytics" element={<Layout><BIAnalytics /></Layout>} />
           <Route path="/services/vr-ar-solutions" element={<Layout><VRARSolutions /></Layout>} />
 
-          {/* User Dashboard Route (Protected) */}
+          {/* NEW: User Dashboard Route (Protected) */}
           <Route
             path="/dashboard"
             element={
-              <PrivateRoute> {/* Checks for any authenticated user */}
+              <PrivateRoute> {/* Assumes PrivateRoute without 'allowedRoles' checks for any authenticated user */}
                 <Layout><UserDashboard /></Layout>
               </PrivateRoute>
             }
           />
 
-          {/* Admin Routes - Protected */}
+          {/* Admin Routes - Protected (Duplicates removed) */}
           <Route
             path="/admin/dashboard"
             element={

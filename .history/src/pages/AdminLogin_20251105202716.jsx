@@ -6,8 +6,8 @@ import '../assets/css/admin-login.css';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  // FIX 1: Use 'loginAdmin', which is the correct function from your useAuth hook
-  const { loginAdmin } = useAuth();
+  // FIX 1: Correctly destructure 'loginAdmin' from useAuth
+  const { loginAdmin } = useAuth(); 
   
   // FIX 2: Change state property from 'username' to 'loginId' to match the API
   const [formData, setFormData] = useState({
@@ -30,22 +30,24 @@ const AdminLogin = () => {
     setError('');
     setLoading(true);
 
+    // Log the correct property
     console.log('Admin login attempt:', { loginId: formData.loginId });
 
     try {
       // FIX 3: Call the correct 'loginAdmin' function
-      const response = await loginAdmin(formData);
+      const response = await loginAdmin(formData); 
       console.log('Admin login successful:', response);
       
-      // Use navigate for a cleaner redirect
+      // FIX 4: Use navigate for a cleaner redirect without a page reload
       navigate('/admin/dashboard');
 
     } catch (err) {
       console.error('Admin login error:', err);
       // This will now correctly show backend errors (like "Invalid admin credentials")
-      setError(err.message || 'Invalid admin credentials');
+      setError(err.message || 'Invalid admin credentials'); 
     } finally {
-      setLoading(false);
+      // Ensure loading is set to false even if an error occurs
+      setLoading(false); 
     }
   };
 
@@ -61,6 +63,7 @@ const AdminLogin = () => {
             <p className="text-muted">Secure Admin Access</p>
           </div>
 
+          {/* This is your existing error display, it will work fine now */}
           {error && (
             <div className="alert alert-danger" role="alert">
               <i className="fas fa-exclamation-circle me-2"></i>
@@ -76,7 +79,7 @@ const AdminLogin = () => {
               </label>
               <input
                 type="text"
-                // FIX 4: 'name' and 'value' must match the state property 'loginId'
+                // FIX 5: Update 'name' and 'value' to use 'loginId'
                 name="loginId"
                 className="form-control"
                 value={formData.loginId}
