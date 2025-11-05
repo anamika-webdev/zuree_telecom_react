@@ -1,4 +1,4 @@
-// server.js - Debug Version to Find the Problem Route
+// server.js - Safe Version with Proper Error Handling
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -34,6 +34,8 @@ let pool;
 const connectDB = async () => {
   try {
     pool = mysql.createPool(dbConfig);
+    
+    // Test connection
     const connection = await pool.getConnection();
     console.log('✅ Connected to MySQL database:', dbConfig.database);
     connection.release();
@@ -43,7 +45,7 @@ const connectDB = async () => {
   }
 };
 
-// Get pool instance
+// Get pool instance - Export this before requiring routes
 const getPool = () => {
   if (!pool) {
     throw new Error('Database pool not initialized');
@@ -51,7 +53,7 @@ const getPool = () => {
   return pool;
 };
 
-// Export getPool first
+// Export getPool first before requiring any routes
 module.exports = { getPool };
 
 // Helper function to safely require a route
@@ -83,42 +85,31 @@ const adminUsersRoutes = safeRequire('./routes/admin/users', 'Admin Users');
 
 console.log('\n📦 Route Loading Summary:');
 
-// Helper to safely use routes with detailed error info
-function safeUseRoute(path, route, name) {
-  try {
-    console.log(`Attempting to mount: ${name} at ${path}`);
-    
-    // Check if route is valid
-    if (!route) {
-      console.log(`⚠️  Skipping ${name} - route is null/undefined`);
-      return;
-    }
-    
-    // Check if route is a function (middleware)
-    if (typeof route !== 'function') {
-      console.error(`❌ ${name} is not a function! Type: ${typeof route}`);
-      console.error(`Route object keys:`, Object.keys(route));
-      return;
-    }
-    
-    app.use(path, route);
-    console.log(`✅ Successfully mounted: ${name} at ${path}\n`);
-  } catch (err) {
-    console.error(`❌ Error mounting ${name}:`, err.message);
-    console.error(`Full error:`, err);
-  }
+// Public API Routes
+if (blogsRoutes) {
+  app.use('/api/blogs', blogsRoutes);
+}
+if (careersRoutes) {
+  app.use('/api/careers', careersRoutes);
+}
+if (contactRoutes) {
+  app.use('/api/contact', contactRoutes);
+}
+if (authRoutes) {
+  app.use('/api/auth', authRoutes);
 }
 
-// Public API Routes
-safeUseRoute('/api/blogs', blogsRoutes, 'Blogs');
-safeUseRoute('/api/careers', careersRoutes, 'Careers');
-safeUseRoute('/api/contact', contactRoutes, 'Contact');
-safeUseRoute('/api/auth', authRoutes, 'Auth');
-
 // Admin API Routes
-safeUseRoute('/api/admin/auth', adminAuthRoutes, 'Admin Auth');
-safeUseRoute('/api/admin/blogs', adminBlogsRoutes, 'Admin Blogs');
-safeUseRoute('/api/admin/users', adminUsersRoutes, 'Admin Users');
+if (adminAuthRoutes) {
+  app.use('/api/admin/auth', adminAuthRoutes);
+  console.log('🔐 Admin auth endpoint: /api/admin/auth/login');
+}
+if (adminBlogsRoutes) {
+  app.use('/api/admin/blogs', adminBlogsRoutes);
+}
+if (adminUsersRoutes) {
+  app.use('/api/admin/users', adminUsersRoutes);
+}
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

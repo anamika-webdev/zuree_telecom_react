@@ -1,0 +1,102 @@
+// FILE: src/pages/Login.jsx
+// ============================================
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PageTitle from '../components/common/PageTitle';
+import { useAuth } from '../hooks/useAuth.jsx';
+
+const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [formData, setFormData] = useState({
+    username: '', // FIXED: Changed from loginId to username
+    password: ''
+  });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const breadcrumbs = [{ label: 'Login' }];
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      await login(formData);
+      navigate('/admin/dashboard'); // FIXED: Changed from '/' to '/admin/dashboard'
+    } catch (err) {
+      console.error('Login error:', err); // Added for debugging
+      setError(err.message || 'Invalid credentials');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="login-page">
+      <PageTitle title="Login" breadcrumbItems={breadcrumbs} />
+      
+      <section className="section-padding">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-5">
+              <div className="p-5 rounded shadow login-box">
+                <h3 className="mb-4 text-center">Login to Dashboard</h3>
+                
+                {error && (
+                  <div className="alert alert-danger">{error}</div>
+                )}
+
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label>Username or Email</label>
+                    <input
+                      type="text"
+                      name="username"
+                      className="form-control"
+                      value={formData.username}
+                      onChange={handleChange}
+                      placeholder="Enter username or email"
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      name="password"
+                      className="form-control"
+                      value={formData.password}
+                      onChange={handleChange}
+                      placeholder="Enter password"
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="btn btn-primary w-100"
+                    disabled={loading}
+                  >
+                    {loading ? 'Logging in...' : 'Login'}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Login;

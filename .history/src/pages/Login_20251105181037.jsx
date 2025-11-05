@@ -1,12 +1,12 @@
 // src/pages/Login.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageTitle from '../components/common/PageTitle';
 import { useAuth } from '../hooks/useAuth.jsx';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -15,6 +15,14 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const breadcrumbs = [{ label: 'Login' }];
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log('User already authenticated, redirecting to dashboard');
+      navigate('/admin/dashboard', { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -36,13 +44,12 @@ const Login = () => {
       const response = await login(formData);
       console.log('Login successful:', response);
       
-      // Small delay to ensure state updates, then navigate
-      setTimeout(() => {
-        window.location.href = '/admin/dashboard';
-      }, 100);
+      // Force navigation to admin dashboard
+      navigate('/admin/dashboard', { replace: true });
     } catch (err) {
       console.error('Login error:', err);
       setError(err.message || 'Invalid credentials. Please try again.');
+    } finally {
       setLoading(false);
     }
   };
