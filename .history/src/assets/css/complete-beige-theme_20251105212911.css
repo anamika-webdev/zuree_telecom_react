@@ -1,0 +1,686 @@
+/* 
+ * COMPLETE DARK BLUE THEME - Professional Telecom Colors
+ * Based on logo's darkest blue color
+ * 
+ * PRIMARY COLOR: #1e3a5f (Dark Navy Blue from logo)
+ * This file creates a professional dark blue theme
+ */
+
+/* ========================================
+   COLOR PALETTE - PROFESSIONAL DARK BLUE
+   ======================================== */
+
+:root {
+  /* Main Blue Colors */
+  --primary-blue: #1e3a5f;            /* Main dark navy blue from logo */
+  --primary-blue-hover: #2c5282;      /* Hover state - lighter blue */
+  --primary-blue-dark: #152a45;       /* Darker accent */
+  --primary-blue-light: #3b5b8a;      /* Light accent */
+  
+  /* Accent Colors (harmonious with blue) */
+  --accent-cyan: #0891b2;             /* Cyan for highlights */
+  --accent-sky: #0ea5e9;              /* Sky blue for variety */
+  --accent-hover: #0c7a96;            /* Darker cyan for hover */
+  
+  /* Neutral Backgrounds */
+  --bg-light: #f8fafc;                /* Very light gray-blue */
+  --bg-gray-light: #f1f5f9;           /* Light gray background */
+  --bg-gray-medium: #e2e8f0;          /* Medium gray */
+  
+  /* Text Colors */
+  --text-dark: #1e293b;               /* Dark text */
+  --text-medium: #475569;             /* Medium gray text */
+  --text-light: #64748b;              /* Light gray text */
+}
+
+/* ========================================
+   LOGO SIZE - INCREASED
+   ======================================== */
+
+.logo img,
+.page_header .logo img,
+header .logo img,
+.header-fixed .logo img {
+  max-height: 65px !important;
+  min-height: 65px !important;
+  height: 65px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  transition: all 0.3s ease !important;
+}
+
+@media (max-width: 768px) {
+  .logo img,
+  .page_header .logo img,
+  header .logo img {
+    max-height: 55px !important;
+    min-height: 55px !important;
+    height: 55px !important;
+  }
+}
+
+/* ========================================
+   REMOVE ALL OLD COLORS - REPLACE WITH DARK BLUE
+   ======================================== */
+
+/* Override any old colors in the system */
+[style*="#050336"],
+[style*="#b91330"],
+[style*="#a01129"],
+[style*="#A89E91"],
+[style*="rgb(205, 21, 55)"],
+[style*="rgb(185, 19, 48)"],
+[style*="rgb(160, 17, 41)"] {
+  color: #1e3a5f !important;
+  background-color: #1e3a5f !important;
+  border-color: #1e3a5f !important;
+}
+
+/* Force override for old theme classes */
+.text-danger,
+.text-red,
+.bg-danger,
+.bg-red,
+.border-danger,
+.border-red {
+  color: #1e3a5f !important;
+  background-color: #1e3a5f !important;
+  border-color: #1e3a5f !important;
+}
+
+/* ========================================
+   ALL BUTTONS - DARK BLUE THEME
+   ======================================== */
+
+/* Primary Buttons */
+.btn-primary,
+button.btn-primary,
+a.btn-primary,
+.btn.btn-primary,
+button[type="submit"],
+.submit-btn,
+.cta-btn,
+input[type="submit"],
+.btn-hero-primary {
+  background-color: #1e3a5f !important;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+  border-color: #1e3a5f !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover,
+button.btn-primary:hover,
+a.btn-primary:hover,
+.btn.btn-primary:hover,
+button[type="submit"]:hover,
+.submit-btn:hover,
+.cta-btn:hover,
+.btn-hero-primary:hover {
+  background-color: #2c5282 !important;
+  background: linear-gradient(135deg, #2c5282 0%, #3b5b8a 100%) !important;
+  border-color: #2c5282 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.4) !important;
+}
+
+/* Outline Buttons */
+.btn-outline-primary,
+button.btn-outline-primary,
+a.btn-outline-primary {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: 2px solid #1e3a5f !important;
+  color: #1e3a5f !important;
+}
+
+.btn-outline-primary:hover,
+button.btn-outline-primary:hover,
+a.btn-outline-primary:hover {
+  background-color: #1e3a5f !important;
+  background: #1e3a5f !important;
+  color: #ffffff !important;
+  border-color: #1e3a5f !important;
+}
+
+/* Secondary Buttons */
+.btn-secondary,
+button.btn-secondary,
+.btn-hero-secondary {
+  background-color: #0891b2 !important;
+  background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-secondary:hover,
+.btn-hero-secondary:hover {
+  background-color: #0c7a96 !important;
+  background: linear-gradient(135deg, #0c7a96 0%, #0891b2 100%) !important;
+  color: white !important;
+}
+
+/* ========================================
+   NAVIGATION & HEADER
+   ======================================== */
+
+.nav-menu a:hover,
+.nav-menu li.active a {
+  color: #1e3a5f !important;
+}
+
+.mega-menu-col h5 {
+  color: #1e3a5f !important;
+}
+
+/* ========================================
+   LINKS
+   ======================================== */
+
+a:not(.btn):not(.footer-links-list a):not(.nav-menu a) {
+  color: #1e3a5f !important;
+}
+
+a:not(.btn):not(.footer-links-list a):not(.nav-menu a):hover {
+  color: #2c5282 !important;
+}
+
+/* Service card learn more links */
+.service-card a,
+.business-unit-card a {
+  color: #1e3a5f !important;
+  font-weight: 600;
+}
+
+.service-card a:hover,
+.business-unit-card a:hover {
+  color: #0891b2 !important;
+}
+
+/* ========================================
+   FOOTER SOCIAL MEDIA ICONS
+   ======================================== */
+
+.footer-social-icons a,
+.site-footer .footer-social-icons a,
+footer .footer-social-icons a {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  background-color: transparent !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1e3a5f !important;
+  font-size: 26px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-social-icons a:hover,
+.site-footer .footer-social-icons a:hover,
+footer .footer-social-icons a:hover {
+  background-color: transparent !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: #0891b2 !important;
+  transform: translateY(-5px) scale(1.1) !important;
+}
+
+.footer-social-icons a i,
+.site-footer .footer-social-icons a i,
+footer .footer-social-icons a i,
+.footer-social-icons a .bi,
+.site-footer .footer-social-icons a .bi,
+footer .footer-social-icons a .bi {
+  color: inherit !important;
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.footer-social-icons {
+  gap: 18px !important;
+  margin-top: 30px !important;
+}
+
+@media (max-width: 768px) {
+  .footer-social-icons a {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 24px !important;
+  }
+  
+  .footer-social-icons a i,
+  .footer-social-icons a .bi {
+    font-size: 24px !important;
+  }
+}
+
+/* ========================================
+   ALL ICONS - DARK BLUE COLOR
+   ======================================== */
+
+/* Service & Business Unit Icons */
+.service-card .icon,
+.service-card i,
+.business-unit-card .icon,
+.business-unit-card i,
+i.bi,
+.card-icon-clean,
+.card-icon-compact {
+  color: #1e3a5f !important;
+}
+
+/* Support Card Icons */
+.support-card .icon,
+.support-card i {
+  color: #1e3a5f !important;
+}
+
+/* Benefit Icons */
+.benefit-icon,
+.benefit-card .icon,
+.benefit-card i {
+  color: #1e3a5f !important;
+}
+
+/* Contact Icons */
+.contact-icon,
+.contact-info-box i,
+.info-icon {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.15) 0%, rgba(44, 82, 130, 0.15) 100%) !important;
+  color: #1e3a5f !important;
+}
+
+/* Job & Career Icons */
+.job-detail-icon,
+.job-overview-list li i,
+.job-info-item i,
+.career-icon {
+  color: #1e3a5f !important;
+}
+
+/* Hero & carousel icons */
+.hero-carousel-badge i,
+.hero-carousel-arrow {
+  color: #1e3a5f !important;
+}
+
+/* ========================================
+   BADGES & HIGHLIGHTS
+   ======================================== */
+
+.section-badge,
+.hero-badge {
+  background: rgba(30, 58, 95, 0.12) !important;
+  color: #1e3a5f !important;
+}
+
+.highlight-text {
+  color: #1e3a5f !important;
+}
+
+/* ========================================
+   CARDS & HOVER EFFECTS
+   ======================================== */
+
+.service-card:hover,
+.business-unit-card:hover,
+.support-card-clean:hover,
+.support-card-compact:hover {
+  border-color: #1e3a5f !important;
+}
+
+.service-card::before,
+.support-card-clean::before {
+  background: linear-gradient(90deg, #1e3a5f 0%, #2c5282 100%) !important;
+}
+
+/* Icon backgrounds on hover */
+.support-card-clean:hover .card-icon-clean,
+.support-card-compact:hover .card-icon-compact {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+  color: white !important;
+}
+
+.support-card-clean:hover h4,
+.support-card-compact:hover h4 {
+  color: #1e3a5f !important;
+}
+
+/* ========================================
+   FORM ELEMENTS - DARK BLUE FOCUS
+   ======================================== */
+
+.form-control:focus,
+.contact-form .form-control:focus,
+.application-form .form-control:focus,
+.newsletter-input:focus,
+input:focus,
+textarea:focus,
+select:focus,
+.form-select:focus {
+  border-color: #1e3a5f !important;
+  box-shadow: 0 0 0 0.2rem rgba(30, 58, 95, 0.25) !important;
+  outline: none !important;
+}
+
+/* Newsletter Form */
+.newsletter-btn,
+.footer-newsletter-section .newsletter-btn,
+.newsletter-form .newsletter-btn,
+.newsletter-form button {
+  background-color: #1e3a5f !important;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.newsletter-btn:hover,
+.newsletter-form button:hover {
+  background: linear-gradient(135deg, #2c5282 0%, #3b5b8a 100%) !important;
+}
+
+/* Contact & Application Forms */
+.contact-form .btn-primary,
+.contact-form button[type="submit"],
+.application-form .btn-primary,
+.application-form button[type="submit"] {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+}
+
+.contact-form .btn-primary:hover:not(:disabled),
+.application-form .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2c5282 0%, #3b5b8a 100%) !important;
+  box-shadow: 0 8px 20px rgba(30, 58, 95, 0.3) !important;
+}
+
+/* ========================================
+   HERO SECTION - DARK BLUE OVERLAY
+   ======================================== */
+
+.hero-section-modern {
+  background: linear-gradient(135deg, #1a1a2e 0%, #1e3a5f 50%, #2c5282 100%) !important;
+}
+
+.hero-content .btn,
+.hero-carousel-dots .hero-carousel-dot.active {
+  box-shadow: 0 5px 15px rgba(30, 58, 95, 0.4) !important;
+  background: #1e3a5f !important;
+}
+
+/* ========================================
+   TEXT & BACKGROUND UTILITIES
+   ======================================== */
+
+.text-primary,
+.logo-text {
+  color: #1e3a5f !important;
+}
+
+.bg-primary {
+  background-color: #1e3a5f !important;
+  color: white !important;
+}
+
+.badge {
+  background-color: #1e3a5f !important;
+  color: white !important;
+}
+
+/* Alert Success - Blue Theme */
+.alert-success {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 4px solid #1e3a5f !important;
+}
+
+/* ========================================
+   SECTION BACKGROUNDS
+   ======================================== */
+
+.services-section {
+  background-color: #f8fafc !important;
+}
+
+.about-section {
+  background-color: #f1f5f9 !important;
+}
+
+.business-units-section {
+  background-color: #f8fafc !important;
+}
+
+.support-section,
+.support-section-modern {
+  background-color: #f1f5f9 !important;
+}
+
+.bg-light {
+  background-color: #f8fafc !important;
+}
+
+/* ========================================
+   SPINNER & LOADING
+   ======================================== */
+
+.spinner-border {
+  color: #1e3a5f !important;
+  border-color: #1e3a5f !important;
+}
+
+/* ========================================
+   PAGE TITLE
+   ======================================== */
+
+.page-title {
+  background-color: #152a45 !important;
+  color: white !important;
+}
+
+.breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.breadcrumb-item a:hover {
+  color: white !important;
+}
+
+/* ========================================
+   HEADER & FOOTER
+   ======================================== */
+
+.page_header {
+  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.1) !important;
+}
+
+/* ========================================
+   ACCESSIBILITY - FOCUS STATES
+   ======================================== */
+
+.newsletter-btn:focus,
+.newsletter-input:focus,
+.footer-social-icons a:focus,
+.btn:focus,
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #1e3a5f !important;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   SUPPORT SECTION SPECIFIC
+   ======================================== */
+
+.meta-link-compact,
+.meta-link {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+  color: white !important;
+}
+
+.meta-link-compact:hover,
+.meta-link:hover {
+  background: linear-gradient(135deg, #2c5282 0%, #3b5b8a 100%) !important;
+  color: white !important;
+}
+
+.badge-icon {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+}
+
+/* Meta badges with blue theme */
+.meta-time,
+.meta-phone,
+.meta-badge-compact {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.12) 0%, rgba(30, 58, 95, 0.08) 100%) !important;
+  color: #1e3a5f !important;
+  border: 1px solid rgba(30, 58, 95, 0.2) !important;
+}
+
+/* Decorative shapes */
+.shape,
+.hero-blob {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.15) 0%, rgba(44, 82, 130, 0.1) 100%) !important;
+}
+
+.support-card-compact::before,
+.support-card-clean::before {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.06) 0%, transparent 100%) !important;
+}
+
+/* ========================================
+   HIGH SPECIFICITY OVERRIDES
+   ======================================== */
+
+html body .btn-primary,
+html body button.btn-primary,
+html body .newsletter-btn,
+html body .btn-hero-primary {
+  background-color: #1e3a5f !important;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+}
+
+html body .logo img {
+  max-height: 65px !important;
+}
+
+html body .service-card .icon,
+html body .business-unit-card .icon,
+html body .support-card .icon,
+html body i.icon,
+html body .contact-icon {
+  color: #1e3a5f !important;
+}
+
+html body a:not(.btn):not(.footer-links-list a):not(.nav-menu a) {
+  color: #1e3a5f !important;
+}
+
+html body a:not(.btn):not(.footer-links-list a):not(.nav-menu a):hover {
+  color: #2c5282 !important;
+}
+
+/* ========================================
+   CONTACT PAGE ICONS
+   ======================================== */
+
+html body .contact-info-card .info-icon,
+html body .info-icon {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+  color: #ffffff !important;
+}
+
+html body .contact-info-card .info-icon i,
+html body .info-icon i {
+  color: #ffffff !important;
+}
+
+html body .contact-info-card .social-link,
+html body .social-links a,
+html body .social-link {
+  background-color: #1e3a5f !important;
+  background: #1e3a5f !important;
+  color: #ffffff !important;
+}
+
+/* ========================================
+   BLOG & CATEGORY COLORS
+   ======================================== */
+
+.blog-meta .meta-item.category,
+.category-badge {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+}
+
+.blog-card:hover {
+  border-color: #1e3a5f !important;
+}
+
+.read-more-link {
+  color: #1e3a5f !important;
+}
+
+.read-more-link:hover {
+  color: #2c5282 !important;
+}
+
+/* ========================================
+   ENSURE NO OLD COLORS REMAIN
+   ======================================== */
+
+*[class*="beige"],
+*[class*="red"],
+*[class*="danger"],
+*[class*="error"] {
+  color: #1e3a5f !important;
+  background-color: #1e3a5f !important;
+  border-color: #1e3a5f !important;
+}
+
+/* Override any gradient with old colors */
+*[style*="linear-gradient"][style*="cd1537"],
+*[style*="linear-gradient"][style*="b91330"],
+*[style*="linear-gradient"][style*="A89E91"],
+*[style*="linear-gradient"][style*="ec4899"],
+*[style*="linear-gradient"][style*="a855f7"] {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%) !important;
+}
+
+/* ========================================
+   FINAL CATCH-ALL
+   ======================================== */
+
+body .footer-social-icons a,
+body .site-footer .footer-social-icons a,
+body footer .footer-social-icons a,
+.footer-links-section .footer-social-icons a {
+  background-color: transparent !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body .footer-social-icons a:hover,
+body .site-footer .footer-social-icons a:hover,
+body footer .footer-social-icons a:hover,
+.footer-links-section .footer-social-icons a:hover {
+  background-color: transparent !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
