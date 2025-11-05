@@ -1,13 +1,8 @@
-// zuree_telecom_api/routes/admin/blogs.js - Fixed Version
+// zuree_telecom_api/routes/admin/blogs.js
 const express = require('express');
 const router = express.Router();
+const { getPool } = require('../../server');
 const { authMiddleware } = require('../../middleware/auth');
-
-// Get pool function - this will be available after server.js exports it
-const getPool = () => {
-  const { getPool: poolGetter } = require('../../server');
-  return poolGetter();
-};
 
 // Apply authentication middleware to all routes
 router.use(authMiddleware);
