@@ -1,7 +1,7 @@
 // src/pages/admin/Jobs.jsx - UPDATED WITH REAL API
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import adminService from '../../services/adminService';
+import adminService from '../services/adminService';
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);

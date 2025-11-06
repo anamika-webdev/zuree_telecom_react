@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import adminService from '../../services/adminService';
-import '../../assets/css/admin-dashboard.css';
+import '../assets/css/admin-dashboard.css';
 
 const Dashboard = () => {
   const [stats, setStats] = useState({

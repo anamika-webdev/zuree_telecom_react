@@ -30,7 +30,7 @@ const AdminLogin = () => {
     setError('');
     setLoading(true);
 
-    console.log('Admin login attempt:', { username: formData.username });
+    console.log('Admin login attempt:', { loginId: formData.loginId });
 
     try {
       // FIX 3: Call the correct 'loginAdmin' function

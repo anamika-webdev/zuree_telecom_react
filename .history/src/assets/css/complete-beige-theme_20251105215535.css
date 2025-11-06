@@ -130,18 +130,16 @@ a:hover {
 
 /* 5. Hero Section
 --------------------------------------------------------------*/
-body .hero-section {
-  /* UPDATED: Changed to the primary theme color (Muted Brown) */
-  background-color: var(--primary-color) !important; 
+.hero-section {
+  background-color: var(--secondary-color); /* Light Beige BG */
 }
-body .hero-section h1 {
-  /* UPDATED: Changed text to white for visibility on dark bg */
-  color: var(--white-color) !important;
+.hero-section h1 {
+  color: var(--heading-color);
 }
-body .hero-section p {
-  /* UPDATED: Changed text to light for visibility on dark bg */
-  color: var(--text-color-on-primary) !important;
+.hero-section p {
+  color: var(--text-color);
 }
+
 
 /* 6. Section Styles
 --------------------------------------------------------------*/

@@ -130,18 +130,16 @@ a:hover {
 
 /* 5. Hero Section
 --------------------------------------------------------------*/
-body .hero-section {
-  /* UPDATED: Changed to the primary theme color (Muted Brown) */
-  background-color: var(--primary-color) !important; 
+.hero-section {
+  background-color: var(--secondary-color); /* Light Beige BG */
 }
-body .hero-section h1 {
-  /* UPDATED: Changed text to white for visibility on dark bg */
-  color: var(--white-color) !important;
+.hero-section h1 {
+  color: var(--heading-color);
 }
-body .hero-section p {
-  /* UPDATED: Changed text to light for visibility on dark bg */
-  color: var(--text-color-on-primary) !important;
+.hero-section p {
+  color: var(--text-color);
 }
+
 
 /* 6. Section Styles
 --------------------------------------------------------------*/
@@ -270,78 +268,78 @@ body .hero-section p {
 
 /* 13. Footer Styles
 --------------------------------------------------------------*/
-body .site-footer {
+.site-footer {
   /* UPDATED: Changed to hero section color */
-  background-color: var(--secondary-color) !important; 
+  background-color: var(--secondary-color); 
   /* UPDATED: Changed text to dark color for visibility */
-  color: var(--text-color) !important; 
+  color: var(--text-color); 
   padding-top: 60px;
   font-size: 15px;
 }
 
-body .site-footer h5 {
+.site-footer h5 {
   /* UPDATED: Changed heading to dark color */
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 20px;
 }
 
-body .site-footer .footer-widget {
+.site-footer .footer-widget {
   margin-bottom: 30px;
 }
 
-body .site-footer .footer-links li {
+.site-footer .footer-links li {
   padding: 5px 0;
 }
 
-body .site-footer .footer-links li a {
+.site-footer .footer-links li a {
   /* UPDATED: Changed link to dark color */
-  color: var(--text-color) !important;
+  color: var(--text-color);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-body .site-footer .footer-links li a:hover {
-  color: var(--primary-color) !important;
+.site-footer .footer-links li a:hover {
+  color: var(--primary-color);
   padding-left: 5px;
 }
 
-body .site-footer .footer-socials a {
+.footer-socials a {
   /* UPDATED: Changed icon color */
-  color: var(--primary-color) !important; 
+  color: var(--primary-color); 
   display: inline-block;
   width: 36px;
   height: 36px;
   line-height: 36px;
   text-align: center;
   /* UPDATED: Changed border color */
-  border: 1px solid var(--primary-color-light) !important; 
+  border: 1px solid var(--primary-color-light); 
   border-radius: 50%;
   margin-right: 5px;
   transition: all 0.3s ease;
-  background-color: transparent !important; /* Override layout.css */
 }
 
-body .site-footer .footer-socials a:hover {
-  background-color: var(--primary-color) !important;
-  color: #ffffff !important;
-  border-color: var(--primary-color) !important;
+.footer-socials a:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
 }
 
-body .copyright-area {
+.copyright-area {
   /* UPDATED: Changed to hero section color */
-  background-color: var(--secondary-color) !important; 
+  background-color: var(--secondary-color); 
   /* UPDATED: Changed border color to be subtle */
-  border-top: 1px solid var(--primary-color-light) !important; 
+  border-top: 1px solid var(--primary-color-light); 
   padding: 20px 0;
   margin-top: 30px;
 }
 
-body .copyright-area p {
+.copyright-area p {
   margin-bottom: 0;
   /* UPDATED: Changed text to dark color */
-  color: var(--text-color) !important;
+  color: var(--text-color);
 }
+
 /* 14. Page Title
 --------------------------------------------------------------*/
 .page-title {
