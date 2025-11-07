@@ -15,9 +15,9 @@ const Contacts = () => {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('http://localhost:5000/api/contacts', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
 
@@ -26,7 +26,7 @@ const Contacts = () => {
       }
 
       const data = await response.json();
-      setContacts(Array.isArray(data) ? data : []);
+      setContacts(data);
       setError(null);
     } catch (err) {
       console.error('Error fetching contacts:', err);
@@ -38,11 +38,11 @@ const Contacts = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/contact/${id}/status`, {
+      const response = await fetch(`http://localhost:5000/api/contacts/${id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify({ status })
       });
@@ -65,10 +65,10 @@ const Contacts = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/contact/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
 

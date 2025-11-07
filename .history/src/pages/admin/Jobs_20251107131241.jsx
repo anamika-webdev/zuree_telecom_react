@@ -27,9 +27,9 @@ const Jobs = () => {
   const fetchJobs = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/careers/jobs', {
+      const response = await fetch('http://localhost:5000/api/jobs', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
 
@@ -38,7 +38,7 @@ const Jobs = () => {
       }
 
       const data = await response.json();
-      setJobs(Array.isArray(data) ? data : []);
+      setJobs(data);
       setError(null);
     } catch (err) {
       console.error('Error fetching jobs:', err);
@@ -61,8 +61,8 @@ const Jobs = () => {
 
     try {
       const url = editingJob 
-        ? `http://localhost:5000/api/careers/jobs/${editingJob.id}`
-        : 'http://localhost:5000/api/careers/jobs';
+        ? `http://localhost:5000/api/jobs/${editingJob.id}`
+        : 'http://localhost:5000/api/jobs';
       
       const method = editingJob ? 'PUT' : 'POST';
 
@@ -70,7 +70,7 @@ const Jobs = () => {
         method,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify(formData)
       });
@@ -111,10 +111,10 @@ const Jobs = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/careers/jobs/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/jobs/${id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
 

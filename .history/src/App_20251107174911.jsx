@@ -115,7 +115,7 @@ function App() {
           <Route
             path="/admin/blogs"
             element={
-              <PrivateRoute allowedRoles={['admin', 'super_admin', 'editor']}>
+              <PrivateRoute allowedRoles={['admin', 'editor']}>
                 <AdminLayout><AdminBlogs /></AdminLayout>
               </PrivateRoute>
             }
@@ -123,7 +123,7 @@ function App() {
           <Route
             path="/admin/blogs/create"
             element={
-              <PrivateRoute allowedRoles={['admin', 'super_admin', 'editor']}>
+              <PrivateRoute allowedRoles={['admin', 'editor']}>
                 <AdminLayout><AdminBlogForm /></AdminLayout>
               </PrivateRoute>
             }
@@ -131,7 +131,7 @@ function App() {
           <Route
             path="/admin/blogs/edit/:id"
             element={
-              <PrivateRoute allowedRoles={['admin', 'super_admin', 'editor']}>
+              <PrivateRoute allowedRoles={['admin', 'editor']}>
                 <AdminLayout><AdminBlogForm /></AdminLayout>
               </PrivateRoute>
             }
@@ -139,7 +139,7 @@ function App() {
           <Route
             path="/admin/jobs"
             element={
-              <PrivateRoute allowedRoles={['admin', 'super_admin', 'editor']}>
+              <PrivateRoute allowedRoles={['admin', 'editor']}>
                 <AdminLayout><AdminJobs /></AdminLayout>
               </PrivateRoute>
             }
@@ -147,7 +147,7 @@ function App() {
           <Route
             path="/admin/applications"
             element={
-              <PrivateRoute allowedRoles={['admin', 'super_admin', 'editor']}>
+              <PrivateRoute allowedRoles={['admin', 'editor']}>
                 <AdminLayout><AdminApplications /></AdminLayout>
               </PrivateRoute>
             }
@@ -155,7 +155,7 @@ function App() {
           <Route
             path="/admin/contacts"
             element={
-              <PrivateRoute allowedRoles={['admin', 'super_admin', 'editor']}>
+              <PrivateRoute allowedRoles={['admin', 'editor']}>
                 <AdminLayout><AdminContacts /></AdminLayout>
               </PrivateRoute>
             }

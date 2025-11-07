@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/components.css';
+import './components.css';
 
 const Applications = () => {
   const [applications, setApplications] = useState([]);
@@ -15,9 +15,9 @@ const Applications = () => {
   const fetchApplications = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/careers/applications', {
+      const response = await fetch('http://localhost:5000/api/applications', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
 
@@ -26,7 +26,7 @@ const Applications = () => {
       }
 
       const data = await response.json();
-      setApplications(Array.isArray(data) ? data : []);
+      setApplications(data);
       setError(null);
     } catch (err) {
       console.error('Error fetching applications:', err);
@@ -38,11 +38,11 @@ const Applications = () => {
 
   const updateApplicationStatus = async (id, status) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/careers/applications/${id}/status`, {
+      const response = await fetch(`http://localhost:5000/api/applications/${id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify({ status })
       });
@@ -65,10 +65,10 @@ const Applications = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/careers/applications/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/applications/${id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
 

@@ -20,37 +20,35 @@ const Dashboard = () => {
   const fetchDashboardStats = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem('authToken'); // Use 'authToken' not 'token'
       
-      // Fetch all stats with proper error handling
-      const fetchWithFallback = async (url) => {
-        try {
-          const response = await fetch(url, {
-            headers: { 'Authorization': `Bearer ${token}` }
-          });
-          if (!response.ok) return [];
-          return await response.json();
-        } catch (err) {
-          console.warn(`Failed to fetch ${url}:`, err.message);
-          return [];
-        }
-      };
-
-      // Fetch all stats in parallel with fallbacks
-      const [blogs, jobs, applications, messages] = await Promise.all([
-        fetchWithFallback('http://localhost:5000/api/blogs'),
-        fetchWithFallback('http://localhost:5000/api/careers/jobs'),
-        fetchWithFallback('http://localhost:5000/api/careers/applications'),
-        fetchWithFallback('http://localhost:5000/api/contact')
+      // Fetch all stats in parallel
+      const [blogsRes, jobsRes, applicationsRes, messagesRes] = await Promise.all([
+        fetch('http://localhost:5000/api/blogs', {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        }),
+        fetch('http://localhost:5000/api/jobs', {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        }),
+        fetch('http://localhost:5000/api/applications', {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        }),
+        fetch('http://localhost:5000/api/contacts', {
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+        })
       ]);
 
+      const blogs = await blogsRes.json();
+      const jobs = await jobsRes.json();
+      const applications = await applicationsRes.json();
+      const messages = await messagesRes.json();
+
       setStats({
-        totalBlogs: Array.isArray(blogs) ? blogs.length : 0,
-        totalJobs: Array.isArray(jobs) ? jobs.length : 0,
-        totalApplications: Array.isArray(applications) ? applications.length : 0,
-        pendingApplications: Array.isArray(applications) ? applications.filter(a => a.status === 'pending').length : 0,
-        totalMessages: Array.isArray(messages) ? messages.length : 0,
-        unreadMessages: Array.isArray(messages) ? messages.filter(m => m.status === 'unread').length : 0
+        totalBlogs: blogs.length,
+        totalJobs: jobs.length,
+        totalApplications: applications.length,
+        pendingApplications: applications.filter(a => a.status === 'pending').length,
+        totalMessages: messages.length,
+        unreadMessages: messages.filter(m => m.status === 'unread').length
       });
     } catch (error) {
       console.error('Error fetching dashboard stats:', error);
