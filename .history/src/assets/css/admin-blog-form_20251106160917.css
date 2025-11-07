@@ -1,0 +1,265 @@
+/* src/assets/css/admin-blog-form.css */
+
+.admin-blog-form {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Controls */
+.admin-blog-form .form-control,
+.admin-blog-form .form-select {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+}
+
+.admin-blog-form .form-control:focus,
+.admin-blog-form .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+.admin-blog-form .form-control:disabled,
+.admin-blog-form .form-select:disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+}
+
+/* Form Labels */
+.admin-blog-form .form-label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Text Muted */
+.admin-blog-form .text-muted {
+  color: #64748b !important;
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+}
+
+/* Textarea */
+.admin-blog-form textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+}
+
+/* Sidebar Cards */
+.admin-blog-form .card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.admin-blog-form .card-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.875rem 1rem;
+}
+
+.admin-blog-form .card-header h6 {
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+.admin-blog-form .card-body {
+  padding: 1rem;
+}
+
+/* Buttons */
+.admin-blog-form .btn {
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.admin-blog-form .btn-lg {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+}
+
+.admin-blog-form .btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+
+.admin-blog-form .btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+.admin-blog-form .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-blog-form .btn-outline-secondary {
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+}
+
+.admin-blog-form .btn-outline-secondary:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #94a3b8;
+  color: #475569;
+}
+
+/* Invalid Feedback */
+.admin-blog-form .invalid-feedback {
+  color: #ef4444;
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+}
+
+.admin-blog-form .form-control.is-invalid {
+  border-color: #ef4444;
+}
+
+.admin-blog-form .form-control.is-invalid:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Image Preview */
+.admin-blog-form .img-fluid {
+  border: 2px solid #e2e8f0;
+  padding: 0.5rem;
+}
+
+/* Spinner */
+.admin-blog-form .spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+/* Loading State */
+.admin-blog-form .py-5 {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-blog-form .col-md-4 .card {
+    margin-bottom: 1rem;
+  }
+
+  .admin-blog-form .btn {
+    width: 100%;
+  }
+
+  .admin-blog-form h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Character Counter */
+.admin-blog-form .text-muted.char-count {
+  float: right;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Form Grid */
+.admin-blog-form .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.admin-blog-form .row > * {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Status Badge Preview */
+.status-preview {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.status-preview i {
+  font-size: 0.875rem;
+}
+
+.status-preview.status-draft {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.status-preview.status-published {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* HTML Content Helper */
+.html-helper {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.html-helper code {
+  background: white;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  color: #3b82f6;
+}
+
+/* Accessibility */
+.admin-blog-form .btn:focus,
+.admin-blog-form .form-control:focus,
+.admin-blog-form .form-select:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .admin-blog-form .btn,
+  .admin-blog-form .card-header {
+    display: none !important;
+  }
+}

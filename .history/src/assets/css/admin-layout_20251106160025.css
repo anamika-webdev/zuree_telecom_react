@@ -1,4 +1,4 @@
-/* src/assets/css/admin-layout.css - UPDATED WITH SECTIONS */
+/* src/assets/css/admin-layout.css - ENHANCED MODERN VERSION */
 
 /* =====================================================
    ADMIN LAYOUT SYSTEM
@@ -80,32 +80,6 @@
   margin: 1rem 1.5rem;
 }
 
-/* Navigation Sections */
-.nav-section {
-  margin: 0.75rem 0;
-}
-
-.nav-section-title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1.5rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 1rem;
-}
-
-.nav-section-title i {
-  font-size: 0.875rem;
-}
-
-.nav-section .nav-link {
-  padding-left: 2rem;
-}
-
 /* Navigation Links */
 .sidebar-nav .nav-link {
   display: flex;
@@ -167,13 +141,11 @@
 }
 
 /* Back to Site Link */
-.sidebar-nav > .nav-link:last-child {
+.sidebar-nav .nav-link:last-child {
   margin-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   padding-top: 1.5rem;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
 }
 
 /* =====================================================
@@ -320,10 +292,6 @@
     font-size: 0.875rem;
   }
   
-  .nav-section .nav-link {
-    padding-left: 1.5rem;
-  }
-  
   .header-content {
     padding: 1rem 1.5rem;
   }
@@ -356,7 +324,7 @@
   
   .header-content {
     padding: 1rem;
-    margin-left: 54px;
+    margin-left: 54px; /* Space for mobile menu button */
   }
   
   .header-title {
@@ -372,8 +340,15 @@
   }
   
   /* Overlay when mobile menu is open */
-  .mobile-overlay {
-    display: block !important;
+  .admin-sidebar.mobile-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 280px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
   }
 }
 
@@ -389,11 +364,6 @@
   
   .sidebar-header h3 {
     font-size: 1.25rem;
-  }
-  
-  .nav-section-title {
-    font-size: 0.7rem;
-    padding: 0.5rem 1rem;
   }
 }
 
@@ -449,6 +419,37 @@
 }
 
 /* =====================================================
+   DARK MODE SUPPORT (Optional)
+   ===================================================== */
+
+@media (prefers-color-scheme: dark) {
+  .admin-main {
+    background: #0f172a;
+  }
+  
+  .admin-header {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .header-title {
+    color: #f1f5f9;
+    background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .header-actions span {
+    color: #94a3b8;
+  }
+  
+  .admin-content {
+    background: #0f172a;
+  }
+}
+
+/* =====================================================
    SMOOTH ANIMATIONS
    ===================================================== */
 
@@ -468,22 +469,32 @@
 }
 
 /* =====================================================
-   BADGE COUNTS (Optional)
+   UTILITIES
    ===================================================== */
 
-.nav-link .badge-count {
-  margin-left: auto;
-  background: #ef4444;
-  color: white;
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.625rem;
   font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.125rem 0.5rem;
-  border-radius: 10px;
-  min-width: 20px;
-  text-align: center;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 6px;
+  margin-left: auto;
 }
 
-.nav-link.active .badge-count {
-  background: white;
-  color: #3b82f6;
+.admin-badge.badge-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.admin-badge.badge-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.admin-badge.badge-success {
+  background: #10b981;
+  color: white;
 }
