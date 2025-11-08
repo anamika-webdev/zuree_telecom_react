@@ -92,6 +92,7 @@ const Blogs = () => {
 
   return (
     <div className="admin-section" style={{ background: 'white', padding: '20px', minHeight: '500px' }}>
+      <h1 style={{ color: 'red', fontSize: '24px' }}>BLOGS PAGE TEST - IF YOU SEE THIS, COMPONENT IS RENDERING!</h1>
       
       <div className="section-header">
         <h2>Blog Management</h2>
