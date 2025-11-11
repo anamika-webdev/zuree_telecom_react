@@ -983,3 +983,18 @@
     max-height: 300px;
   }
 }
+/* ==============================================
+   OPTION 1: ANGLED LINE
+   ============================================== */
+.hero-section-modern .hero-section-curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Controls the height of the angle */
+  background: #fff; /* MUST be the background color of the next section */
+  z-index: 2;
+  
+  /* This creates the angled shape (slants down from right to left) */
+  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%);
+}

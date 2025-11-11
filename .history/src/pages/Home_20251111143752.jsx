@@ -1,6 +1,5 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// This version adds an inline style to the 'hero-carousel-wrapper'
-// to force it to be full-width, overriding any constraining CSS.
+// This code moves the carousel into its own, separate section *below* the hero content.
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -82,54 +81,51 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ==================================================================
-        FIX: VIDEO CAROUSEL SECTION (Full-Width)
-        
-        I've added: style={{ maxWidth: 'none', margin: '0' }}
-        to the wrapper div to ensure it breaks out of any container.
-        ==================================================================
-      */}
+      {/* NEW Video Carousel Section (Below Hero) */}
       <section className="hero-carousel-section section-padding-top">
-        <div 
-          className="hero-carousel-wrapper" 
-          style={{ maxWidth: 'none', margin: '0' }}
-        >
-          <div className="hero-carousel-container">
-            {/* Main Carousel Image */}
-            <div className="hero-carousel-image">
-              <img 
-                src={videos[currentVideoIndex].thumbnail} 
-                alt={videos[currentVideoIndex].title}
-                className="hero-carousel-img"
-              />
-              {/* Small icon badge on top left */}
-              <div className="hero-carousel-badge">
-                <i className="fas fa-cube"></i>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="hero-carousel-wrapper">
+                <div className="hero-carousel-container">
+                  {/* Main Carousel Image */}
+                  <div className="hero-carousel-image">
+                    <img 
+                      src={videos[currentVideoIndex].thumbnail} 
+                      alt={videos[currentVideoIndex].title}
+                      className="hero-carousel-img"
+                    />
+                    {/* Small icon badge on top left */}
+                    <div className="hero-carousel-badge">
+                      <i className="fas fa-cube"></i>
+                    </div>
+                  </div>
+
+                  {/* Carousel Dots Indicator */}
+                  <div className="hero-carousel-dots">
+                    {videos.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`hero-carousel-dot ${index === currentVideoIndex ? 'active' : ''}`}
+                        onClick={() => handleDotClick(index)}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Navigation Arrows */}
+                  <button className="hero-carousel-arrow hero-arrow-left" onClick={handlePrevious}>
+                    <i className="fas fa-chevron-left"></i>
+                  </button>
+                  <button className="hero-carousel-arrow hero-arrow-right" onClick={handleNext}>
+                    <i className="fas fa-chevron-right"></i>
+                  </button>
+
+                  {/* Decorative circles */}
+                  <div className="hero-carousel-deco hero-carousel-deco-1"></div>
+                  <div className="hero-carousel-deco hero-carousel-deco-2"></div>
+                </div>
               </div>
             </div>
-
-            {/* Carousel Dots Indicator */}
-            <div className="hero-carousel-dots">
-              {videos.map((_, index) => (
-                <button
-                  key={index}
-                  className={`hero-carousel-dot ${index === currentVideoIndex ? 'active' : ''}`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
-
-            {/* Navigation Arrows */}
-            <button className="hero-carousel-arrow hero-arrow-left" onClick={handlePrevious}>
-              <i className="fas fa-chevron-left"></i>
-            </button>
-            <button className="hero-carousel-arrow hero-arrow-right" onClick={handleNext}>
-              <i className="fas fa-chevron-right"></i>
-            </button>
-
-            {/* Decorative circles */}
-            <div className="hero-carousel-deco hero-carousel-deco-1"></div>
-            <div className="hero-carousel-deco hero-carousel-deco-2"></div>
           </div>
         </div>
       </section>

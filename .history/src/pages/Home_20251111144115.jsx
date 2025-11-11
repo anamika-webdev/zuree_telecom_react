@@ -1,6 +1,6 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// This version adds an inline style to the 'hero-carousel-wrapper'
-// to force it to be full-width, overriding any constraining CSS.
+// This fix separates the hero and carousel and removes the container 
+// from the carousel section to make it full-screen width.
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -82,18 +82,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ==================================================================
-        FIX: VIDEO CAROUSEL SECTION (Full-Width)
-        
-        I've added: style={{ maxWidth: 'none', margin: '0' }}
-        to the wrapper div to ensure it breaks out of any container.
-        ==================================================================
-      */}
+      {/* NEW Video Carousel Section (Full-Width) */}
+      {/* We remove the .container and .row to make this full-width */}
       <section className="hero-carousel-section section-padding-top">
-        <div 
-          className="hero-carousel-wrapper" 
-          style={{ maxWidth: 'none', margin: '0' }}
-        >
+        <div className="hero-carousel-wrapper">
           <div className="hero-carousel-container">
             {/* Main Carousel Image */}
             <div className="hero-carousel-image">

@@ -1,6 +1,7 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// This version adds an inline style to the 'hero-carousel-wrapper'
-// to force it to be full-width, overriding any constraining CSS.
+// This version restructures the hero section to place the
+// carousel in the background (fullscreen) with the hero content overlaid.
+// This requires the accompanying CSS changes listed below.
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -62,38 +63,15 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Hero Section (Content Only) */}
-      <section className="hero-section-modern">
-        {/* Decorative Blobs */}
-        <div className="hero-blob hero-blob-1"></div>
-        <div className="hero-blob hero-blob-2"></div>
-        
-        <div className="container">
-          <div className="row align-items-center justify-content-center">
-            {/* Centered Content */}
-            <div className="text-center col-lg-8">
-              <div className="hero-content-left">
-                <h1>Empowering Digital Transformation</h1>
-                <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
-                <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================================
-        FIX: VIDEO CAROUSEL SECTION (Full-Width)
-        
-        I've added: style={{ maxWidth: 'none', margin: '0' }}
-        to the wrapper div to ensure it breaks out of any container.
-        ==================================================================
+      {/* Hero Section with Fullscreen Background Carousel.
+        The 'hero-section-modern' class now acts as a relative container.
       */}
-      <section className="hero-carousel-section section-padding-top">
-        <div 
-          className="hero-carousel-wrapper" 
-          style={{ maxWidth: 'none', margin: '0' }}
-        >
+      <section className="hero-section-modern">
+        
+        {/* Layer 1: Fullscreen Background Carousel */}
+        {/* We reuse 'hero-carousel-wrapper' and its children, but it's now
+            positioned absolutely to fill the whole section. */}
+        <div className="hero-carousel-wrapper hero-carousel-fullscreen">
           <div className="hero-carousel-container">
             {/* Main Carousel Image */}
             <div className="hero-carousel-image">
@@ -102,10 +80,8 @@ const Home = () => {
                 alt={videos[currentVideoIndex].title}
                 className="hero-carousel-img"
               />
-              {/* Small icon badge on top left */}
-              <div className="hero-carousel-badge">
-                <i className="fas fa-cube"></i>
-              </div>
+              {/* Aesthetic overlay for better text contrast */}
+              <div className="hero-carousel-bg-overlay"></div>
             </div>
 
             {/* Carousel Dots Indicator */}
@@ -127,15 +103,39 @@ const Home = () => {
               <i className="fas fa-chevron-right"></i>
             </button>
 
-            {/* Decorative circles */}
+            {/* Decorative circles (from original component) */}
             <div className="hero-carousel-deco hero-carousel-deco-1"></div>
             <div className="hero-carousel-deco hero-carousel-deco-2"></div>
           </div>
         </div>
+
+        {/* Decorative Blobs (Layer 2) */}
+        <div className="hero-blob hero-blob-1"></div>
+        <div className="hero-blob hero-blob-2"></div>
+        
+        {/* Layer 3: Foreground Content */}
+        {/* The container is now centered and sits on top of the carousel */}
+        <div className="container hero-content-container-overlay">
+          <div className="row align-items-center justify-content-center">
+            {/* This column is now wider and centered */}
+            <div className="text-center col-lg-8">
+              <div className="hero-content-left">
+                <h1>Empowering Digital Transformation</h1>
+                <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
+                <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Layer 4: The Curve */}
+        {/* This div is for the curve effect, which must be styled in CSS.
+            It creates the "scooped" bottom edge for the hero section. */}
+        <div className="hero-section-curve"></div>
+
       </section>
 
-
-      {/* Services Section - Now comes after hero and carousel */}
+      {/* Services Section - This will now be visible "under" the hero curve */}
       <section className="services-section section-padding">
         <div className="container">
           <div className="row">
@@ -215,7 +215,7 @@ const Home = () => {
       </section>
 
       
-{/* Compact 24/7 Support Section - Single Screen */}
+      {/* Compact 24/7 Support Section - Single Screen */}
       <section className="support-section-modern section-padding-compact">
         <div className="container">
           {/* Compact Section Header */}

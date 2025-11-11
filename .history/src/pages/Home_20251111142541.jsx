@@ -1,9 +1,7 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// This version adds an inline style to the 'hero-carousel-wrapper'
-// to force it to be full-width, overriding any constraining CSS.
-
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import '../assets/css/pages/video-carousel.css'; // Ensure this CSS file is imported
 
 const Home = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -62,89 +60,82 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Hero Section (Content Only) */}
+      {/* Hero Section with Fullscreen Background Carousel */}
       <section className="hero-section-modern">
-        {/* Decorative Blobs */}
-        <div className="hero-blob hero-blob-1"></div>
-        <div className="hero-blob hero-blob-2"></div>
         
-        <div className="container">
-          <div className="row align-items-center justify-content-center">
-            {/* Centered Content */}
-            <div className="text-center col-lg-8">
-              <div className="hero-content-left">
-                <h1>Empowering Digital Transformation</h1>
-                <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
-                <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================================
-        FIX: VIDEO CAROUSEL SECTION (Full-Width)
-        
-        I've added: style={{ maxWidth: 'none', margin: '0' }}
-        to the wrapper div to ensure it breaks out of any container.
-        ==================================================================
-      */}
-      <section className="hero-carousel-section section-padding-top">
-        <div 
-          className="hero-carousel-wrapper" 
-          style={{ maxWidth: 'none', margin: '0' }}
-        >
+        {/* Layer 1: Fullscreen Background Carousel */}
+        <div className="hero-carousel-wrapper hero-carousel-fullscreen">
           <div className="hero-carousel-container">
-            {/* Main Carousel Image */}
             <div className="hero-carousel-image">
               <img 
                 src={videos[currentVideoIndex].thumbnail} 
                 alt={videos[currentVideoIndex].title}
                 className="hero-carousel-img"
               />
-              {/* Small icon badge on top left */}
-              <div className="hero-carousel-badge">
-                <i className="fas fa-cube"></i>
+              <div className="hero-carousel-bg-overlay"></div>
+            </div>
+
+            {/* Controls */}
+            <div className="hero-carousel-controls">
+              <button className="hero-carousel-arrow hero-arrow-left" onClick={handlePrevious}>
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              
+              <div className="hero-carousel-dots">
+                {videos.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`hero-carousel-dot ${index === currentVideoIndex ? 'active' : ''}`}
+                    onClick={() => handleDotClick(index)}
+                  />
+                ))}
               </div>
+
+              <button className="hero-carousel-arrow hero-arrow-right" onClick={handleNext}>
+                <i className="fas fa-chevron-right"></i>
+              </button>
             </div>
-
-            {/* Carousel Dots Indicator */}
-            <div className="hero-carousel-dots">
-              {videos.map((_, index) => (
-                <button
-                  key={index}
-                  className={`hero-carousel-dot ${index === currentVideoIndex ? 'active' : ''}`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
-            </div>
-
-            {/* Navigation Arrows */}
-            <button className="hero-carousel-arrow hero-arrow-left" onClick={handlePrevious}>
-              <i className="fas fa-chevron-left"></i>
-            </button>
-            <button className="hero-carousel-arrow hero-arrow-right" onClick={handleNext}>
-              <i className="fas fa-chevron-right"></i>
-            </button>
-
-            {/* Decorative circles */}
-            <div className="hero-carousel-deco hero-carousel-deco-1"></div>
-            <div className="hero-carousel-deco hero-carousel-deco-2"></div>
           </div>
         </div>
+
+        {/* Layer 2: Decorative Blobs */}
+        <div className="hero-blob hero-blob-1"></div>
+        <div className="hero-blob hero-blob-2"></div>
+        
+        {/* Layer 3: Foreground Content */}
+        <div className="container hero-content-container-overlay">
+          <div className="row align-items-center justify-content-center">
+            <div className="text-center col-lg-9">
+              <div className="hero-content-left">
+                <span className="hero-subtitle-badge">Welcome to Zuree Telecom</span>
+                <h1>Empowering Digital <span className="text-gradient">Transformation</span></h1>
+                <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
+                <div className="hero-btn-group">
+                  <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
+                  <Link to="/services/android-application" className="btn btn-hero-outline">Our Services</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Layer 4: The Wave Pattern Divider */}
+        <div className="hero-wave-divider"></div>
+
       </section>
 
-
-      {/* Services Section - Now comes after hero and carousel */}
+      {/* Services Section */}
       <section className="services-section section-padding">
         <div className="container">
           <div className="row">
             <div className="mb-5 text-center col-12">
+              <span className="section-subtitle-small">WHAT WE DO</span>
               <h2>Our Services</h2>
             </div>
           </div>
 
           <div className="row">
+            {/* Service Cards */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
@@ -215,10 +206,9 @@ const Home = () => {
       </section>
 
       
-{/* Compact 24/7 Support Section - Single Screen */}
+      {/* Compact 24/7 Support Section */}
       <section className="support-section-modern section-padding-compact">
         <div className="container">
-          {/* Compact Section Header */}
           <div className="mb-4 row">
             <div className="mx-auto text-center col-lg-10">
               <span className="mb-2 section-badge">24/7 SUPPORT</span>
@@ -232,9 +222,7 @@ const Home = () => {
           </div>
 
           <div className="row align-items-center">
-            {/* Left Side - Support Options */}
             <div className="mb-4 col-lg-7 mb-lg-0">
-              {/* Decorative Shapes */}
               <div className="support-shapes">
                 <div className="shape shape-1"></div>
                 <div className="shape shape-2"></div>
@@ -242,7 +230,6 @@ const Home = () => {
               </div>
 
               <div className="support-cards-grid-compact">
-                {/* Live Chat Card */}
                 <div className="support-card-compact">
                   <div className="card-icon-compact">
                     <i className="fas fa-comment-dots"></i>
@@ -256,7 +243,6 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Email Support Card */}
                 <div className="support-card-compact">
                   <div className="card-icon-compact">
                     <i className="fas fa-envelope-open-text"></i>
@@ -270,7 +256,6 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Phone Support Card */}
                 <div className="support-card-compact">
                   <div className="card-icon-compact">
                     <i className="fas fa-phone-volume"></i>
@@ -284,7 +269,6 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Need Help Card */}
                 <div className="support-card-compact">
                   <div className="card-icon-compact">
                     <i className="fas fa-headset"></i>
@@ -300,7 +284,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Side - Compact Image */}
             <div className="col-lg-5">
               <div className="support-image-compact">
                 <div className="image-backdrop-compact"></div>

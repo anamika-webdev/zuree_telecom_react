@@ -983,3 +983,115 @@
     max-height: 300px;
   }
 }
+/* ==============================================
+   STYLES FOR FULLSCREEN HERO CAROUSEL
+   Add these rules to your existing home.css or layout.css
+   ============================================== */
+
+/* 1. Make the main hero section a relative container */
+.hero-section-modern {
+  position: relative;
+  /* Set a min-height, e.g., 700px or 100vh */
+  min-height: 700px;
+  /* This padding is for the content on top, not the section itself */
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex; /* Use flex to center content vertically */
+  align-items: center;
+  overflow: hidden; /* Important for the curve */
+}
+
+/* 2. Style the fullscreen carousel wrapper */
+.hero-carousel-fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Sits behind everything */
+}
+
+/* 3. Make carousel components fill the wrapper */
+.hero-carousel-fullscreen .hero-carousel-container,
+.hero-carousel-fullscreen .hero-carousel-image {
+  height: 100%;
+  border-radius: 0; /* Remove rounded corners if any */
+}
+
+/* 4. Make the carousel image cover the area */
+.hero-carousel-fullscreen .hero-carousel-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* Subtle zoom effect for aesthetics */
+  animation: kenBurnsZoom 20s infinite alternate;
+}
+
+/* 5. Add the aesthetic overlay for contrast */
+.hero-carousel-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dark gradient: stronger at bottom, lighter at top */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+/* 6. Style the foreground content container */
+.hero-content-container-overlay {
+  position: relative;
+  z-index: 3; /* Above blobs and overlay */
+  /* This ensures the content is nicely padded */
+  padding-top: 100px;
+  padding-bottom: 150px; /* Extra padding to clear the curve */
+}
+
+/* 7. Ensure blobs are behind content but above carousel */
+.hero-blob {
+  z-index: 2;
+}
+
+/* 8. Ensure carousel navigation is on top */
+.hero-carousel-dots,
+.hero-carousel-arrow {
+  z-index: 4; /* On top of everything */
+}
+
+/* 9. THE CURVE */
+/* This creates the curve at the bottom of the hero section.
+   It's a pseudo-element on the section itself. */
+.hero-section-modern .hero-section-curve {
+  position: absolute;
+  bottom: -1px; /* Sits at the bottom */
+  left: 0;
+  width: 100%;
+  height: 100px; /* Height of the curve */
+  background: #fff; /* MUST be the background color of the next section */
+  z-index: 2; /* Sits on top of carousel, under content */
+  
+  /* Creates the "scooped" curve */
+  clip-path: ellipse(80% 100% at 50% 100%);
+}
+
+/* 10. (Optional) Ken Burns zoom effect */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* 11. Adjustments for original carousel CSS */
+/* Ensure these elements are not inside a .container */
+.hero-carousel-wrapper-fullscreen .hero-carousel-deco-1,
+.hero-carousel-wrapper-fullscreen .hero-carousel-deco-2 {
+  display: none; /* Hide decorative circles if they look out of place */
+}
