@@ -143,9 +143,8 @@
 
 .hero-carousel-wrapper {
   position: relative;
-  z-index: 2;
+  /* z-index: 2; */ /* REMOVED THIS LINE */
   animation: fadeInRight 1s ease-out 0.4s both;
-  /* The inline style in Home.jsx handles max-width */
 }
 
 .hero-carousel-container {

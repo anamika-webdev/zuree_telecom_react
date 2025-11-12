@@ -175,7 +175,7 @@ const Home = () => {
                 <div className="icon">
                   <i className="fas fa-network-wired"></i>
                 </div>
-                <h3>IOT Solution</h3>
+                <h3>IOT solution</h3>
                 <p>Advanced networking solutions for seamless connectivity.</p>
                 <Link to="/services/5g">Learn More →</Link>
               </div>

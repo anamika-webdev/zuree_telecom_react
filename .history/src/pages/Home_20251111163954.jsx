@@ -143,7 +143,7 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="mb-5 text-center col-12">
-              <h2>Business Models</h2>
+              <h2>Our Services</h2>
             </div>
           </div>
 
@@ -175,7 +175,7 @@ const Home = () => {
                 <div className="icon">
                   <i className="fas fa-network-wired"></i>
                 </div>
-                <h3>IOT Solution</h3>
+                <h3>5G & Networking</h3>
                 <p>Advanced networking solutions for seamless connectivity.</p>
                 <Link to="/services/5g">Learn More →</Link>
               </div>

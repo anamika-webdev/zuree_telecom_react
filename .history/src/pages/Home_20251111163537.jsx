@@ -1,6 +1,6 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// I have added a negative top margin to the carousel section
-// to pull it up 150px, removing the blank space.
+// This version adds an inline style to the 'hero-carousel-wrapper'
+// to force it to be full-width, overriding any constraining CSS.
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -85,14 +85,11 @@ const Home = () => {
       {/* ==================================================================
         FIX: VIDEO CAROUSEL SECTION (Full-Width)
         
-        ADDED: style={{ marginTop: '-150px', position: 'relative' }}
-        This pulls the section up to sit behind the hero's curve.
+        I've added: style={{ maxWidth: 'none', margin: '0' }}
+        to the wrapper div to ensure it breaks out of any container.
         ==================================================================
       */}
-      <section 
-        className="hero-carousel-section" 
-        style={{ marginTop: '-150px', position: 'relative' }}
-      >
+      <section className="hero-carousel-section">
         <div 
           className="hero-carousel-wrapper" 
           style={{ maxWidth: 'none', margin: '0' }}
@@ -143,7 +140,7 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="mb-5 text-center col-12">
-              <h2>Business Models</h2>
+              <h2>Our Services</h2>
             </div>
           </div>
 
@@ -175,7 +172,7 @@ const Home = () => {
                 <div className="icon">
                   <i className="fas fa-network-wired"></i>
                 </div>
-                <h3>IOT Solution</h3>
+                <h3>5G & Networking</h3>
                 <p>Advanced networking solutions for seamless connectivity.</p>
                 <Link to="/services/5g">Learn More →</Link>
               </div>

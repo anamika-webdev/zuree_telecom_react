@@ -1,6 +1,7 @@
 /* ============================================
    INTEGRATED CAROUSEL IN HERO - UPDATED CODE
    FOR: src/assets/css/pages/home.css
+   ADD THIS CODE TO THE END OF YOUR EXISTING home.css FILE
    ============================================ */
 
 /* ============================================
@@ -138,7 +139,7 @@
 }
 
 /* ============================================
-   HERO CAROUSEL - FULL WIDTH (VIEWPORT HEIGHT)
+   HERO CAROUSEL - FULL WIDTH
    ============================================ */
 
 .hero-carousel-wrapper {
@@ -150,28 +151,34 @@
 
 .hero-carousel-container {
   position: relative;
-  overflow: hidden; 
-  width: 100%; 
+  /* max-width: 580px; */ /* REMOVED to allow full width */
+  /* margin-left: auto; */ /* REMOVED */
+  /* border-radius: 32px; */ /* REMOVED */
+  /* overflow: visible; */ /* REMOVED */
+  overflow: hidden; /* ADDED */
+  width: 100%; /* ADDED */
 }
 
 /* Main Carousel Image */
 .hero-carousel-image {
   position: relative;
+  /* border-radius: 32px; */ /* REMOVED */
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-  height: 80vh; /* Set height to 80% of viewport height */
-  min-height: 400px; /* Fallback minimum height */
+  min-height: 500px; /* ADDED */
+  height: 100%; /* ADDED */
 }
 
 .hero-carousel-img {
   width: 100%;
-  height: 100%; /* Fill the parent container */
-  object-fit: cover; 
+  /* height: auto; */ /* REMOVED */
+  height: 100%; /* ADDED */
+  min-height: 500px; /* ADDED */
+  object-fit: cover; /* ADDED */
   display: block;
   transition: transform 0.6s ease;
 }
-
 
 .hero-carousel-image:hover .hero-carousel-img {
   transform: scale(1.05);
@@ -268,11 +275,13 @@
 }
 
 .hero-arrow-left {
-  left: 25px; 
+  /* left: -25px; */ /* REMOVED */
+  left: 25px; /* ADDED */
 }
 
 .hero-arrow-right {
-  right: 25px; 
+  /* right: -25px; */ /* REMOVED */
+  right: 25px; /* ADDED */
 }
 
 .hero-carousel-arrow i {
@@ -331,6 +340,7 @@
   }
 
   .hero-carousel-wrapper {
+    /* max-width: 500px; */ /* REMOVED */
     margin: 0 auto;
   }
 
@@ -361,9 +371,9 @@
     font-size: 1.05rem;
   }
   
-  .hero-carousel-image {
-      height: 70vh; /* Adjust height for tablets */
-      min-height: 350px;
+  .hero-carousel-image,
+  .hero-carousel-img {
+      min-height: 400px; /* Adjust height for mobile */
   }
 
   .btn-hero-primary {
@@ -409,9 +419,9 @@
     font-size: 1.9rem;
   }
   
-  .hero-carousel-image {
-      height: 60vh; /* Adjust height for mobile */
-      min-height: 300px;
+  .hero-carousel-image,
+  .hero-carousel-img {
+      min-height: 300px; /* Adjust height for small mobile */
   }
 
   .hero-blob-1,
