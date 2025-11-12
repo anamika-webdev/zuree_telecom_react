@@ -15,7 +15,7 @@
   min-height: 850px;
   background: 
     linear-gradient(135deg, rgba(10, 15, 44, 0.92) 0%, rgba(26, 26, 46, 0.88) 50%, rgba(45, 27, 78, 0.92) 100%),
-    url('../images/telecomtower.jpg');
+    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

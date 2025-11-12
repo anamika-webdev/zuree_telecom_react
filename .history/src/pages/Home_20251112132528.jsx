@@ -308,7 +308,7 @@ const Home = () => {
             <div className="col-lg-6 order-lg-2">
               <div className="support-image-compact">
                 <img 
-                  src="../../images/customer2.jpg" 
+                  src="../../assets/images/customer2.jpg" 
                   alt="24/7 Support" 
                   className="support-img-compact"
                 />
