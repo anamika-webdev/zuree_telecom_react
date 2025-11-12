@@ -76,9 +76,10 @@ const Home = () => {
             {/* Centered Content */}
             <div className="text-center col-lg-8">
               <div className="hero-content-left">
-                <h1 className="fade-in-up">Empowering Digital Transformation</h1>
+                <h1 className="fade-in-up">Connect Your World, Faster.</h1>
                 <p className="fade-in-up-delay-1">
-                Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.
+                  Experience the future of connectivity with Zuree Telecom. Seamless, 
+                  high-speed solutions designed for your home and business.
                 </p>
                 <Link 
                   to="/contact-us" 

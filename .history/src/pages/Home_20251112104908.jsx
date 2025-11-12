@@ -1,7 +1,6 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// I have updated the hero section with new text,
-// new animated glows (replacing the blobs),
-// and new animation classes for a staggered fade-in effect.
+// I have provided a new set of different icons for the
+// Business Models section.
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -63,29 +62,20 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* =================================
-        HERO SECTION (UPDATED)
-      ================================= */}
+      {/* Hero Section (Content Only) */}
       <section className="hero-section-modern">
-        {/* Decorative Glows (Replaced Blobs) */}
-        <div className="hero-glow-1"></div>
-        <div className="hero-glow-2"></div>
+        {/* Decorative Blobs */}
+        <div className="hero-blob hero-blob-1"></div>
+        <div className="hero-blob hero-blob-2"></div>
         
         <div className="container">
           <div className="row align-items-center justify-content-center">
             {/* Centered Content */}
             <div className="text-center col-lg-8">
               <div className="hero-content-left">
-                <h1 className="fade-in-up">Empowering Digital Transformation</h1>
-                <p className="fade-in-up-delay-1">
-                Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.
-                </p>
-                <Link 
-                  to="/contact-us" 
-                  className="btn btn-hero-primary fade-in-up-delay-2"
-                >
-                  Get Started
-                </Link>
+                <h1>Empowering Digital Transformation</h1>
+                <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
+                <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
               </div>
             </div>
           </div>
@@ -158,6 +148,7 @@ const Home = () => {
           </div>
 
           <div className="row">
+            {/* === NEW ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
@@ -169,6 +160,7 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === NEW ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
@@ -180,6 +172,7 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === NEW ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
@@ -191,6 +184,7 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === NEW ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
@@ -202,6 +196,7 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === NEW ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
@@ -213,6 +208,7 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === NEW ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">

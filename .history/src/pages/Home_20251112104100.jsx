@@ -1,7 +1,8 @@
 // UPDATED CODE FOR: src/pages/Home.jsx
-// I have updated the hero section with new text,
-// new animated glows (replacing the blobs),
-// and new animation classes for a staggered fade-in effect.
+// I have added a negative top margin to the carousel section
+// to pull it up 150px, removing the blank space.
+//
+// I have ALSO updated the icons in the Business Models section.
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -63,29 +64,20 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* =================================
-        HERO SECTION (UPDATED)
-      ================================= */}
+      {/* Hero Section (Content Only) */}
       <section className="hero-section-modern">
-        {/* Decorative Glows (Replaced Blobs) */}
-        <div className="hero-glow-1"></div>
-        <div className="hero-glow-2"></div>
+        {/* Decorative Blobs */}
+        <div className="hero-blob hero-blob-1"></div>
+        <div className="hero-blob hero-blob-2"></div>
         
         <div className="container">
           <div className="row align-items-center justify-content-center">
             {/* Centered Content */}
             <div className="text-center col-lg-8">
               <div className="hero-content-left">
-                <h1 className="fade-in-up">Empowering Digital Transformation</h1>
-                <p className="fade-in-up-delay-1">
-                Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.
-                </p>
-                <Link 
-                  to="/contact-us" 
-                  className="btn btn-hero-primary fade-in-up-delay-2"
-                >
-                  Get Started
-                </Link>
+                <h1>Empowering Digital Transformation</h1>
+                <p>Transform your business with innovative digital solutions and cutting-edge technology. We help organizations navigate their digital journey with confidence.</p>
+                <Link to="/contact-us" className="btn btn-hero-primary">Get Started</Link>
               </div>
             </div>
           </div>
@@ -158,10 +150,11 @@ const Home = () => {
           </div>
 
           <div className="row">
+            {/* === UPDATED ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
-                  <i className="fas fa-code"></i>
+                  <i className="fas fa-laptop-code"></i>
                 </div>
                 <h3>Application Development</h3>
                 <p>Custom mobile and web applications tailored to your business needs.</p>
@@ -169,10 +162,11 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === UPDATED ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
-                  <i className="fas fa-bullhorn"></i>
+                  <i className="fas fa-chart-line"></i>
                 </div>
                 <h3>Digital Marketing</h3>
                 <p>Comprehensive digital marketing strategies to grow your business.</p>
@@ -180,10 +174,11 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === UPDATED ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
-                  <i className="fas fa-broadcast-tower"></i>
+                  <i className="fas fa-signal"></i>
                 </div>
                 <h3>IOT Solution</h3>
                 <p>Advanced networking solutions for seamless connectivity.</p>
@@ -191,10 +186,11 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === UPDATED ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
-                  <i className="fas fa-link"></i>
+                  <i className="fa fa-cubes"></i>
                 </div>
                 <h3>Blockchain</h3>
                 <p>Secure and transparent blockchain solutions.</p>
@@ -202,10 +198,11 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === UPDATED ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
-                  <i className="fas fa-chart-bar"></i>
+                  <i className="fa fa-chart-pie"></i>
                 </div>
                 <h3>BI & Analytics</h3>
                 <p>Data-driven insights for better business decisions.</p>
@@ -213,10 +210,11 @@ const Home = () => {
               </div>
             </div>
 
+            {/* === UPDATED ICON === */}
             <div className="mb-4 col-lg-4 col-md-6">
               <div className="service-card">
                 <div className="icon">
-                  <i className="fas fa-glasses"></i>
+                  <i className="fas fa-vr-cardboard"></i>
                 </div>
                 <h3>VR & AR Solutions</h3>
                 <p>Immersive experiences through virtual and augmented reality.</p>

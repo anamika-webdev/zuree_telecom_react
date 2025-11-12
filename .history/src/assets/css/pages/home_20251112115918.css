@@ -10,10 +10,9 @@
 .hero-section-modern {
   position: relative;
   min-height: 700px;
-  /* Darker, more professional gradient */
-  background: linear-gradient(135deg, #0a0f2c 0%, #1a1a2e 50%, #2d1b4e 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #4a2c6d 100%);
   overflow: hidden;
-  padding: 120px 0 150px; /* Increased top padding */
+  padding: 100px 0 150px;
   margin-bottom: 0;
 }
 
@@ -30,69 +29,61 @@
   z-index: 1;
 }
 
-/* ============================================
-   NEW ANIMATED GLOWS (Replaces Blobs)
-   ============================================ */
-
-.hero-glow-1, .hero-glow-2 {
+/* Decorative Blobs */
+.hero-blob {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(80px); /* Increased blur */
-  opacity: 0.3; /* More subtle */
-  animation: subtleFloat 25s ease-in-out infinite;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: blobFloat 20s ease-in-out infinite;
+}
+
+.hero-blob-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  top: 10%;
+  right: 15%;
   z-index: 0;
 }
 
-.hero-glow-1 {
-  width: 450px;
-  height: 450px;
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-  top: 5%;
-  right: 10%;
-}
-
-.hero-glow-2 {
-  width: 350px;
-  height: 350px;
+.hero-blob-2 {
+  width: 250px;
+  height: 250px;
   background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  bottom: 10%;
-  left: 5%;
-  animation-delay: -12s;
+  bottom: 20%;
+  right: 10%;
+  z-index: 0;
+  animation-delay: -10s;
 }
 
-/* More subtle floating animation */
-@keyframes subtleFloat {
+@keyframes blobFloat {
   0%, 100% {
     transform: translate(0, 0) rotate(0deg);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   }
   25% {
-    transform: translate(20px, -30px) rotate(45deg);
+    transform: translate(30px, -30px) rotate(90deg);
+    border-radius: 50% 60% 40% 70% / 60% 30% 70% 40%;
   }
   50% {
-    transform: translate(-10px, 15px) rotate(90deg);
+    transform: translate(-20px, 20px) rotate(180deg);
+    border-radius: 60% 40% 60% 40% / 70% 50% 50% 50%;
   }
   75% {
-    transform: translate(30px, 10px) rotate(135deg);
+    transform: translate(40px, 10px) rotate(270deg);
+    border-radius: 50% 50% 50% 70% / 50% 60% 40% 60%;
   }
 }
 
-
-/* ============================================
-   UPDATED HERO CONTENT
-   ============================================ */
-
-/* Hero Content - Centered */
+/* Hero Content - Left Side */
 .hero-content-left {
   position: relative;
   z-index: 2;
   color: white;
-  text-align: center; /* Center align */
-  max-width: 700px; /* Widen content area */
-  margin: 0 auto; /* Center block */
-  padding-right: 0; /* Remove old padding */
+  padding-right: 30px;
 }
 
-/* Remove animation from badge (if it exists) */
 .hero-badge {
   display: inline-block;
   padding: 10px 24px;
@@ -104,49 +95,45 @@
   font-weight: 600;
   color: white;
   margin-bottom: 25px;
-  /* animation removed */
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-content-left h1 {
-  font-size: 4rem; /* Larger font */
+  font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 25px;
   color: white;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  /* animation removed */
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero-content-left p {
-  font-size: 1.2rem; /* Slightly larger */
+  font-size: 1.15rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
-  margin: 25px auto 35px; /* Centered with new margin */
-  max-width: 550px; /* Controlled width */
-  /* animation removed */
+  margin-bottom: 35px;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .btn-hero-primary {
   display: inline-block;
   padding: 16px 40px;
-  /* New gradient */
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  background: linear-gradient(135deg, #18084d 0%, #a855f7 100%);
   color: white;
   font-weight: 600;
   font-size: 1.05rem;
   border-radius: 50px;
   border: none;
   text-decoration: none;
-  /* New shadow */
-  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 10px 30px rgba(27, 5, 59, 0.4);
   transition: all 0.3s ease;
-  /* animation removed */
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .btn-hero-primary:hover {
-  /* Updated hover effect */
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.5);
   color: white;
 }
 
@@ -326,17 +313,17 @@
 @media (max-width: 992px) {
   .hero-section-modern {
     min-height: 600px;
-    padding: 100px 0 120px; /* Adjusted padding */
+    padding: 80px 0 120px;
   }
 
   .hero-content-left {
     padding-right: 0;
     text-align: center;
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-bottom: 50px;
   }
 
   .hero-content-left h1 {
-    font-size: 3.2rem; /* Adjusted font size */
+    font-size: 2.8rem;
   }
 
   .hero-content-left p {
@@ -359,7 +346,7 @@
 @media (max-width: 768px) {
   .hero-section-modern {
     min-height: auto;
-    padding: 80px 0 100px; /* Adjusted padding */
+    padding: 60px 0 100px;
   }
 
   .hero-section-modern::after {
@@ -367,11 +354,11 @@
   }
 
   .hero-content-left h1 {
-    font-size: 2.5rem; /* Adjusted font size */
+    font-size: 2.2rem;
   }
 
   .hero-content-left p {
-    font-size: 1.1rem; /* Adjusted font size */
+    font-size: 1.05rem;
   }
   
   .hero-carousel-image {
@@ -411,7 +398,7 @@
 
 @media (max-width: 576px) {
   .hero-section-modern {
-    padding: 60px 0 80px; /* Adjusted padding */
+    padding: 50px 0 80px;
   }
 
   .hero-section-modern::after {
@@ -419,11 +406,7 @@
   }
 
   .hero-content-left h1 {
-    font-size: 2.1rem; /* Adjusted font size */
-  }
-
-  .hero-content-left p {
-    font-size: 1rem;
+    font-size: 1.9rem;
   }
   
   .hero-carousel-image {
@@ -431,11 +414,10 @@
       min-height: 300px;
   }
 
-  .hero-glow-1,
-  .hero-glow-2 {
-    width: 250px;
-    height: 250px;
-    filter: blur(60px);
+  .hero-blob-1,
+  .hero-blob-2 {
+    width: 200px;
+    height: 200px;
   }
 
   .hero-carousel-dots {
@@ -461,9 +443,7 @@
   }
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -486,18 +466,6 @@
   }
 }
 
-/* New Staggered Animation Classes */
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-.fade-in-up-delay-1 {
-  animation: fadeInUp 0.8s ease-out 0.4s both;
-}
-.fade-in-up-delay-2 {
-  animation: fadeInUp 0.8s ease-out 0.6s both;
-}
-
-
 /* ============================================
    REMOVE OLD CAROUSEL SECTION STYLES
    ============================================ */
@@ -507,7 +475,6 @@
 .video-carousel-section {
   display: none !important;
 }
-
 /* ============================================
    COMPACT SUPPORT SECTION - SINGLE SCREEN VIEW
    ============================================ */
@@ -1047,8 +1014,7 @@
 
 /* New Service Card Style */
 .service-card {
-  /* === NEW TEXTURE: Radial Gradient === */
-  background: radial-gradient(circle at 0% 100%, rgba(168, 158, 145, 0.08), transparent 40%), #ffffff;
+  background: #ffffff;
   border: 1px solid #e5e7eb; /* Light border */
   border-radius: 16px; /* More rounded */
   padding: 35px 30px;
@@ -1060,19 +1026,37 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden; /* For decorative elements */
+  
+  /* === NEW BACKGROUND GRID === */
+  background-image: 
+    linear-gradient(rgba(168, 158, 145, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 158, 145, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px; /* Larger grid size */
 }
 
-/* Remove the ::before top bar style */
+/* === NEW CARD DESIGN ELEMENT === */
 .service-card::before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px; /* Start small */
+  height: 4px;
+  background: #A89E91; /* Matching theme color */
+  border-radius: 0 0 4px 0;
+  transition: all 0.3s ease;
+  z-index: 2; /* Above the ::after element */
 }
 
 .service-card:hover {
   transform: translateY(-8px); /* Lift effect */
   box-shadow: 0 10px 25px rgba(168, 158, 145, 0.12); /* Matching support shadow */
   border-color: rgba(168, 158, 145, 0.25); /* Matching support border */
-  /* === Enhance gradient on hover === */
-  background: radial-gradient(circle at 0% 100%, rgba(168, 158, 145, 0.12), transparent 50%), #ffffff;
+}
+
+/* === EXPAND CARD DESIGN ELEMENT ON HOVER === */
+.service-card:hover::before {
+  width: 100px; /* Expand on hover */
 }
 
 
