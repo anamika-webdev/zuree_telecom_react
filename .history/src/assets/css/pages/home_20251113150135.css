@@ -756,14 +756,14 @@
 
 .services-section {
   background: linear-gradient(135deg, #FAF8F6 0%, #F5F3F1 100%);
-  padding: 40px 0 100px;
+  padding: 100px 0;
   position: relative;
   z-index: 5;
 }
 
 /* Section Title Styling */
 .section-title-wrapper {
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
 }
 

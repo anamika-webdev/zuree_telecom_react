@@ -366,7 +366,7 @@ const Home = () => {
                   
                   <div className="support-card-compact">
                     <div className="card-icon-compact">
-                      <i className="fas fa-phone-volume"></i>
+                      <i className="fas fa-phone-alt"></i>
                     </div>
                     <h4>Phone Support</h4>
                     <p>Call us anytime for assistance</p>

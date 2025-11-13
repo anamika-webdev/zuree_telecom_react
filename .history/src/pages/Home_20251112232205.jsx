@@ -164,31 +164,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Add this section RIGHT BEFORE the closing </section> tag of your hero section */}
-{/* It should be placed after all your hero content but before </section> */}
-
-      {/* Decorative Elements for Transition Area */}
-      <div className="hero-decorative-elements">
-        {/* Floating Circles */}
-        <div className="hero-deco-circle hero-deco-circle-1"></div>
-        <div className="hero-deco-circle hero-deco-circle-2"></div>
-        <div className="hero-deco-circle hero-deco-circle-3"></div>
-        <div className="hero-deco-circle hero-deco-circle-4"></div>
-        
-        {/* Geometric Squares */}
-        <div className="hero-deco-square hero-deco-square-1"></div>
-        <div className="hero-deco-square hero-deco-square-2"></div>
-        
-        {/* Pattern Overlay */}
-        <div className="hero-pattern-overlay"></div>
-        
-        {/* Accent Lines */}
-        <div className="hero-accent-line hero-accent-line-1"></div>
-        <div className="hero-accent-line hero-accent-line-2"></div>
-      </div>
-    </section>
-    {/* End of hero section */}
-      
+      </section>
 
       {/* =================================
         BUSINESS MODELS SECTION (SERVICES)
@@ -366,7 +342,7 @@ const Home = () => {
                   
                   <div className="support-card-compact">
                     <div className="card-icon-compact">
-                      <i className="fas fa-phone-volume"></i>
+                      <i className="fas fa-phone-alt"></i>
                     </div>
                     <h4>Phone Support</h4>
                     <p>Call us anytime for assistance</p>

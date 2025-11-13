@@ -291,7 +291,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-       <TeamMembersSection />
+
       {/* CTA Section */}
       <section className="about-cta-section">
         <div className="container">

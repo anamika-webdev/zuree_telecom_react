@@ -3,8 +3,7 @@
 // - Hero section with background image
 // - Enhanced business model cards with animated icons
 // - Modern carousel integration
-// - Enhanced 24/7 support section with background card
-// - UPDATED: 24/7 support card icons and number removal
+// - Added background card wrappers to 24/7 Support section
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -164,31 +163,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Add this section RIGHT BEFORE the closing </section> tag of your hero section */}
-{/* It should be placed after all your hero content but before </section> */}
-
-      {/* Decorative Elements for Transition Area */}
-      <div className="hero-decorative-elements">
-        {/* Floating Circles */}
-        <div className="hero-deco-circle hero-deco-circle-1"></div>
-        <div className="hero-deco-circle hero-deco-circle-2"></div>
-        <div className="hero-deco-circle hero-deco-circle-3"></div>
-        <div className="hero-deco-circle hero-deco-circle-4"></div>
-        
-        {/* Geometric Squares */}
-        <div className="hero-deco-square hero-deco-square-1"></div>
-        <div className="hero-deco-square hero-deco-square-2"></div>
-        
-        {/* Pattern Overlay */}
-        <div className="hero-pattern-overlay"></div>
-        
-        {/* Accent Lines */}
-        <div className="hero-accent-line hero-accent-line-1"></div>
-        <div className="hero-accent-line hero-accent-line-2"></div>
-      </div>
-    </section>
-    {/* End of hero section */}
-      
+      </section>
 
       {/* =================================
         BUSINESS MODELS SECTION (SERVICES)
@@ -332,63 +307,71 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2">
-              <div className="support-image-compact">
-                {/* --- Background Card Shape --- */}
-                <div className="support-image-bg-card"></div>
-                
-                <img 
-                  src="../../images/customer2.jpg" 
-                  alt="24/7 Support" 
-                  className="support-img-compact"
-                />
-                <div className="support-shapes">
-                  <div className="shape shape-1"></div>
-                  <div className="shape shape-2"></div>
+              {/* --- ADDED WRAPPER FOR CARD SHAPE BEHIND IMAGE ---
+                  You can style this class in your CSS to create
+                  a card effect (e.g., padding, bg-color, border-radius)
+              */}
+              <div className="support-image-card-background">
+                <div className="support-image-compact">
+                  <img 
+                    src="../../images/customer2.jpg" 
+                    alt="24/7 Support" 
+                    className="support-img-compact"
+                  />
+                  <div className="support-shapes">
+                    <div className="shape shape-1"></div>
+                    <div className="shape shape-2"></div>
+                    <div className="shape shape-3"></div>
+                    <div className="shape shape-4"></div>
+                    <div className="shape shape-5-dots"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="col-lg-6 order-lg-1">
-              <div className="support-content-compact">
-                <h2 className="support-title-compact">24/7 Support Available</h2>
-                <p className="support-description-compact">
-                  Our dedicated team is always ready to assist you with any technical issues or questions you may have.
-                </p>
-                
-                <div className="support-cards-grid-compact">
-                  <div className="support-card-compact">
-                    <div className="card-icon-compact">
-                      <i className="fas fa-headset"></i>
-                    </div>
-                    <h4>Live Chat</h4>
-                    <p>Instant support through live chat</p>
-                    {/* --- REMOVED: Decorative Number --- */}
-                  </div>
+              {/* --- ADDED WRAPPER FOR CARD SHAPE BEHIND CONTENT ---
+                  You can style this class in your CSS to create
+                  a card effect (e.g., padding, bg-color, border-radius)
+              */}
+              <div className="support-content-card-background">
+                <div className="support-content-compact">
+                  <h2 className="support-title-compact">24/7 Support Available</h2>
+                  <p className="support-description-compact">
+                    Our dedicated team is always ready to assist you with any technical issues or questions you may have.
+                  </p>
                   
-                  <div className="support-card-compact">
-                    <div className="card-icon-compact">
-                      <i className="fas fa-phone-volume"></i>
+                  <div className="support-cards-grid-compact">
+                    <div className="support-card-compact">
+                      <div className="card-icon-compact">
+                        <i className="fas fa-headset"></i>
+                      </div>
+                      <h4>Live Chat</h4>
+                      <p>Instant support through live chat</p>
                     </div>
-                    <h4>Phone Support</h4>
-                    <p>Call us anytime for assistance</p>
-                    {/* --- REMOVED: Decorative Number --- */}
-                  </div>
-                  
-                  <div className="support-card-compact">
-                    <div className="card-icon-compact">
-                      <i className="fas fa-envelope"></i>
+                    
+                    <div className="support-card-compact">
+                      <div className="card-icon-compact">
+                        <i className="fas fa-phone-alt"></i>
+                      </div>
+                      <h4>Phone Support</h4>
+                      <p>Call us anytime for assistance</p>
                     </div>
-                    <h4>Email Support</h4>
-                    <p>Get responses within 2 hours</p>
-                    {/* --- REMOVED: Decorative Number --- */}
-                  </div>
-                  
-                  <div className="support-card-compact">
-                    <div className="card-icon-compact">
-                      <i className="fas fa-comments"></i>
+                    
+                    <div className="support-card-compact">
+                      <div className="card-icon-compact">
+                        <i className="fas fa-envelope"></i>
+                      </div>
+                      <h4>Email Support</h4>
+                      <p>Get responses within 2 hours</p>
                     </div>
-                    <h4>Community Forum</h4>
-                    <p>Connect with other users</p>
-                    {/* --- REMOVED: Decorative Number --- */}
+                    
+                    <div className="support-card-compact">
+                      <div className="card-icon-compact">
+                        <i className="fas fa-comments"></i>
+                      </div>
+                      <h4>Community Forum</h4>
+                      <p>Connect with other users</p>
+                    </div>
                   </div>
                 </div>
               </div>

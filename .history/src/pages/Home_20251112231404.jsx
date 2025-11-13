@@ -3,8 +3,7 @@
 // - Hero section with background image
 // - Enhanced business model cards with animated icons
 // - Modern carousel integration
-// - Enhanced 24/7 support section with background card
-// - UPDATED: 24/7 support card icons and number removal
+// - Enhanced 24/7 support section with background card and graphics
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -164,31 +163,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Add this section RIGHT BEFORE the closing </section> tag of your hero section */}
-{/* It should be placed after all your hero content but before </section> */}
-
-      {/* Decorative Elements for Transition Area */}
-      <div className="hero-decorative-elements">
-        {/* Floating Circles */}
-        <div className="hero-deco-circle hero-deco-circle-1"></div>
-        <div className="hero-deco-circle hero-deco-circle-2"></div>
-        <div className="hero-deco-circle hero-deco-circle-3"></div>
-        <div className="hero-deco-circle hero-deco-circle-4"></div>
-        
-        {/* Geometric Squares */}
-        <div className="hero-deco-square hero-deco-square-1"></div>
-        <div className="hero-deco-square hero-deco-square-2"></div>
-        
-        {/* Pattern Overlay */}
-        <div className="hero-pattern-overlay"></div>
-        
-        {/* Accent Lines */}
-        <div className="hero-accent-line hero-accent-line-1"></div>
-        <div className="hero-accent-line hero-accent-line-2"></div>
-      </div>
-    </section>
-    {/* End of hero section */}
-      
+      </section>
 
       {/* =================================
         BUSINESS MODELS SECTION (SERVICES)
@@ -333,7 +308,7 @@ const Home = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 order-lg-2">
               <div className="support-image-compact">
-                {/* --- Background Card Shape --- */}
+                {/* --- NEW: Background Card Shape --- */}
                 <div className="support-image-bg-card"></div>
                 
                 <img 
@@ -361,16 +336,18 @@ const Home = () => {
                     </div>
                     <h4>Live Chat</h4>
                     <p>Instant support through live chat</p>
-                    {/* --- REMOVED: Decorative Number --- */}
+                    {/* --- NEW: Decorative Number --- */}
+                    <div className="support-card-deco-number">01</div>
                   </div>
                   
                   <div className="support-card-compact">
                     <div className="card-icon-compact">
-                      <i className="fas fa-phone-volume"></i>
+                      <i className="fas fa-phone-alt"></i>
                     </div>
                     <h4>Phone Support</h4>
                     <p>Call us anytime for assistance</p>
-                    {/* --- REMOVED: Decorative Number --- */}
+                    {/* --- NEW: Decorative Number --- */}
+                    <div className="support-card-deco-number">02</div>
                   </div>
                   
                   <div className="support-card-compact">
@@ -379,7 +356,8 @@ const Home = () => {
                     </div>
                     <h4>Email Support</h4>
                     <p>Get responses within 2 hours</p>
-                    {/* --- REMOVED: Decorative Number --- */}
+                    {/* --- NEW: Decorative Number --- */}
+                    <div className="support-card-deco-number">03</div>
                   </div>
                   
                   <div className="support-card-compact">
@@ -388,7 +366,8 @@ const Home = () => {
                     </div>
                     <h4>Community Forum</h4>
                     <p>Connect with other users</p>
-                    {/* --- REMOVED: Decorative Number --- */}
+                    {/* --- NEW: Decorative Number --- */}
+                    <div className="support-card-deco-number">04</div>
                   </div>
                 </div>
               </div>

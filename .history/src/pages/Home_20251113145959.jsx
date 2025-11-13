@@ -198,7 +198,6 @@ const Home = () => {
           <div className="row">
             <div className="mb-5 text-center col-12">
               <div className="section-title-wrapper">
-                <span className="section-subtitle">What We Offer</span>
                 <h2 className="section-title">Business Models</h2>
                 <p className="section-description">
                   Comprehensive solutions to drive your business forward with innovative technology
@@ -366,7 +365,7 @@ const Home = () => {
                   
                   <div className="support-card-compact">
                     <div className="card-icon-compact">
-                      <i className="fas fa-phone-volume"></i>
+                      <i className="fas fa-phone-alt"></i>
                     </div>
                     <h4>Phone Support</h4>
                     <p>Call us anytime for assistance</p>
