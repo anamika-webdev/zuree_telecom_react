@@ -1,21 +1,21 @@
 // =====================================================
-// TEAM ROUTES - FIXED VERSION (No Auth Issues)
+// TEAM ROUTES
 // File: zuree_telecom_api/routes/team.js
 // =====================================================
 
 const express = require('express');
 const router = express.Router();
 
-// Import getPool from server.js (your database connection)
-const { getPool } = require('../server');
+// You'll need to adjust these imports based on your actual project structure
+const db = require('../config/database'); // Your database connection
+const { verifyToken } = require('../middleware/auth'); // Your auth middleware
 
 // =====================================================
-// GET ALL TEAM MEMBERS
+// GET ALL TEAM MEMBERS (Protected - for admin)
 // =====================================================
-router.get('/', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
   try {
-    const pool = getPool();
-    const [rows] = await pool.query(
+    const [rows] = await db.query(
       'SELECT * FROM team_members ORDER BY id DESC'
     );
     res.json(rows);
@@ -29,12 +29,11 @@ router.get('/', async (req, res) => {
 });
 
 // =====================================================
-// GET ACTIVE TEAM MEMBERS (Public)
+// GET ACTIVE TEAM MEMBERS (Public - no auth needed)
 // =====================================================
 router.get('/active', async (req, res) => {
   try {
-    const pool = getPool();
-    const [rows] = await pool.query(
+    const [rows] = await db.query(
       `SELECT id, name, position, department, email, phone, bio, 
               image_url, linkedin, twitter, status, created_at 
        FROM team_members 
@@ -55,10 +54,9 @@ router.get('/active', async (req, res) => {
 // =====================================================
 // GET SINGLE TEAM MEMBER BY ID
 // =====================================================
-router.get('/:id', async (req, res) => {
+router.get('/:id', verifyToken, async (req, res) => {
   try {
-    const pool = getPool();
-    const [rows] = await pool.query(
+    const [rows] = await db.query(
       'SELECT * FROM team_members WHERE id = ?',
       [req.params.id]
     );
@@ -80,7 +78,7 @@ router.get('/:id', async (req, res) => {
 // =====================================================
 // CREATE NEW TEAM MEMBER
 // =====================================================
-router.post('/', async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
   try {
     const { 
       name, position, department, email, phone, 
@@ -94,8 +92,7 @@ router.post('/', async (req, res) => {
       });
     }
     
-    const pool = getPool();
-    const [result] = await pool.query(
+    const [result] = await db.query(
       `INSERT INTO team_members 
        (name, position, department, email, phone, bio, image_url, linkedin, twitter, status) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -122,7 +119,7 @@ router.post('/', async (req, res) => {
 // =====================================================
 // UPDATE TEAM MEMBER
 // =====================================================
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyToken, async (req, res) => {
   try {
     const { 
       name, position, department, email, phone, 
@@ -136,8 +133,7 @@ router.put('/:id', async (req, res) => {
       });
     }
     
-    const pool = getPool();
-    const [result] = await pool.query(
+    const [result] = await db.query(
       `UPDATE team_members 
        SET name = ?, position = ?, department = ?, email = ?, 
            phone = ?, bio = ?, image_url = ?, linkedin = ?, twitter = ?, status = ?
@@ -166,10 +162,9 @@ router.put('/:id', async (req, res) => {
 // =====================================================
 // DELETE TEAM MEMBER
 // =====================================================
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
-    const pool = getPool();
-    const [result] = await pool.query(
+    const [result] = await db.query(
       'DELETE FROM team_members WHERE id = ?', 
       [req.params.id]
     );
@@ -189,14 +184,3 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
-
-// =====================================================
-// NOTE: Authentication removed for now
-// =====================================================
-// If you need to add authentication later, you can:
-// 1. Import your auth middleware properly
-// 2. Add it to routes that need protection
-//
-// Example:
-// const { verifyToken } = require('../middleware/auth');
-// router.post('/', verifyToken, async (req, res) => { ... });

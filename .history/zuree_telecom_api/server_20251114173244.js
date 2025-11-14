@@ -1,10 +1,11 @@
-// server.js - CORRECTED VERSION
+// server.js - Debug Version to Find the Problem Route
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mysql = require('mysql2/promise');
 const fs = require('fs');
 const path = require('path');
+const teamRoutes = require('./routes/team');
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api/team', teamRoutes); 
 
 // MySQL Database configuration
 const dbConfig = {
@@ -51,12 +53,8 @@ const getPool = () => {
   return pool;
 };
 
-// ⚠️ IMPORTANT: Export getPool BEFORE requiring routes
-// This prevents circular dependency issues
+// Export getPool first
 module.exports = { getPool };
-
-// NOW import routes (after exporting getPool)
-const teamRoutes = require('./routes/team');
 
 // Helper function to safely require a route
 function safeRequire(routePath, routeName) {
@@ -118,12 +116,12 @@ safeUseRoute('/api/blogs', blogsRoutes, 'Blogs');
 safeUseRoute('/api/careers', careersRoutes, 'Careers');
 safeUseRoute('/api/contact', contactRoutes, 'Contact');
 safeUseRoute('/api/auth', authRoutes, 'Auth');
-safeUseRoute('/api/team', teamRoutes, 'Team');
 
 // Admin API Routes
 safeUseRoute('/api/admin/auth', adminAuthRoutes, 'Admin Auth');
 safeUseRoute('/api/admin/blogs', adminBlogsRoutes, 'Admin Blogs');
 safeUseRoute('/api/admin/users', adminUsersRoutes, 'Admin Users');
+safeUseRoute('/api/team', teamRoutes, 'Team');
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -136,8 +134,7 @@ app.get('/api/health', (req, res) => {
         blogs: !!blogsRoutes,
         careers: !!careersRoutes,
         contact: !!contactRoutes,
-        auth: !!authRoutes,
-        team: !!teamRoutes  
+        auth: !!authRoutes
       },
       admin: {
         auth: !!adminAuthRoutes,
@@ -186,8 +183,6 @@ const startServer = async () => {
       console.log(`🚀 Server running on port ${PORT}`);
       console.log(`📍 Health check: http://localhost:${PORT}/api/health`);
       console.log(`📍 Test endpoint: http://localhost:${PORT}/api/test`);
-      console.log(`📍 Team members: http://localhost:${PORT}/api/team`);
-      console.log(`📍 Active team members: http://localhost:${PORT}/api/team/active`);
       if (adminAuthRoutes) {
         console.log(`🔐 Admin login: POST http://localhost:${PORT}/api/admin/auth/login`);
       }

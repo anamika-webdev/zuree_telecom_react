@@ -1,5 +1,5 @@
 // =====================================================
-// TEAM ROUTES - FIXED VERSION (No Auth Issues)
+// TEAM ROUTES - CORRECTED FOR YOUR PROJECT STRUCTURE
 // File: zuree_telecom_api/routes/team.js
 // =====================================================
 
@@ -9,8 +9,20 @@ const router = express.Router();
 // Import getPool from server.js (your database connection)
 const { getPool } = require('../server');
 
+// Optional: Import auth middleware if you have it
+// If you don't have this file, we'll make the routes public for now
+let verifyToken;
+try {
+  const auth = require('../middleware/auth');
+  verifyToken = auth.verifyToken || auth;
+} catch (err) {
+  console.log('⚠️  Auth middleware not found - team routes will be public');
+  // Create a dummy middleware that just passes through
+  verifyToken = (req, res, next) => next();
+}
+
 // =====================================================
-// GET ALL TEAM MEMBERS
+// GET ALL TEAM MEMBERS (Admin - with optional auth)
 // =====================================================
 router.get('/', async (req, res) => {
   try {
@@ -29,7 +41,7 @@ router.get('/', async (req, res) => {
 });
 
 // =====================================================
-// GET ACTIVE TEAM MEMBERS (Public)
+// GET ACTIVE TEAM MEMBERS (Public - no auth)
 // =====================================================
 router.get('/active', async (req, res) => {
   try {
@@ -80,7 +92,7 @@ router.get('/:id', async (req, res) => {
 // =====================================================
 // CREATE NEW TEAM MEMBER
 // =====================================================
-router.post('/', async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
   try {
     const { 
       name, position, department, email, phone, 
@@ -122,7 +134,7 @@ router.post('/', async (req, res) => {
 // =====================================================
 // UPDATE TEAM MEMBER
 // =====================================================
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyToken, async (req, res) => {
   try {
     const { 
       name, position, department, email, phone, 
@@ -166,7 +178,7 @@ router.put('/:id', async (req, res) => {
 // =====================================================
 // DELETE TEAM MEMBER
 // =====================================================
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
     const pool = getPool();
     const [result] = await pool.query(
@@ -189,14 +201,3 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
-
-// =====================================================
-// NOTE: Authentication removed for now
-// =====================================================
-// If you need to add authentication later, you can:
-// 1. Import your auth middleware properly
-// 2. Add it to routes that need protection
-//
-// Example:
-// const { verifyToken } = require('../middleware/auth');
-// router.post('/', verifyToken, async (req, res) => { ... });
