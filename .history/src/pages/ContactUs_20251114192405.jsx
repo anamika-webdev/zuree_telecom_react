@@ -131,7 +131,11 @@ const ContactUs = () => {
                   <div className="info-content">
                     <h4>Visit Us</h4>
                     <p> USA:  2320 Ponce De Leon Blvd, Coral Gables, FL 33134<br />
-                    India: Plot no. 23, Udyog Vihar Phase 1, Dundahera Village, Sector 20, Gurugram, Haryana 122022</p>                 
+                    India: Plot no. 23, Udyog Vihar Phase 1,<br />
+                    Bangalore, Karnataka 560001<br />
+                    Dundahera Village, Sector 20, Gurugram, Haryana 122022</p>
+
+                   
  
                   </div>
                 </div>

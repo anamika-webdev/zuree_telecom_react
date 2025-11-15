@@ -1,6 +1,6 @@
 /* ============================================
-   TEAM CAROUSEL with SMALLER CARDS
-   Compact, modern carousel design
+   TEAM CAROUSEL with Text Overlay
+   Modern carousel design with text on images
    File: src/assets/css/team-section.css
    ============================================ */
 
@@ -9,7 +9,7 @@
    ============================================ */
 .team-section {
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
-  padding: 80px 0;
+  padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
@@ -20,35 +20,35 @@
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 50px;
+  margin: 0 auto 60px;
 }
 
 .section-badge {
   display: inline-block;
   background: linear-gradient(135deg, #f5f3f1 0%, #e8e6e3 100%);
   color: #6b6b6b;
-  padding: 6px 20px;
+  padding: 8px 24px;
   border-radius: 50px;
-  font-size: 0.75rem;
+  font-size: 0.813rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   border: 1px solid rgba(107, 107, 107, 0.1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #666;
   line-height: 1.8;
   margin: 0;
@@ -59,13 +59,13 @@
    ============================================ */
 .team-carousel-container {
   position: relative;
-  margin-top: 50px;
-  padding: 0 55px;
+  margin-top: 60px;
+  padding: 0 60px;
 }
 
 .team-carousel {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 .team-carousel-track {
@@ -74,27 +74,27 @@
 }
 
 /* ============================================
-   CAROUSEL CARD - SMALLER SIZE
+   CAROUSEL CARD with Text Overlay
    ============================================ */
 .team-carousel-card {
   flex-shrink: 0;
-  padding: 0 10px;
+  padding: 0 12px;
   box-sizing: border-box;
 }
 
 .team-card-overlay {
   position: relative;
-  height: 350px; /* ← REDUCED from 500px */
-  border-radius: 12px;
+  height: 500px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 }
 
 .team-card-overlay:hover {
-  transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 /* ============================================
@@ -117,11 +117,11 @@
 }
 
 .team-card-overlay:hover .team-card-image {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 /* ============================================
-   GRADIENT OVERLAY
+   GRADIENT OVERLAY (makes text readable)
    ============================================ */
 .team-card-gradient {
   position: absolute;
@@ -132,9 +132,9 @@
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 30%,
-    rgba(0, 0, 0, 0.5) 60%,
-    rgba(45, 27, 78, 0.92) 100%
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.6) 70%,
+    rgba(45, 27, 78, 0.95) 100%
   );
   z-index: 2;
   transition: opacity 0.4s ease;
@@ -143,26 +143,26 @@
 .team-card-overlay:hover .team-card-gradient {
   background: linear-gradient(
     180deg,
-    rgba(45, 27, 78, 0.25) 0%,
-    rgba(45, 27, 78, 0.55) 40%,
-    rgba(45, 27, 78, 0.8) 70%,
-    rgba(45, 27, 78, 0.96) 100%
+    rgba(45, 27, 78, 0.3) 0%,
+    rgba(45, 27, 78, 0.6) 40%,
+    rgba(45, 27, 78, 0.85) 70%,
+    rgba(45, 27, 78, 0.98) 100%
   );
 }
 
 /* ============================================
-   TEXT CONTENT OVERLAY - SMALLER
+   TEXT CONTENT OVERLAY
    ============================================ */
 .team-card-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px; /* ← REDUCED from 30px */
+  padding: 30px;
   z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 14px; /* ← REDUCED from 20px */
+  gap: 20px;
 }
 
 .team-card-info {
@@ -170,42 +170,42 @@
 }
 
 .team-card-name {
-  font-size: 1.375rem; /* ← REDUCED from 1.75rem */
+  font-size: 1.75rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
   line-height: 1.2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.5px;
 }
 
 .team-card-position {
-  font-size: 0.875rem; /* ← REDUCED from 1rem */
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .team-card-department {
   display: inline-block;
-  padding: 4px 12px; /* ← REDUCED from 6px 16px */
+  padding: 6px 16px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  font-size: 0.75rem; /* ← REDUCED from 0.875rem */
+  border-radius: 20px;
+  font-size: 0.875rem;
   color: #ffffff;
   font-weight: 500;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================
-   SOCIAL LINKS - SMALLER
+   SOCIAL LINKS on Card
    ============================================ */
 .team-card-social {
   display: flex;
-  gap: 10px; /* ← REDUCED from 12px */
+  gap: 12px;
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -217,8 +217,8 @@
 }
 
 .team-social-link {
-  width: 36px; /* ← REDUCED from 44px */
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -227,7 +227,7 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 0.875rem; /* ← REDUCED from 1rem */
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -242,14 +242,14 @@
 }
 
 /* ============================================
-   CAROUSEL NAVIGATION ARROWS - SMALLER
+   CAROUSEL NAVIGATION ARROWS
    ============================================ */
 .carousel-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px; /* ← REDUCED from 50px */
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -259,16 +259,16 @@
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   color: #2d1b4e;
-  font-size: 1rem; /* ← REDUCED from 1.125rem */
+  font-size: 1.125rem;
 }
 
 .carousel-nav:hover:not(:disabled) {
   background: #2d1b4e;
   color: #ffffff;
-  transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 6px 20px rgba(45, 27, 78, 0.3);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(45, 27, 78, 0.3);
 }
 
 .carousel-nav:disabled {
@@ -286,18 +286,18 @@
 }
 
 /* ============================================
-   CAROUSEL DOTS - SMALLER
+   CAROUSEL DOTS
    ============================================ */
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 32px; /* ← REDUCED from 40px */
+  gap: 12px;
+  margin-top: 40px;
 }
 
 .carousel-dot {
-  width: 10px; /* ← REDUCED from 12px */
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 2px solid #d0d0d0;
   background: transparent;
@@ -308,14 +308,14 @@
 
 .carousel-dot:hover {
   border-color: #2d1b4e;
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .carousel-dot.active {
   background: #2d1b4e;
   border-color: #2d1b4e;
-  width: 28px; /* ← REDUCED from 32px */
-  border-radius: 5px;
+  width: 32px;
+  border-radius: 6px;
 }
 
 /* ============================================
@@ -323,16 +323,16 @@
    ============================================ */
 .loading-wrapper {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #2d1b4e;
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2d1b4e;
   border-radius: 50%;
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
   animation: spin 1s linear infinite;
 }
 
@@ -342,7 +342,7 @@
 }
 
 .loading-text {
-  font-size: 0.938rem;
+  font-size: 1rem;
   color: #666;
   margin: 0;
 }
@@ -352,28 +352,28 @@
    ============================================ */
 .error-wrapper {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .error-icon {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #e74c3c;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .error-text {
-  font-size: 0.938rem;
+  font-size: 1rem;
   color: #666;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
 }
 
 .retry-btn {
-  padding: 10px 28px;
+  padding: 12px 32px;
   background: linear-gradient(135deg, #2d1b4e 0%, #4a3870 100%);
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: 0.938rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -392,35 +392,35 @@
 /* Tablet */
 @media (max-width: 992px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   
   .team-section {
-    padding: 70px 0;
+    padding: 80px 0;
   }
   
   .team-carousel-container {
-    padding: 0 48px;
+    padding: 0 50px;
   }
   
   .team-card-overlay {
-    height: 320px; /* ← REDUCED */
+    height: 450px;
   }
   
   .carousel-nav {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
 }
 
 /* Small Tablet */
 @media (max-width: 768px) {
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.875rem;
   }
   
   .section-subtitle {
-    font-size: 0.938rem;
+    font-size: 1rem;
   }
   
   .team-section {
@@ -428,29 +428,25 @@
   }
   
   .team-carousel-container {
-    padding: 0 42px;
+    padding: 0 45px;
   }
   
   .team-card-overlay {
-    height: 300px; /* ← REDUCED */
+    height: 400px;
   }
   
   .team-card-name {
-    font-size: 1.25rem;
-  }
-  
-  .team-card-position {
-    font-size: 0.813rem;
+    font-size: 1.5rem;
   }
   
   .team-card-content {
-    padding: 18px;
+    padding: 24px;
   }
   
   .carousel-nav {
-    width: 38px;
-    height: 38px;
-    font-size: 0.938rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }
 
@@ -461,68 +457,64 @@
   }
   
   .team-carousel-container {
-    padding: 0 38px;
+    padding: 0 40px;
   }
   
   .team-carousel-card {
-    padding: 0 6px;
+    padding: 0 8px;
   }
   
   .team-card-overlay {
-    height: 380px; /* Mobile gets slightly taller for single card view */
+    height: 450px;
   }
   
   .team-card-content {
-    padding: 16px;
+    padding: 20px;
   }
   
   .team-card-name {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
   }
   
   .team-card-position {
-    font-size: 0.813rem;
+    font-size: 0.938rem;
   }
   
   .carousel-nav {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     font-size: 0.875rem;
   }
   
   .carousel-dots {
-    margin-top: 28px;
+    margin-top: 30px;
   }
   
   .carousel-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
   
   .carousel-dot.active {
-    width: 24px;
+    width: 28px;
   }
   
   .team-social-link {
-    width: 34px;
-    height: 34px;
-    font-size: 0.813rem;
+    width: 40px;
+    height: 40px;
+    font-size: 0.938rem;
   }
 }
 
 /* Very Small Mobile */
 @media (max-width: 400px) {
   .team-carousel-container {
-    padding: 0 32px;
+    padding: 0 35px;
   }
   
   .carousel-nav {
     width: 32px;
     height: 32px;
-  }
-  
-  .team-card-overlay {
-    height: 360px;
   }
 }
 
