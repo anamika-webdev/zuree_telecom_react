@@ -8,10 +8,10 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   // FIX 1: Use 'loginAdmin', which is the correct function from your useAuth hook
   const { loginAdmin } = useAuth();
-  
+
   // FIX 2: Change state property from 'username' to 'loginId' to match the API
   const [formData, setFormData] = useState({
-    username: '', 
+    username: '',
     password: ''
   });
   const [error, setError] = useState('');
@@ -36,7 +36,7 @@ const AdminLogin = () => {
       // FIX 3: Call the correct 'loginAdmin' function
       const response = await loginAdmin(formData);
       console.log('Admin login successful:', response);
-      
+
       // Use navigate for a cleaner redirect
       navigate('/admin/dashboard');
 
@@ -68,6 +68,23 @@ const AdminLogin = () => {
             </div>
           )}
 
+          <div className="admin-credentials-info">
+            <div className="credentials-header">
+              <i className="fas fa-info-circle me-2"></i>
+              <strong>Demo Admin Credentials</strong>
+            </div>
+            <div className="credentials-content">
+              <div className="credential-item">
+                <span className="credential-label">Admin ID:</span>
+                <span className="credential-value">admin</span>
+              </div>
+              <div className="credential-item">
+                <span className="credential-label">Password:</span>
+                <span className="credential-value">Admin@123</span>
+              </div>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="admin-login-form">
             <div className="form-group">
               <label>
@@ -76,13 +93,13 @@ const AdminLogin = () => {
               </label>
               <input
                 input
-           type="text"
-           name="username"
-           className="form-control"
-           value={formData.username}
-           onChange={handleChange}
-           placeholder="Enter admin ID"
-           required
+                type="text"
+                name="username"
+                className="form-control"
+                value={formData.username}
+                onChange={handleChange}
+                placeholder="Enter admin ID"
+                required
               />
             </div>
 
@@ -101,6 +118,16 @@ const AdminLogin = () => {
                 required
                 disabled={loading}
               />
+            </div>
+
+            <div className="forgot-password-container">
+              <a href="#" className="forgot-password-link" onClick={(e) => {
+                e.preventDefault();
+                alert('Please contact the system administrator to reset your password.\n\nEmail: admin@zuree.com\nPhone: +1 (555) 123-4567');
+              }}>
+                <i className="fas fa-key me-1"></i>
+                Forgot Password?
+              </a>
             </div>
 
             <button

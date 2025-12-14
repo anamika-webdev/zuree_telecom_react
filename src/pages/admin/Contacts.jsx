@@ -15,7 +15,7 @@ const Contacts = () => {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('http://localhost:5000/api/admin/contacts', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
@@ -26,7 +26,7 @@ const Contacts = () => {
       }
 
       const data = await response.json();
-      setContacts(Array.isArray(data) ? data : []);
+      setContacts(data.contacts || []);
       setError(null);
     } catch (err) {
       console.error('Error fetching contacts:', err);
@@ -38,8 +38,8 @@ const Contacts = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/contact/${id}/status`, {
-        method: 'PUT',
+      const response = await fetch(`http://localhost:5000/api/admin/contacts/${id}/status`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -65,7 +65,7 @@ const Contacts = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/contact/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/contacts/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -124,15 +124,16 @@ const Contacts = () => {
       <div className="section-header">
         <h2>Contact Messages</h2>
         <div className="filter-controls">
-          <select 
-            value={filterStatus} 
+          <select
+            value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
             className="form-select"
           >
             <option value="all">All Messages</option>
-            <option value="unread">Unread</option>
+            <option value="new">New</option>
             <option value="read">Read</option>
             <option value="replied">Replied</option>
+            <option value="archived">Archived</option>
           </select>
         </div>
       </div>
@@ -145,9 +146,9 @@ const Contacts = () => {
               <span className="stat-value">{contacts.length}</span>
             </div>
             <div className="stat-card">
-              <span className="stat-label">Unread</span>
+              <span className="stat-label">New</span>
               <span className="stat-value">
-                {contacts.filter(c => c.status === 'unread').length}
+                {contacts.filter(c => c.status === 'new').length}
               </span>
             </div>
             <div className="stat-card">
@@ -160,6 +161,12 @@ const Contacts = () => {
               <span className="stat-label">Replied</span>
               <span className="stat-value">
                 {contacts.filter(c => c.status === 'replied').length}
+              </span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-label">Archived</span>
+              <span className="stat-value">
+                {contacts.filter(c => c.status === 'archived').length}
               </span>
             </div>
           </div>
@@ -186,7 +193,7 @@ const Contacts = () => {
                   </tr>
                 ) : (
                   filteredContacts.map(contact => (
-                    <tr 
+                    <tr
                       key={contact.id}
                       className={selectedContact?.id === contact.id ? 'selected' : ''}
                       onClick={() => setSelectedContact(contact)}
@@ -197,12 +204,12 @@ const Contacts = () => {
                       <td>{contact.subject || 'No subject'}</td>
                       <td>{formatDate(contact.created_at)}</td>
                       <td>
-                        <span className={`status-badge status-${contact.status || 'unread'}`}>
-                          {contact.status || 'unread'}
+                        <span className={`status-badge status-${contact.status || 'new'}`}>
+                          {contact.status || 'new'}
                         </span>
                       </td>
                       <td>
-                        <button 
+                        <button
                           onClick={(e) => {
                             e.stopPropagation();
                             setSelectedContact(contact);
@@ -224,7 +231,7 @@ const Contacts = () => {
           <div className="application-detail">
             <div className="detail-header">
               <h3>Message Details</h3>
-              <button 
+              <button
                 onClick={() => setSelectedContact(null)}
                 className="btn btn-sm"
               >
@@ -263,18 +270,19 @@ const Contacts = () => {
               <div className="detail-section">
                 <h4>Status</h4>
                 <select
-                  value={selectedContact.status || 'unread'}
+                  value={selectedContact.status || 'new'}
                   onChange={(e) => updateStatus(selectedContact.id, e.target.value)}
                   className="form-select"
                 >
-                  <option value="unread">Unread</option>
+                  <option value="new">New</option>
                   <option value="read">Read</option>
                   <option value="replied">Replied</option>
+                  <option value="archived">Archived</option>
                 </select>
               </div>
 
               <div className="detail-actions">
-                <a 
+                <a
                   href={`mailto:${selectedContact.email}`}
                   className="btn btn-primary"
                 >

@@ -34,8 +34,8 @@ const AdminLayout = ({ children }) => {
   return (
     <div className="admin-layout">
       {/* Mobile Menu Toggle */}
-      <button 
-        className="mobile-menu-toggle" 
+      <button
+        className="mobile-menu-toggle"
         onClick={toggleMobileMenu}
         aria-label="Toggle menu"
       >
@@ -54,24 +54,24 @@ const AdminLayout = ({ children }) => {
 
         <nav className="sidebar-nav">
           {/* Dashboard */}
-          <Link 
-            to="/admin/dashboard" 
+          <Link
+            to="/admin/dashboard"
             className={`nav-link ${isActive('/admin/dashboard')}`}
             onClick={closeMobileMenu}
           >
             <i className="fas fa-chart-line"></i>
             <span>Dashboard</span>
           </Link>
-          
+
           {/* Blogs Section */}
           <div className="nav-section">
             <div className="nav-section-title">
               <i className="fas fa-newspaper"></i>
               <span>Content Management</span>
             </div>
-            
-            <Link 
-              to="/admin/blogs" 
+
+            <Link
+              to="/admin/blogs"
               className={`nav-link ${isActiveGroup(['/admin/blogs'])}`}
               onClick={closeMobileMenu}
             >
@@ -79,8 +79,8 @@ const AdminLayout = ({ children }) => {
               <span>Blogs</span>
             </Link>
 
-            <Link 
-              to="/admin/services" 
+            <Link
+              to="/admin/services"
               className={`nav-link ${isActiveGroup(['/admin/services'])}`}
               onClick={closeMobileMenu}
             >
@@ -88,9 +88,9 @@ const AdminLayout = ({ children }) => {
               <span>Services</span>
             </Link>
 
-            <Link 
-              to="/admin/team" 
-              className={`nav-link ${isActiveGroup(['/admin/team'])}`}
+            <Link
+              to="/admin/team-members"
+              className={`nav-link ${isActiveGroup(['/admin/team-members'])}`}
               onClick={closeMobileMenu}
             >
               <i className="fas fa-user-friends"></i>
@@ -104,18 +104,18 @@ const AdminLayout = ({ children }) => {
               <i className="fas fa-briefcase"></i>
               <span>Career Management</span>
             </div>
-            
-            <Link 
-              to="/admin/jobs" 
+
+            <Link
+              to="/admin/jobs"
               className={`nav-link ${isActiveGroup(['/admin/jobs'])}`}
               onClick={closeMobileMenu}
             >
               <i className="fas fa-briefcase"></i>
               <span>Jobs</span>
             </Link>
-            
-            <Link 
-              to="/admin/applications" 
+
+            <Link
+              to="/admin/applications"
               className={`nav-link ${isActiveGroup(['/admin/applications'])}`}
               onClick={closeMobileMenu}
             >
@@ -130,9 +130,9 @@ const AdminLayout = ({ children }) => {
               <i className="fas fa-comments"></i>
               <span>Communication</span>
             </div>
-            
-            <Link 
-              to="/admin/contacts" 
+
+            <Link
+              to="/admin/contacts"
               className={`nav-link ${isActiveGroup(['/admin/contacts'])}`}
               onClick={closeMobileMenu}
             >
@@ -147,9 +147,9 @@ const AdminLayout = ({ children }) => {
               <i className="fas fa-cog"></i>
               <span>Settings</span>
             </div>
-            
-            <Link 
-              to="/admin/users" 
+
+            <Link
+              to="/admin/users"
               className={`nav-link ${isActiveGroup(['/admin/users'])}`}
               onClick={closeMobileMenu}
             >
@@ -157,8 +157,8 @@ const AdminLayout = ({ children }) => {
               <span>Admin Users</span>
             </Link>
 
-            <Link 
-              to="/admin/settings" 
+            <Link
+              to="/admin/settings"
               className={`nav-link ${isActiveGroup(['/admin/settings'])}`}
               onClick={closeMobileMenu}
             >
@@ -170,8 +170,8 @@ const AdminLayout = ({ children }) => {
           <hr />
 
           {/* Back to Site */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="nav-link"
             onClick={closeMobileMenu}
           >
@@ -210,8 +210,8 @@ const AdminLayout = ({ children }) => {
 
       {/* Mobile Overlay */}
       {mobileMenuOpen && (
-        <div 
-          className="mobile-overlay" 
+        <div
+          className="mobile-overlay"
           onClick={closeMobileMenu}
           style={{
             position: 'fixed',

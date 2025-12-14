@@ -103,8 +103,8 @@ router.get('/', verifyToken, async (req, res) => {
     // Get blogs
     const [blogs] = await pool.query(
       `SELECT 
-        b.id, b.title, b.url_slug, b.author, b.category, b.excerpt,
-        b.featured_image, b.status, b.published_date, b.views,
+        b.id, b.title, b.url_title, b.author, b.category, b.description as excerpt,
+        b.img as featured_image, b.status, b.date as published_date, b.views,
         b.created_at, b.updated_at,
         a.full_name as created_by_name
        FROM blogs b
@@ -228,7 +228,7 @@ router.post('/', verifyToken, async (req, res) => {
     const urlSlug = createSlug(title);
 
     // Check if slug already exists
-    const [existing] = await pool.query('SELECT id FROM blogs WHERE url_slug = ?', [urlSlug]);
+    const [existing] = await pool.query('SELECT id FROM blogs WHERE url_title = ?', [urlSlug]);
     if (existing.length > 0) {
       return res.status(400).json({
         success: false,
@@ -239,8 +239,8 @@ router.post('/', verifyToken, async (req, res) => {
     // Insert blog
     const [result] = await pool.query(
       `INSERT INTO blogs 
-       (title, url_slug, author, category, content, excerpt, featured_image, 
-        tags, status, published_date, created_by)
+       (title, url_title, author, category, content, description, img, 
+        tags, status, date, created_by)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         title,
@@ -298,7 +298,7 @@ router.put('/:id', verifyToken, async (req, res) => {
 
     // Check if blog exists
     const [existing] = await pool.query('SELECT * FROM blogs WHERE id = ?', [id]);
-    
+
     if (existing.length === 0) {
       return res.status(404).json({
         success: false,
@@ -307,16 +307,16 @@ router.put('/:id', verifyToken, async (req, res) => {
     }
 
     // Create new slug if title changed
-    let urlSlug = existing[0].url_slug;
+    let urlSlug = existing[0].url_title;
     if (title && title !== existing[0].title) {
       urlSlug = createSlug(title);
-      
+
       // Check if new slug conflicts with other blogs
       const [conflicts] = await pool.query(
-        'SELECT id FROM blogs WHERE url_slug = ? AND id != ?',
+        'SELECT id FROM blogs WHERE url_title = ? AND id != ?',
         [urlSlug, id]
       );
-      
+
       if (conflicts.length > 0) {
         urlSlug = `${urlSlug}-${Date.now()}`;
       }
@@ -325,9 +325,9 @@ router.put('/:id', verifyToken, async (req, res) => {
     // Update blog
     await pool.query(
       `UPDATE blogs SET 
-       title = ?, url_slug = ?, author = ?, category = ?,
-       content = ?, excerpt = ?, featured_image = ?, tags = ?,
-       status = ?, published_date = ?
+       title = ?, url_title = ?, author = ?, category = ?,
+       content = ?, description = ?, img = ?, tags = ?,
+       status = ?, date = ?
        WHERE id = ?`,
       [
         title || existing[0].title,
@@ -335,11 +335,11 @@ router.put('/:id', verifyToken, async (req, res) => {
         author || existing[0].author,
         category || existing[0].category,
         content || existing[0].content,
-        excerpt || existing[0].excerpt,
-        featuredImage !== undefined ? featuredImage : existing[0].featured_image,
+        excerpt || existing[0].description,
+        featuredImage !== undefined ? featuredImage : existing[0].img,
         tags !== undefined ? tags : existing[0].tags,
         status || existing[0].status,
-        publishedDate !== undefined ? publishedDate : existing[0].published_date,
+        publishedDate !== undefined ? publishedDate : existing[0].date,
         id
       ]
     );
@@ -372,7 +372,7 @@ router.delete('/:id', verifyToken, async (req, res) => {
 
     // Check if blog exists
     const [existing] = await pool.query('SELECT title FROM blogs WHERE id = ?', [id]);
-    
+
     if (existing.length === 0) {
       return res.status(404).json({
         success: false,
@@ -417,11 +417,11 @@ router.patch('/:id/status', verifyToken, async (req, res) => {
 
     const pool = getPool();
 
-    // Update status and published_date if publishing
+    // Update status and date if publishing
     const publishedDate = status === 'published' ? new Date().toISOString().split('T')[0] : null;
-    
+
     await pool.query(
-      `UPDATE blogs SET status = ?, published_date = COALESCE(?, published_date) WHERE id = ?`,
+      `UPDATE blogs SET status = ?, date = COALESCE(?, date) WHERE id = ?`,
       [status, publishedDate, id]
     );
 

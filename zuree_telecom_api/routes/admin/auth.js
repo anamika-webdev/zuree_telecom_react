@@ -12,7 +12,7 @@ const getPool = () => {
 // Middleware to verify JWT token (defined here but not exported)
 const verifyToken = (req, res, next) => {
   const token = req.headers['authorization']?.split(' ')[1];
-  
+
   if (!token) {
     return res.status(403).json({
       success: false,
@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
     }
 
     const pool = getPool();
-    
+
     // Find user by username or email
     const [users] = await pool.query(
       `SELECT id, username, email, password, full_name, role, status 
@@ -79,7 +79,7 @@ router.post('/login', async (req, res) => {
 
     // Verify password
     const isPasswordValid = await bcrypt.compare(password, user.password);
-    
+
     if (!isPasswordValid) {
       return res.status(401).json({
         success: false,
@@ -135,7 +135,7 @@ router.post('/login', async (req, res) => {
 router.get('/me', verifyToken, async (req, res) => {
   try {
     const pool = getPool();
-    
+
     const [users] = await pool.query(
       `SELECT id, username, email, full_name, role, last_login, created_at 
        FROM admin_users 
@@ -194,7 +194,7 @@ router.post('/change-password', verifyToken, async (req, res) => {
     }
 
     const pool = getPool();
-    
+
     // Get current password
     const [users] = await pool.query(
       'SELECT password FROM admin_users WHERE id = ?',
@@ -210,7 +210,7 @@ router.post('/change-password', verifyToken, async (req, res) => {
 
     // Verify current password
     const isPasswordValid = await bcrypt.compare(currentPassword, users[0].password);
-    
+
     if (!isPasswordValid) {
       return res.status(401).json({
         success: false,
@@ -248,5 +248,7 @@ router.post('/change-password', verifyToken, async (req, res) => {
   }
 });
 
-// CRITICAL: Only export the router, nothing else!
+// Export router and middleware
 module.exports = router;
+module.exports.verifyToken = verifyToken;
+module.exports.isSuperAdmin = isSuperAdmin;

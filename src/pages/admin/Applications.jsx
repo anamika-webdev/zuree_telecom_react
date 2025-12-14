@@ -15,7 +15,7 @@ const Applications = () => {
   const fetchApplications = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/careers/applications', {
+      const response = await fetch('http://localhost:5000/api/admin/applications', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
@@ -26,7 +26,7 @@ const Applications = () => {
       }
 
       const data = await response.json();
-      setApplications(Array.isArray(data) ? data : []);
+      setApplications(data.applications || []);
       setError(null);
     } catch (err) {
       console.error('Error fetching applications:', err);
@@ -38,8 +38,8 @@ const Applications = () => {
 
   const updateApplicationStatus = async (id, status) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/careers/applications/${id}/status`, {
-        method: 'PUT',
+      const response = await fetch(`http://localhost:5000/api/admin/applications/${id}/status`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -65,7 +65,7 @@ const Applications = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/careers/applications/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/applications/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -124,8 +124,8 @@ const Applications = () => {
       <div className="section-header">
         <h2>Job Applications</h2>
         <div className="filter-controls">
-          <select 
-            value={filterStatus} 
+          <select
+            value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
             className="form-select"
           >
@@ -187,23 +187,23 @@ const Applications = () => {
                   </tr>
                 ) : (
                   filteredApplications.map(app => (
-                    <tr 
+                    <tr
                       key={app.id}
                       className={selectedApplication?.id === app.id ? 'selected' : ''}
                       onClick={() => setSelectedApplication(app)}
                     >
-                      <td>{app.full_name}</td>
+                      <td>{app.name}</td>
                       <td>{app.job_title || 'N/A'}</td>
                       <td>{app.email}</td>
                       <td>{app.phone}</td>
-                      <td>{formatDate(app.applied_at)}</td>
+                      <td>{formatDate(app.applied_date)}</td>
                       <td>
                         <span className={`status-badge status-${app.status}`}>
                           {app.status}
                         </span>
                       </td>
                       <td>
-                        <button 
+                        <button
                           onClick={(e) => {
                             e.stopPropagation();
                             setSelectedApplication(app);
@@ -225,7 +225,7 @@ const Applications = () => {
           <div className="application-detail">
             <div className="detail-header">
               <h3>Application Details</h3>
-              <button 
+              <button
                 onClick={() => setSelectedApplication(null)}
                 className="btn btn-sm"
               >
@@ -239,7 +239,7 @@ const Applications = () => {
                 <div className="detail-grid">
                   <div className="detail-item">
                     <label>Full Name:</label>
-                    <span>{selectedApplication.full_name}</span>
+                    <span>{selectedApplication.name}</span>
                   </div>
                   <div className="detail-item">
                     <label>Email:</label>
@@ -264,7 +264,7 @@ const Applications = () => {
               {selectedApplication.resume_path && (
                 <div className="detail-section">
                   <h4>Resume</h4>
-                  <a 
+                  <a
                     href={`http://localhost:5000${selectedApplication.resume_path}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -286,6 +286,7 @@ const Applications = () => {
                   <option value="reviewed">Reviewed</option>
                   <option value="shortlisted">Shortlisted</option>
                   <option value="rejected">Rejected</option>
+                  <option value="hired">Hired</option>
                 </select>
               </div>
 
@@ -299,7 +300,7 @@ const Applications = () => {
               </div>
 
               <div className="detail-meta">
-                <small>Applied on: {formatDate(selectedApplication.applied_at)}</small>
+                <small>Applied on: {formatDate(selectedApplication.applied_date)}</small>
               </div>
             </div>
           </div>
